@@ -1,0 +1,32 @@
+export default interface CbItem {
+    tipo: string;
+    sku: string;
+    sku_padre: string;
+    nombre: string;
+    atributo_1: string;
+    variante_atributo_1: string;
+    atributo_2: string;
+    variante_atributo_2: string;
+    codigo_barras: string;
+    codigo_oem: string;
+    descripcion: string;
+    estado: string;
+    moneda: string;
+    costo_interno: number;
+    precio: number;
+    iva: number;
+    precio_final: number;
+    rentabilidad: number;
+    stock: number;
+    stock_reservado: number;
+    stock_disponible: number;
+    stock_minimo: number;
+    visible_en_ventas: boolean;
+    rubro: string;
+    sub_rubro: string;
+    proveedor: string;
+    observaciones: string;
+    cc_compras: string;
+    cc_ventas: string;
+    cc_mercaderia: string;
+}
