@@ -1,0 +1,110 @@
+{
+  "id": "53cd09af-a6bb-498e-8c2c-36b34d693b32",
+  "name": "sotano deposito nuevo - ls2 alta gama cajas negras",
+  "details": "Stock de todos los cascos que hay en el nuevo deposito",
+  "isoStringDate": "2024-11-16T20:34:38.920Z",
+  "products": [
+    {
+      "sku": "1080010110030",
+      "name": "ff800 storm solid matt black M",
+      "quantity": 1,
+      "details": "creado nuevo. Ademas tiene otro codigo: 6934432857083"
+    },
+    {
+      "sku": "1080010110020",
+      "name": "ff800 storm solid matt black S",
+      "quantity": 2,
+      "details": "creado nuevo. Ademas tiene otro codigo: 6934432857076"
+    },
+    {
+      "sku": "1080010110040",
+      "name": "ff800 storm solid matt black L",
+      "quantity": 1,
+      "details": "creado nuevo. Ademas tiene otro codigo: 6934432857090"
+    },
+    {
+      "sku": "1080010110050",
+      "name": "ff800 storm solid matt black XL",
+      "quantity": 1,
+      "details": "creado nuevocreado nuevo. Ademas tiene otro codigo: 6934432857106"
+    },
+    {
+      "sku": "1080570980040",
+      "name": "ls2 ff805 thunder matt carbon[013] L",
+      "quantity": 1,
+      "details": "creado nuevo. ademas tiene otro codigo: 6934432870358"
+    },
+    {
+      "sku": "1080570980030",
+      "name": "ls2 ff805 thunder matt carbon[013] M",
+      "quantity": 1,
+      "details": "creado nuevo. ademas tiene otro codigo: 6934432870341"
+    },
+    {
+      "sku": "4043620110030",
+      "name": "ls2 mx436 pioneer evo matt black[01] M",
+      "quantity": 1,
+      "details": "creado nuevo. 6934432851685"
+    },
+    {
+      "sku": "4043620110050",
+      "name": "ls2 mx436 pioneer evo matt black[01] XL",
+      "quantity": 1,
+      "details": "creado nuevo. 6934432851708"
+    },
+    {
+      "sku": "LS2509001011.XL",
+      "name": "CASCO MOTO LS2 REBATIBLE 900 VALIANT 2 C/PINLOCK RPM925",
+      "quantity": 1,
+      "details": "tiene estos codigos en la caja, no se si el que esta actualmente es el que corresponde. : 5090010110050 y 6934432855591 "
+    },
+    {
+      "sku": "LS2509001011.S",
+      "name": "CASCO MOTO LS2 REBATIBLE 900 VALIANT 2 C/PINLOCK R",
+      "quantity": 1,
+      "details": "5090010110020 y 6934432855560"
+    },
+    {
+      "sku": "LS2509001011.L",
+      "name": "CASCO MOTO LS2 REBATIBLE 900 VALIANT 2 C/PINLOCK RPM925",
+      "quantity": 1,
+      "details": "5090010110040 y 6934432855584"
+    },
+    {
+      "sku": "LS2503991011.M",
+      "name": "CASCO MOTO REBATIBLE LS2 VALIANT 399 NEGRO MATE - RPM  NEGRO MATE MONOCOLOR M",
+      "quantity": 2,
+      "details": "5039910110030 y 6934432830680"
+    },
+    {
+      "sku": "LS2103273212.L",
+      "name": "CASCO MOTO INTEGRAL LS2 327 CHALLENGER GP PINLOCK RPM925  BLANCO-NEGRO GP L",
+      "quantity": 1,
+      "details": "1032732120040 y 6934432843055"
+    },
+    {
+      "sku": "LS2103273903.XL",
+      "name": "CASCO MOTO INTEGRAL LS2 327 ALLERT TITANIUM C/PINLOCK RPM925",
+      "quantity": 1,
+      "details": "Revisar los codigos, parece que estan mal: los que corresponden son: 1032739030050 y 6934432864524"
+    },
+    {
+      "sku": "LS2103273903.M",
+      "name": "CASCO MOTO INTEGRAL LS2 327 ALLERT TITANIUM C/PINLOCK RPM925",
+      "quantity": 1,
+      "details": "los codigos son: 1032739030030 y 6934432864500"
+    },
+    {
+      "sku": "LS2103273903.L",
+      "name": "CASCO MOTO INTEGRAL LS2 327 ALLERT TITANIUM C/PINLOCK RPM925",
+      "quantity": 1,
+      "details": "los codigos son: 1032739030040 y 6934432864517"
+    },
+    {
+      "sku": "LS2103273212.M",
+      "name": "CASCO MOTO INTEGRAL LS2 327 CHALLENGER GP PINLOCK RPM925  BLANCO-NEGRO GP M",
+      "quantity": 1,
+      "details": "los codigos son: 1032732120030 y 6934432843048"
+    }
+  ]
+}

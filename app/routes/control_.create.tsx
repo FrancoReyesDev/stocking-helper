@@ -5,8 +5,11 @@ import {
   Fragment,
   KeyboardEvent,
   MouseEvent,
+  useRef,
   useState,
 } from "react";
+import { BackToSkuInput } from "~/components/BackToSkuInput";
+import { ControlListedProduct } from "~/components/ControlListedProduct";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository";
 import { ControlsRepository } from "~/repositories/Controls.repository";
 import { ContabiliumService } from "~/services/Contabilium.service";
@@ -66,10 +69,18 @@ export default function ControlCreate() {
     isoStringDate: new Date().toISOString(),
   });
 
+  const searchProductRef = useRef<HTMLInputElement>(null);
   const [searchProduct, setSearchProduct] = useState("");
+  const [appendQuantity, setAppendQuantity] = useState(1);
   const [searchProductResults, setSearchProductResults] = useState<CbItem[]>(
     []
   );
+
+  function clearAddProductInputs() {
+    setSearchProduct("");
+    setAppendQuantity(1);
+    setSearchProductResults([]);
+  }
 
   function getHandleChange(field: keyof typeof control) {
     return function handleChange(
@@ -113,22 +124,35 @@ export default function ControlCreate() {
   }
 
   function handleBarcodeChange(event: ChangeEvent<HTMLInputElement>) {
-    const newValue = event.target.value.trim() ?? "";
+    const newValue = event.target.value ?? "";
+
     setSearchProduct(newValue);
 
-    if (newValue === "") setSearchProductResults([]);
+    if (newValue.trim() === "") {
+      clearAddProductInputs();
+      return;
+    }
 
     const searchResults = contabiliumService.searchProduct(newValue);
     setSearchProductResults(searchResults);
   }
 
+  function handleAppendQuantityChange(event: ChangeEvent<HTMLInputElement>) {
+    const newValue = event.target.value;
+
+    const newValueToNumber = Number(newValue);
+
+    if (isNaN(newValueToNumber)) return setAppendQuantity(1);
+
+    setAppendQuantity(newValueToNumber);
+  }
+
   function handleBarcodeInput(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter" && searchProduct.trim() !== "") {
       const target = event.target as HTMLInputElement;
-      const sku = target.value.trim();
+      const sku = target.value;
       setSearchProduct(sku);
-
-      addProduct(sku);
+      addProduct(sku.trim());
     }
   }
 
@@ -138,13 +162,12 @@ export default function ControlCreate() {
     );
 
     if (listedProduct !== undefined) {
-      setSearchProduct("");
-      setSearchProductResults([]);
+      clearAddProductInputs();
       return setControl(({ products, ...rest }) => {
         const newProducts = products.filter((product) => product.sku !== sku);
         const newProduct: Control["products"][number] = {
           ...listedProduct,
-          quantity: Number(listedProduct.quantity) + 1,
+          quantity: Number(listedProduct.quantity) + (appendQuantity ?? 1),
         };
 
         return { ...rest, products: [...newProducts, newProduct] };
@@ -152,34 +175,36 @@ export default function ControlCreate() {
     }
 
     if (sku in contabiliumService.indexedProducts) {
-      setSearchProduct("");
-      setSearchProductResults([]);
+      clearAddProductInputs();
       return setControl(({ products, ...rest }) => {
         const cbItem = contabiliumService.indexedProducts[sku];
         return {
           ...rest,
           products: [
             ...products,
-            { sku, name: cbItem.nombre, quantity: 1, details: "" },
+            {
+              sku,
+              name: cbItem.nombre,
+              quantity: appendQuantity ?? 1,
+              details: "",
+            },
           ],
         };
       });
     }
 
     createNewProduct();
-    setSearchProduct("");
-    setSearchProductResults([]);
+    clearAddProductInputs();
   }
 
   function createNewProduct() {
     const newProduct: Control["products"][number] = {
       sku: searchProduct,
       name: "",
-      quantity: 1,
+      quantity: appendQuantity ?? 1,
       details: "creado nuevo",
     };
-    setSearchProduct("");
-    setSearchProductResults([]);
+    clearAddProductInputs();
     setControl(({ products, ...rest }) => ({
       ...rest,
       products: [...products, newProduct],
@@ -230,29 +255,35 @@ export default function ControlCreate() {
           value={control.details}
         />
 
-        <label className="form-control w-full grow ">
-          <div className="label">
+        <label className="form-control w-full grow grid row-gap-2 grid-cols-6 grid-rows-2 ">
+          <div className="label grid col-span-6">
             <span className="label-text">Agregar Producto</span>
           </div>
           <input
+            ref={searchProductRef}
             type="text"
             name="add-product"
             placeholder="sku"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full col-span-5"
             value={searchProduct}
             onChange={handleBarcodeChange}
             onKeyUp={handleBarcodeInput}
           />
+          <input
+            type="number"
+            min={1}
+            className="input input-bordered col-span-1"
+            value={String(appendQuantity ?? "")}
+            onChange={handleAppendQuantityChange}
+            onKeyUp={handleBarcodeInput}
+          />
         </label>
-
-        {/* {searchProduct.length !== 0 && (
-          <button
-            onClick={createNewProduct}
-            className="btn btn-sm btn-success btn-block"
-          >
-            crear nuevo producto
-          </button>
-        )} */}
+        <p>
+          productos: {control.products.length}, total:{" "}
+          {control.products.reduce((acc, { quantity }) => {
+            return acc + Number(quantity);
+          }, 0)}
+        </p>
 
         {searchProductResults.slice(0, 10).map(({ sku, nombre }) => (
           <div
@@ -277,45 +308,12 @@ export default function ControlCreate() {
           <Fragment key={product.sku}>
             {index === 0 && <div className="divider"></div>}
 
-            <div key={index} className="grid gap-2 bordered ">
-              <input
-                type="text"
-                className="input input-bordered"
-                name={"product-sku-" + index}
-                placeholder="sku"
-                value={product.sku}
-                onChange={getHandleChangeProduct("sku", product.sku)}
-              />
-              <input
-                type="text"
-                placeholder="titulo"
-                name={"product-name-" + index}
-                className="input input-bordered"
-                value={product.name}
-                onChange={getHandleChangeProduct("name", product.sku)}
-              />
-              <input
-                type="number"
-                className="input input-bordered"
-                placeholder="stock"
-                name={"product-quantity-" + index}
-                value={product.quantity}
-                onChange={getHandleChangeProduct("quantity", product.sku)}
-              />
-              <textarea
-                className="textarea textarea-bordered"
-                name={"product-details-" + index}
-                value={product.details}
-                placeholder="detalles"
-                onChange={getHandleChangeProduct("details", product.sku)}
-              />
-              <button
-                onClick={getHandleDeleteProduct(product.sku)}
-                className="btn btn-sm btn-block btn-error"
-              >
-                eliminar
-              </button>
-            </div>
+            <ControlListedProduct
+              index={index}
+              product={product}
+              getHandleChangeProduct={getHandleChangeProduct}
+              getHandleDeleteProduct={getHandleDeleteProduct}
+            />
             {control.products.length > 0 && <div className="divider"></div>}
           </Fragment>
         ))}
@@ -323,6 +321,7 @@ export default function ControlCreate() {
           aceptar control
         </button>
       </Form>
+      <BackToSkuInput skuInputRef={searchProductRef} />
     </article>
   );
 }

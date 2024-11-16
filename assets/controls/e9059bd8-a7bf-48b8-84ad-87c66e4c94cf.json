@@ -1,0 +1,278 @@
+{
+  "id": "e9059bd8-a7bf-48b8-84ad-87c66e4c94cf",
+  "name": "vertigo, punto extremo y hawk",
+  "details": "Cascos en la planta del deposito y algunos accesorios de vertigo. LOS QUE ESTA EN CAJAS CERRADAS NO ESTAN CONTABILIZADOS (BULTOS, cascos abiertos)",
+  "isoStringDate": "2024-11-16T16:36:44.068Z",
+  "products": [
+    {
+      "sku": "935.NEGROBRILLO.M",
+      "name": "CASCO MOTO REBATIBLE DOBLE VISOR PUNTO EXTREMO WAY 935 RPM  NEGRO BRILLO SOLID M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "935.NEGROMATE.S",
+      "name": "CASCO MOTO REBATIBLE DOBLE VISOR PUNTO EXTREMO WAY 935 RPM  NEGRO MATE SOLID S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "978.ROJO.M",
+      "name": "CASCO MOTO INTEGRAL PUNTO EXTREMO FAST 978 RPM925  ROJO SOLID M",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "978.ROJO.S",
+      "name": "CASCO MOTO INTEGRAL PUNTO EXTREMO FAST 978 RPM925  ROJO SOLID S",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "978.NEGROMATE.L",
+      "name": "CASCO MOTO INTEGRAL PUNTO EXTREMO FAST 978 RPM925  NEGRO MATE SOLID S",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "978.NEGROMATE.M",
+      "name": "CASCO MOTO INTEGRAL PUNTO EXTREMO FAST 978 RPM925  NEGRO MATE SOLID M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "5916",
+      "name": "vertigo antiparra va1 negra roja",
+      "quantity": 6,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5754",
+      "name": "vertigo antiparra va1 negra gris",
+      "quantity": 6,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5436",
+      "name": "RODILLERAS VERTIGO PROTECCION MOTOCROSS VR1 RPM   NEGRO",
+      "quantity": 12,
+      "details": ""
+    },
+    {
+      "sku": "6588",
+      "name": "ik1000 vertigo vintage scooter fucsia/gris mate L",
+      "quantity": 6,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6589",
+      "name": "ik1000 vertigo vintage scooter-fucsia/gris mate M",
+      "quantity": 3,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6569",
+      "name": "ik1000 vertigo vintage scooter rojo negro mate M",
+      "quantity": 3,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6560",
+      "name": "ik1000 vertigo vintage scooter gris negro mate L",
+      "quantity": 7,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6568",
+      "name": "ik1000 vertigo vintage scooter rojo negro mate L",
+      "quantity": 5,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6561",
+      "name": "ik1000 vertigo vintage scooter gris negro mate M",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6553",
+      "name": "CASCO ABIERTO MOTO VERTIGO VINTAGE GOLD EDITION NEGRO MATE",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "6557",
+      "name": "CASCO ABIERTO MOTO VERTIGO VINTAGE GOLD EDITION BLANCO BRILL",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "6533",
+      "name": "CASCO MOTO ABIERTO VERTIGO VINTAGE OLD SCHOOL NEGRO MATE RPM",
+      "quantity": 11,
+      "details": ""
+    },
+    {
+      "sku": "6552",
+      "name": "CASCO ABIERTO MOTO VERTIGO VINTAGE GOLD EDITION NEGRO MATE",
+      "quantity": 6,
+      "details": ""
+    },
+    {
+      "sku": "6556",
+      "name": "CASCO ABIERTO MOTO VERTIGO VINTAGE GOLD EDITION BLANCO BRILL",
+      "quantity": 6,
+      "details": ""
+    },
+    {
+      "sku": "6532",
+      "name": "CASCO MOTO ABIERTO VERTIGO VINTAGE OLD SCHOOL NEGRO MATE RPM",
+      "quantity": 20,
+      "details": ""
+    },
+    {
+      "sku": "6307",
+      "name": "ig3500 vertigo v50 monochrome dark mate M",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5439",
+      "name": "ig2900 vertigo mz3 race division nj brillo M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6306",
+      "name": "ig3500 vertigo v50 monochrome dark mate L",
+      "quantity": 4,
+      "details": "creado nuevo. Hay uno que no tiene etiqueta, solo dice \"L\". debemos etiquetarlos"
+    },
+    {
+      "sku": "6385",
+      "name": "ig2900 vertigo mz3 gris mate M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5438",
+      "name": "ig2900 vertigo mz3 race division nj brillo L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5384",
+      "name": "vertigo mz3 gris mate L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "5437",
+      "name": "ig2900 vertigo mz3 race division nj brillo xl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "6305",
+      "name": "ig3500 vertigo v50 monochrome dark mate xl ",
+      "quantity": 3,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "HILM42",
+      "name": "CASCO HAWK RS11 DOBLE VISOR LENTES DE SOL INTERNOS RPM925  NEGRO MATE XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "HILBN32",
+      "name": "hawk rs1 negro brillo L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "HIGM42",
+      "name": "CASCO INTEGRAL HAWK RS1F CON GRAFICAS - RPM  NEGRO/NARANJA MATE F XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "HRM515",
+      "name": "CASCO MOTO REBATIBLE HAWK RS5 RESISTANCE MATE FLUOR RPM925  AMARILLO XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "2264",
+      "name": "ik1000 vertigo custom negro M",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "2265",
+      "name": "ik1000 vertigo custom negro L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001874",
+      "name": "vx verde mate M",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001875",
+      "name": "vx verde mate L",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "307",
+      "name": "vx summer turquesa cinta amarillo L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "293",
+      "name": "vx black edition azul L",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "294",
+      "name": "vx black edition azul M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "295",
+      "name": "vx black edition azul S",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001857",
+      "name": "vx negro mate S",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001858",
+      "name": "vx negro mate M",
+      "quantity": 5,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001866",
+      "name": "vx blanco mate M",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1001867",
+      "name": "vx blanco mate L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    }
+  ]
+}
