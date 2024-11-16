@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 import { Control } from "~/types/Control.type";
 
 interface Props {
@@ -30,7 +30,10 @@ export function ControlsPanel({ controls }: Props) {
                   <td>{control.isoStringDate}</td>
                   <td>{control.products.length}</td>
                   <td>
-                    <Link to={"/control/" + control.id}>ver</Link>
+                    <Link to={"/control/" + control.id}>ver</Link>{" "}
+                    <a href={"/control/" + control.id + "/download"}>
+                      exportar
+                    </a>
                   </td>
                 </tr>
               ))}

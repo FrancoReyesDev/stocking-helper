@@ -15,9 +15,11 @@ export class ContabiliumRepository {
   }
 
   private getProductsFromAssets(): typeof this.arrayOfProducts {
-    const workbook = new WorkbookService(this.filename);
-    const arrayOfJsons = workbook.sheetToAoJson<CbItem>(
-      workbook.workbook.SheetNames[0],
+    const workbookService = new WorkbookService();
+    const workbook = workbookService.createWorkbook(this.filename);
+    const arrayOfJsons = workbookService.sheetToAoJson<CbItem>(
+      workbook,
+      workbook.SheetNames[0],
       cbItemHeaders
     );
     return arrayOfJsons;

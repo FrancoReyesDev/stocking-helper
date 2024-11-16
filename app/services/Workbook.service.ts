@@ -1,27 +1,28 @@
-import XLSX, { Sheet2JSONOpts } from "xlsx"
-import path from "path"
+import XLSX, { Sheet2JSONOpts } from "xlsx";
 
-export class WorkbookService{
+export class WorkbookService {
+  public createWorkbook(filename: string) {
+    const workbook = XLSX.readFile(filename);
+    return workbook;
+  }
 
-    workbook:XLSX.WorkBook
+  public sheetToAoJson<item = unknown>(
+    workbook: XLSX.WorkBook,
+    sheetName: string,
+    headers: string[]
+  ) {
+    const opts: Sheet2JSONOpts = { header: headers, defval: null };
+    const arrayOfJsons = XLSX.utils.sheet_to_json<item>(
+      workbook.Sheets[sheetName],
+      opts
+    );
+    return arrayOfJsons;
+  }
 
-    constructor(filename:string){
-   
-        this.workbook = this.createWorkbook(filename)
-    }
-
-    private createWorkbook(filename:string){
-        const workbook = XLSX.readFile(filename)
-        return workbook
-    }
-
-    public sheetToAoJson<item = unknown>(sheetName:string,headers:string[]){
-        const opts:Sheet2JSONOpts = {header:headers,defval:null}
-        const arrayOfJsons = XLSX.utils.sheet_to_json<item>(this.workbook.Sheets[sheetName],opts)
-        return arrayOfJsons
-    }
-
-   
-
-    
+  public createWorkbookFromAoA(title: string, data: any[][]) {
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.aoa_to_sheet(data);
+    XLSX.utils.book_append_sheet(workbook, worksheet, title);
+    return workbook;
+  }
 }

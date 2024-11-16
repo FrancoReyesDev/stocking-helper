@@ -31,13 +31,21 @@ export class ControlsRepository {
     return jsonObjects;
   }
 
+  getControl(id: string) {
+    return this.controls.find((control) => control.id === id);
+  }
+
   saveControl(data: Control) {
     try {
       // Convierte el objeto JavaScript a JSON
       const jsonData = JSON.stringify(data, null, 2); // El `null, 2` agrega formato (espaciado) al JSON
 
       // Escribe el JSON en el archivo
-      fs.writeFileSync(this.dirname, jsonData, "utf-8");
+      fs.writeFileSync(
+        path.join(this.dirname, data.id + ".json"),
+        jsonData,
+        "utf-8"
+      );
       console.log(`El archivo JSON ha sido creado en: ${this.dirname}`);
     } catch (error) {
       console.error("Error al crear el archivo JSON:", error);

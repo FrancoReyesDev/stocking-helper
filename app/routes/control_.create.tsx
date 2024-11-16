@@ -1,9 +1,48 @@
-import { Form, useLoaderData } from "@remix-run/react";
-import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { ActionFunctionArgs } from "@remix-run/node";
+import { Form, redirect, useLoaderData } from "@remix-run/react";
+import {
+  ChangeEvent,
+  Fragment,
+  KeyboardEvent,
+  MouseEvent,
+  useState,
+} from "react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository";
+import { ControlsRepository } from "~/repositories/Controls.repository";
 import { ContabiliumService } from "~/services/Contabilium.service";
 import CbItem from "~/types/CbItem.type";
 import { Control } from "~/types/Control.type";
+
+export async function action({ request }: ActionFunctionArgs) {
+  const controlsRepository = new ControlsRepository();
+
+  const body = await request.formData();
+  const formData = Object.fromEntries(body.entries());
+
+  const newControl: Control = {
+    id: crypto.randomUUID(),
+    name: formData["control-name"] as string,
+    details: formData["control-details"] as string,
+    isoStringDate: formData["control-date"] as string,
+    products: [],
+  };
+
+  let index = 0;
+  while (`product-sku-${index}` in formData) {
+    const product = {
+      sku: (formData[`product-sku-${index}`] as string) || "",
+      name: (formData[`product-name-${index}`] as string) || "",
+      quantity: Number(formData[`product-quantity-${index}`]) || 0,
+      details: (formData[`product-details-${index}`] as string) || "",
+    };
+    newControl.products.push(product);
+    index++;
+  }
+
+  controlsRepository.saveControl(newControl);
+
+  return redirect("/control/" + newControl.id);
+}
 
 export function loader() {
   const contabiliumRepository = new ContabiliumRepository();
@@ -48,23 +87,33 @@ export default function ControlCreate() {
     return function handleChangeProduct(
       event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
-      const newValue = event.target.value ?? field === "quantity" ? 0 : "";
+      const newValue = event.target.value ?? (field === "quantity" ? 0 : "");
+
       const newProduct = {
         ...control.products.find((product) => product.sku === sku),
         [field]: newValue,
       } as Control["products"][number];
       setControl({
         ...control,
-        products: [
-          ...control.products.filter((product) => product.sku !== sku),
-          newProduct,
-        ],
+        products: control.products.map((product) =>
+          product.sku !== sku ? product : newProduct
+        ),
+      });
+    };
+  }
+
+  function getHandleDeleteProduct(sku: string) {
+    return function (event: MouseEvent<HTMLButtonElement>) {
+      event.preventDefault();
+      setControl({
+        ...control,
+        products: control.products.filter((product) => product.sku !== sku),
       });
     };
   }
 
   function handleBarcodeChange(event: ChangeEvent<HTMLInputElement>) {
-    const newValue = event.target.value ?? "";
+    const newValue = event.target.value.trim() ?? "";
     setSearchProduct(newValue);
 
     if (newValue === "") setSearchProductResults([]);
@@ -74,51 +123,90 @@ export default function ControlCreate() {
   }
 
   function handleBarcodeInput(event: KeyboardEvent<HTMLInputElement>) {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && searchProduct.trim() !== "") {
       const target = event.target as HTMLInputElement;
-      setSearchProduct(target.value);
-      const sku = target.value;
+      const sku = target.value.trim();
+      setSearchProduct(sku);
 
-      const listedProduct = control.products.find(
-        (product) => product.sku === sku
-      );
-
-      if (listedProduct !== undefined)
-        return setControl(({ products, ...rest }) => {
-          const newProducts = products.filter((product) => product.sku !== sku);
-          const newProduct: Control["products"][number] = {
-            ...listedProduct,
-            quantity: listedProduct.quantity + 1,
-          };
-          return { ...rest, products: [...newProducts, newProduct] };
-        });
-
-      const newProduct: Control["products"][number] = {
-        sku,
-        name: "",
-        quantity: 1,
-        details: "",
-      };
-
-      if (sku in contabiliumService.indexedProducts) {
-        setSearchProduct("");
-        setControl(({ products, ...rest }) => {
-          const cbItem = contabiliumService.indexedProducts[sku];
-          return {
-            ...rest,
-            products: [...products, { ...newProduct, name: cbItem.nombre }],
-          };
-        });
-      }
-
-      // No existe el producto
+      addProduct(sku);
     }
   }
+
+  function addProduct(sku: string) {
+    const listedProduct = control.products.find(
+      (product) => product.sku === sku
+    );
+
+    if (listedProduct !== undefined) {
+      setSearchProduct("");
+      setSearchProductResults([]);
+      return setControl(({ products, ...rest }) => {
+        const newProducts = products.filter((product) => product.sku !== sku);
+        const newProduct: Control["products"][number] = {
+          ...listedProduct,
+          quantity: Number(listedProduct.quantity) + 1,
+        };
+
+        return { ...rest, products: [...newProducts, newProduct] };
+      });
+    }
+
+    if (sku in contabiliumService.indexedProducts) {
+      setSearchProduct("");
+      setSearchProductResults([]);
+      return setControl(({ products, ...rest }) => {
+        const cbItem = contabiliumService.indexedProducts[sku];
+        return {
+          ...rest,
+          products: [
+            ...products,
+            { sku, name: cbItem.nombre, quantity: 1, details: "" },
+          ],
+        };
+      });
+    }
+
+    createNewProduct();
+    setSearchProduct("");
+    setSearchProductResults([]);
+  }
+
+  function createNewProduct() {
+    const newProduct: Control["products"][number] = {
+      sku: searchProduct,
+      name: "",
+      quantity: 1,
+      details: "creado nuevo",
+    };
+    setSearchProduct("");
+    setSearchProductResults([]);
+    setControl(({ products, ...rest }) => ({
+      ...rest,
+      products: [...products, newProduct],
+    }));
+  }
+
+  function getHandleAddItem(sku: string) {
+    return function (event: MouseEvent<HTMLButtonElement>) {
+      event.preventDefault();
+      addProduct(sku);
+    };
+  }
+
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
 
   return (
     <article className="grid gap-2 p-4 prose">
       <h2>Nuevo Control</h2>
-      <Form method="POST" className="flex flex-col gap-2">
+      <Form
+        method="POST"
+        className="flex flex-col gap-2"
+        onKeyDown={handleKeyDown}
+      >
         <input
           type="text"
           name="control-name"
@@ -130,9 +218,9 @@ export default function ControlCreate() {
         <input
           type="text"
           name="control-date"
-          className="input input-bordered"
+          className="input input-bordered input-disabled"
           value={control.isoStringDate}
-          disabled
+          readOnly
         />
         <textarea
           className="textarea textarea-bordered"
@@ -142,7 +230,7 @@ export default function ControlCreate() {
           value={control.details}
         />
 
-        <label className="form-control w-full grow">
+        <label className="form-control w-full grow ">
           <div className="label">
             <span className="label-text">Agregar Producto</span>
           </div>
@@ -157,19 +245,39 @@ export default function ControlCreate() {
           />
         </label>
 
+        {/* {searchProduct.length !== 0 && (
+          <button
+            onClick={createNewProduct}
+            className="btn btn-sm btn-success btn-block"
+          >
+            crear nuevo producto
+          </button>
+        )} */}
+
         {searchProductResults.slice(0, 10).map(({ sku, nombre }) => (
-          <div key={sku} className="flex justify-between">
-            <span>{sku}</span>
-            <span>{nombre}</span>
-            <button className="btn">agregar</button>
+          <div
+            key={sku}
+            className="flex justify-between border rounded p-2 items-center"
+          >
+            <div className="flex flex-col gap-1 ml-2">
+              <span>
+                <strong>sku:</strong> {sku}
+              </span>
+              <span>
+                <strong>nombre:</strong> {nombre}
+              </span>
+            </div>
+            <button className="btn" onClick={getHandleAddItem(sku)}>
+              agregar
+            </button>
           </div>
         ))}
 
         {control.products.map((product, index) => (
-          <>
+          <Fragment key={product.sku}>
             {index === 0 && <div className="divider"></div>}
 
-            <div key={index} className="grid gap-2 bordered mt-2">
+            <div key={index} className="grid gap-2 bordered ">
               <input
                 type="text"
                 className="input input-bordered"
@@ -201,16 +309,19 @@ export default function ControlCreate() {
                 placeholder="detalles"
                 onChange={getHandleChangeProduct("details", product.sku)}
               />
-              <button className="btn btn-sm btn-block btn-error">
+              <button
+                onClick={getHandleDeleteProduct(product.sku)}
+                className="btn btn-sm btn-block btn-error"
+              >
                 eliminar
               </button>
             </div>
-            {control.products.length > 0 &&
-              index !== control.products.length - 1 && (
-                <div className="divider"></div>
-              )}
-          </>
+            {control.products.length > 0 && <div className="divider"></div>}
+          </Fragment>
         ))}
+        <button className="btn btn-block" type="submit">
+          aceptar control
+        </button>
       </Form>
     </article>
   );
