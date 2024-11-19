@@ -1,14 +1,14 @@
 import path from "path";
 import fs from "fs";
 import { Control } from "~/types/Control.type";
-import crypto from "crypto";
 
 export class ControlsRepository {
   private dirname = path.join(import.meta.dirname, "../../assets/controls");
   controls: Control[];
 
   constructor() {
-    this.controls = this.getControlsFromDirectory();
+    const controls = this.getControlsFromDirectory();
+    this.controls = controls.sort();
   }
 
   private getControlsFromDirectory() {

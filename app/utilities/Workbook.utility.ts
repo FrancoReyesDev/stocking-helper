@@ -1,6 +1,6 @@
 import XLSX, { Sheet2JSONOpts } from "xlsx";
 
-export class WorkbookService {
+export class WorkbookUtility {
   public createWorkbook(filename: string) {
     const workbook = XLSX.readFile(filename);
     return workbook;

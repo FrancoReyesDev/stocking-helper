@@ -1,13 +1,15 @@
 import {
+  Link,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 
 import "./tailwind.css";
-import { RootLayout } from "./layouts/Root.layout";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen min-w-screen">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -28,9 +30,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const location = useLocation();
+
+  const inRoot = location.pathname === "/";
+
   return (
-    <RootLayout>
+    <div className="mx-auto lg:w-2/3 p-8">
+      <header className="my-6 prose flex gap-4">
+        <Link to={"/"}>{!inRoot && <span>&#8592;</span>} inicio</Link>
+        {inRoot ? (
+          <NavLink to={"/control/create"}>
+            {({ isPending }) => (isPending ? "cargando..." : "nuevo control")}
+          </NavLink>
+        ) : null}
+      </header>
       <Outlet />
-    </RootLayout>
+    </div>
   );
 }

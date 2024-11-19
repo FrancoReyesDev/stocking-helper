@@ -1,12 +1,10 @@
 import _ from "lodash";
-import lunr from "lunr";
 
 import Fuse from "fuse.js";
 import CbItem from "~/types/CbItem.type";
 
-export class ContabiliumService {
+export class ContabiliumProductsUtility {
   private fuse: Fuse<CbItem>;
-  // private lunrIndex: lunr.Index;
   arrayOfProducts: CbItem[];
   indexedProducts: { [sku: string]: CbItem };
 
@@ -14,18 +12,6 @@ export class ContabiliumService {
     this.arrayOfProducts = arrayOfProducts;
     this.indexedProducts = _.keyBy(this.arrayOfProducts, "sku");
     this.fuse = this.createFuse();
-    // this.lunrIndex = this.createLunrIndex(arrayOfProducts);
-  }
-
-  private createLunrIndex(arrayOfProducts: CbItem[]) {
-    const lunrIndex = lunr(function () {
-      this.ref("sku");
-      this.field("name");
-      this.field("sku");
-
-      arrayOfProducts.forEach((product) => this.add(product));
-    });
-    return lunrIndex;
   }
 
   private createFuse() {

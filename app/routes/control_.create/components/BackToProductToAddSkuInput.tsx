@@ -1,19 +1,19 @@
 import { MouseEvent, RefObject } from "react";
-import { SearchIcon } from "./icons/Search.icon";
+import { SearchIcon } from "~/components/icons/Search.icon";
 
 interface Props {
-  skuInputRef: RefObject<HTMLInputElement>;
+  productToAddSkuRef: RefObject<HTMLInputElement>;
 }
 
-export function BackToSkuInput({ skuInputRef }: Props) {
+export function BackToProductToAddSkuInput({ productToAddSkuRef }: Props) {
   function handleClick(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
 
-    skuInputRef.current?.scrollIntoView({
+    productToAddSkuRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
-    skuInputRef.current?.focus();
+    productToAddSkuRef.current?.focus();
   }
 
   return (
