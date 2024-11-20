@@ -1,5 +1,10 @@
-import { ActionFunctionArgs } from "@remix-run/node";
-import { Form, redirect, useLoaderData } from "@remix-run/react";
+import { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
+import {
+  Form,
+  redirect,
+  redirectDocument,
+  useLoaderData,
+} from "@remix-run/react";
 import { ChangeEvent, useState } from "react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository.server";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
@@ -43,12 +48,27 @@ export async function action({ request }: ActionFunctionArgs) {
 
   controlsRepository.saveControl(newControl);
 
-  return redirect("/control/" + newControl.id);
+  return redirectDocument("/control/" + newControl.id);
 }
 
-export function loader() {
+export function loader({ params }: LoaderFunctionArgs) {
   const contabiliumRepository = new ContabiliumRepository();
-  return contabiliumRepository.arrayOfProducts;
+
+  const currentControlId = params.id;
+
+  const response = {
+    arrayOfProducts: contabiliumRepository.arrayOfProducts,
+    currentControl: null,
+  };
+
+  if (currentControlId === undefined) return response;
+
+  const controlsRepository = new ControlsRepository();
+  const currentControl = controlsRepository.getControl(currentControlId);
+
+  return currentControl !== undefined
+    ? { ...response, currentControl }
+    : response;
 }
 
 const defaultControl: Control = {
@@ -60,12 +80,14 @@ const defaultControl: Control = {
 };
 
 export default function ControlCreate() {
-  const arrayOfProducts = useLoaderData<typeof loader>();
+  const { arrayOfProducts, currentControl } = useLoaderData<typeof loader>();
   const contabiliumProductsUtility = new ContabiliumProductsUtility(
     arrayOfProducts
   );
 
-  const [control, setControl] = useState<Control>(defaultControl);
+  const [control, setControl] = useState<Control>(
+    currentControl !== null ? currentControl : defaultControl
+  );
 
   const [productToAddSku, setProductToAddSku] = useState("");
   const [productToAddQuantity, setProductToAddQuantity] = useState(1);
@@ -155,7 +177,7 @@ export default function ControlCreate() {
         <h2>Nuevo Control</h2>
       </header>
       <Form
-        method="POST"
+        method="post"
         className="flex flex-col gap-2"
         onKeyDown={handleKeyDown}
       >

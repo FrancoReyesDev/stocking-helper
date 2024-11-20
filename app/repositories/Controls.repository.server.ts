@@ -8,7 +8,13 @@ export class ControlsRepository {
 
   constructor() {
     const controls = this.getControlsFromDirectory();
-    this.controls = controls.sort();
+    this.controls = controls.sort((a, b) =>
+      a.isoStringDate < b.isoStringDate
+        ? 1
+        : a.isoStringDate === b.isoStringDate
+        ? 0
+        : -1
+    );
   }
 
   private getControlsFromDirectory() {
@@ -33,6 +39,20 @@ export class ControlsRepository {
 
   getControl(id: string) {
     return this.controls.find((control) => control.id === id);
+  }
+
+  deleteControl(id: string) {
+    const filename = path.join(this.dirname, id + ".json");
+
+    try {
+      fs.rmSync(filename);
+    } catch (e) {
+      console.error({
+        error: e,
+        msg: "error al borrar " + id,
+        filename: filename,
+      });
+    }
   }
 
   saveControl(data: Control) {

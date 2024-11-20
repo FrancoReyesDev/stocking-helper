@@ -1,0 +1,680 @@
+{
+  "id": "2cd67a1b-681a-49fa-8736-9a861af617a8",
+  "name": "mac",
+  "details": "deposito nuevo sotano",
+  "isoStringDate": "2024-11-19T23:54:26.441Z",
+  "products": [
+    {
+      "sku": "MAC108251113.S",
+      "name": "speed solid matt black S",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC118252449.L",
+      "name": "CASCO INTEGRAL MAC SPEED 2.0 NEO FF825 RPM925  NEGRO-VERDE SPEED L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC118251113.M",
+      "name": "CASCO MOTO INTEGRAL MAC SPEED SOLID NEGRO MATE RPM925  NEGRO SOLID M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC108252242.M",
+      "name": "CASCO MOTO INTEGRAL MAC WASP 825 RPM925  BLANCO-AZUL WASP M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC118255279.L",
+      "name": "CASCO INTEGRAL MAC 825 SPEED 2.0 BOLD DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC118255279.M",
+      "name": "CASCO INTEGRAL MAC 825 SPEED 2.0 BOLD DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC118255279.S",
+      "name": "CASCO INTEGRAL MAC 825 SPEED 2.0 BOLD DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC118255279.XX",
+      "name": "ff825 2.0 bold blue white red gloss XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC118255279.XL",
+      "name": "CASCO INTEGRAL MAC 825 SPEED 2.0 BOLD DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC118253650.L",
+      "name": "CASCO MOTO DOBLE VISOR MAC SPEED 2.0 GRIPPER RPM925  NEGRO-ROJO SPEED L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC118252449.S",
+      "name": "CASCO INTEGRAL MAC SPEED 2.0 NEO FF825 RPM925  NEGRO-VERDE SPEED S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100671113.XL",
+      "name": "CASCO MOTO INTEGRAL MAC M67 BASS NEGRO MATE RPM925  NEGRO SOLID XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100672854.M",
+      "name": "CASCO MOTO INTEGRAL MAC BASS KINKS VISOR SIMPLE RPM925  NEGRO-AMARILLO BASS M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100672854.S",
+      "name": "CASCO MOTO INTEGRAL MAC BASS KINKS VISOR SIMPLE RPM925  NEGRO-AMARILLO BASS S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100672952.S",
+      "name": "CASCO MOTO INTEGRAL MAC BASS CORONADOS EDICIÓN LIMITADA RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100701113.S",
+      "name": "full face single visor m70 solid mate negro S",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100674472.XL",
+      "name": "CASCO MOTO INTEGRAL MAC FF067 BASS CAGE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC118252449.M",
+      "name": "CASCO INTEGRAL MAC SPEED 2.0 NEO FF825 RPM925  NEGRO-VERDE SPEED M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674472.L",
+      "name": "CASCO MOTO INTEGRAL MAC FF067 BASS CAGE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100701113.L",
+      "name": "full face single visor m70 solid new logo mate negro L",
+      "quantity": 3,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.L",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100706473.L",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100706473.XL",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red xl",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.XL",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro XL",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100673259.XL",
+      "name": "CASCO MOTO INTEGRAL MAC BASS MONSTER FF067 RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674876.XL",
+      "name": "CASCO MOTO MAC INTEGRAL M67 BASS TAYLOR GRIS/ROSA RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC501666398.M",
+      "name": "flip up face double visor 166 monarch mate black grey orange M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100674270.XL",
+      "name": "CASCO INTEGRAL MAC 067 BASS ZORO NEGRO BRILLO RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100672952.XL",
+      "name": "CASCO MOTO INTEGRAL MAC BASS CORONADOS EDICIÓN LIMITADA RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100701113.XL",
+      "name": "full face single visor m70 solid mate negro XL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100674270.L",
+      "name": "CASCO INTEGRAL MAC 067 BASS ZORO NEGRO BRILLO RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100706473.M",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.S",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro s",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.M",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro m",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100706473.S",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red S",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.XS",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro XS",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC1007057A5.XXL",
+      "name": "full face single visor (with mac volt silver visor) m70 sadikd gloss orange pro XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100706473.XXL",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100706473.XS",
+      "name": "full face single visor (with mac volt silver visor) m70 makabro gloss black red XS",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100701113.XS",
+      "name": "full face single visor m70 solid  mate negro xs",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100674270.S",
+      "name": "CASCO INTEGRAL MAC 067 BASS ZORO NEGRO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674472.S",
+      "name": "CASCO MOTO INTEGRAL MAC FF067 BASS CAGE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC110694573.XL",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SIGGY DOBLE VISOR RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC110694775.XL",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SOMA DOBLE VISOR RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100671113.XX",
+      "name": "full face single visor m67 solid matt black XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100671113.XS",
+      "name": "CASCO MAC M67 BASS SOLID NEGRO MATE",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674472.2X",
+      "name": "CASCO MOTO INTEGRAL MAC FF067 BASS CAGE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100673259.S",
+      "name": "CASCO MOTO INTEGRAL MAC BASS MONSTER FF067 RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100672854.L",
+      "name": "CASCO MOTO INTEGRAL MAC BASS KINKS VISOR SIMPLE RPM925  NEGRO-AMARILLO BASS L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674270.2X",
+      "name": "CASCO INTEGRAL MAC 067 BASS ZORO NEGRO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.XS",
+      "name": "SERVICOM SERVICOM SERVICOM SERVICOM CASCO MAC 721 BEAT NEGRO MATE",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC110694775.M",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SOMA DOBLE VISOR RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC110691113.S",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SOLID DOBLE VISOR RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC501666373.XL",
+      "name": "flip up face double visor 166 monarch matt black grey red XL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666398.XL",
+      "name": "flip up face double visor 166 monarch matt black grey orange XL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.XL",
+      "name": "flip up face double visor 166 solid matt black XL",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666398.L",
+      "name": "flip up face double visor 166 monarch matt black grey orange L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100674472.M",
+      "name": "CASCO MOTO INTEGRAL MAC FF067 BASS CAGE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100674270.M",
+      "name": "CASCO INTEGRAL MAC 067 BASS ZORO NEGRO BRILLO RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC501666373.XXL",
+      "name": "flip up face double visor 166 monarch matt black grey red XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC100701113.M",
+      "name": "full face single visor m70 solid new logo mate negro M",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC110694573.M",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SIGGY DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC501666373.M",
+      "name": "flip up face double visor 166 monarch matt black grey red M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666398.S",
+      "name": "flip up face double visor 166 monarch matt black grey orange S",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC110694573.S",
+      "name": "CASCO MOTO INTEGRAL MAC FF069 FORCE SIGGY DOBLE VISOR RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "4410454774.S",
+      "name": "full face double visors m69 soma matt black red S",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666373.L",
+      "name": "flip up face double visor 166 monarch matt black grey red L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.M",
+      "name": "flip up face double visor 166 solid mate negro M",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.L",
+      "name": "flip up face double visor 166 solid mate negro L",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC607212024.S",
+      "name": "CASCO ABIERTO MAC BEAT CYRUS NEGRO ROJO OF721 RPM925  NEGRO-ROJO CYRUS S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.M",
+      "name": "CASCO MOTO ABIERTO MAC BEAT SOLID NEGRO MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212040.S",
+      "name": "CASCO MOTO ABIERTO MAC BEAT CYRUS BLANCO ROSA MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.XL",
+      "name": "CASCO MOTO ABIERTO MAC BEAT SOLID NEGRO MATE RPM925  NEGRO SOLID ",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212024.L",
+      "name": "CASCO ABIERTO MAC BEAT CYRUS NEGRO ROJO OF721 RPM925  NEGRO-ROJO CYRUS L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212024.XL",
+      "name": "CASCO ABIERTO MAC BEAT CYRUS NEGRO ROJO OF721 RPM925  NEGRO-ROJO CYRUS XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC501666373.S",
+      "name": "flip up face double visor 166 monarch matt black grey red S",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.S",
+      "name": "flip up face double visor 166 monarch matt black S",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666398.XXL",
+      "name": "flip up face double visor 166 monarch matte black grey orange xxl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666373.XS",
+      "name": "flip up face double visor 166 monarch matt black grey red XS",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.XXL",
+      "name": "flip up face double visor 166 solid mate negro XXL",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501666398.XS",
+      "name": "flip up face double visor 166 monarch matt black grey orange XS",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC501661113.XS",
+      "name": "flip up face double visor 166 solid mate negro XS",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC509081113.L",
+      "name": "CASCO MOTO REBATIBLE MAC ROCK SOLID NEGRO MATE RPM925  NEGRO SOLID L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC509081113.M",
+      "name": "CASCO MOTO REBATIBLE MAC ROCK SOLID NEGRO MATE RPM925  NEGRO SOLID M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC509081113.S",
+      "name": "CASCO MOTO REBATIBLE MAC ROCK SOLID NEGRO MATE RPM925  NEGRO SOLID S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816188.XS",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICAS MATE RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601811117.XS",
+      "name": "CASCO MOTO ABIERTO MAC OFICIAL BOWIE NEGRO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816187.XS",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICA RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816188.S",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICAS MATE RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601811117.S",
+      "name": "CASCO MOTO ABIERTO MAC OFICIAL BOWIE NEGRO BRILLO RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816187.S",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICA RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816188.M",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICAS MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816187.M",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICA RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.S",
+      "name": "CASCO MOTO ABIERTO MAC BEAT SOLID NEGRO MATE RPM925  NEGRO SOLID S",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212024.M",
+      "name": "CASCO ABIERTO MAC BEAT CYRUS NEGRO ROJO OF721 RPM925  NEGRO-ROJO CYRUS M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.XX",
+      "name": "CASCO MOTO ABIERTO MAC BEAT SOLID NEGRO MATE RPM925 XL",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212040.M",
+      "name": "CASCO MOTO ABIERTO MAC BEAT CYRUS BLANCO ROSA MATE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC607211113.L",
+      "name": "CASCO MOTO ABIERTO MAC BEAT SOLID NEGRO MATE RPM925  NEGRO SOLID L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC607212040.L",
+      "name": "CASCO MOTO ABIERTO MAC BEAT CYRUS BLANCO ROSA MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816188.XXL",
+      "name": "open face sun peak 181 lucky mate silver black xxl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC601816187.XXL",
+      "name": "open face sun peak 181 lucky gloss black gold xxl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC601816187.L",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICA RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC601811117.XXL",
+      "name": "open face sun peak 181 solid new logo gloss black xxl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC601816188.XL",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICAS MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC601816188.L",
+      "name": "CASCO MOTO ABIERTO MAC OF181 BOWIE LUCKY GRAFICAS MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC509083861.L",
+      "name": "CASCO REBATIBLE DOBLE VISOR MAC RAY NARANJA NEGRO MATE RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC509083861.M",
+      "name": "CASCO REBATIBLE DOBLE VISOR MAC RAY NARANJA NEGRO MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC509081838.M",
+      "name": "flip up face rock floyd matt white orange M",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "MAC509081113.XL",
+      "name": "CASCO MOTO REBATIBLE MAC ROCK SOLID NEGRO MATE RPM925  NEGRO SOLID XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100061117.L",
+      "name": "CASCO MOTO INTEGRAL MAC OFICIAL ROOSTER NEGRO BRILLO RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "MAC100061117.M",
+      "name": "CASCO MOTO INTEGRAL MAC OFICIAL ROOSTER NEGRO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "MAC100061117.S",
+      "name": "CASCO MOTO INTEGRAL MAC OFICIAL ROOSTER NEGRO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    }
+  ]
+}

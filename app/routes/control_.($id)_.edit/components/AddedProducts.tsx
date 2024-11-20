@@ -30,12 +30,13 @@ export function AddedProduct({
   const nameInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (product.name === "")
+    if (product.name === "") {
       nameInputRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
-    nameInputRef.current?.focus();
+      nameInputRef.current?.focus();
+    }
   }, []);
 
   return (
