@@ -2,6 +2,7 @@ import Axios, { AxiosError, AxiosInstance } from "axios";
 
 enum Errors {
   MissingCredentials = "Credentials doesnt exists",
+  MissingDepositId = "The deposit isnt exist",
 }
 
 interface Token {
@@ -84,10 +85,60 @@ export default class ContabiliumService {
     return response.data;
   }
 
-  async modifyStock(depositId: number, productId: number, newStock: number) {
+  async modifyStock(
+    depositId: number,
+    productId: number | undefined,
+    sku: string,
+    newStock: number
+  ) {
+    let productStock: ProductStock | undefined = undefined;
+    if (productId === undefined) productStock = await this.getProductStock(sku);
+
     this.client.post(
-      `api/inventarios/modificarStock?id=${depositId}&idConcepto=${productId}&cantidad=${newStock}`
+      `api/inventarios/modificarStock?id=${depositId}&idConcepto=${
+        productId ?? productStock?.Id
+      }&cantidad=${newStock}`
     );
+  }
+
+  async modifyStockWithMovements(
+    originDepositId: number,
+    destinyDepositId: number,
+    sku: string,
+    newStock: number
+  ) {
+    const productStock = await this.getProductStock(sku);
+    const { Id: productId } = productStock;
+
+    const originDeposit = productStock.stock.find(
+      ({ Id }) => Id === originDepositId
+    );
+
+    if (originDeposit === undefined) throw new Error(Errors.MissingDepositId);
+
+    const { StockConReservas } = originDeposit;
+
+    const differenceBetweenOriginDepositStockAndNewStock =
+      newStock - StockConReservas;
+
+    if (differenceBetweenOriginDepositStockAndNewStock <= 0) {
+      this.createMovement(originDepositId, destinyDepositId, sku, newStock);
+      return true;
+    } else {
+      await this.modifyStock(
+        destinyDepositId,
+        productId,
+        sku,
+        differenceBetweenOriginDepositStockAndNewStock
+      );
+      await this.createMovement(
+        originDepositId,
+        destinyDepositId,
+        sku,
+        StockConReservas
+      );
+      return true;
+    }
   }
 
   async getProductStock(sku: string) {

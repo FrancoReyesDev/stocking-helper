@@ -1,27 +1,33 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 interface Props {
-  depositNames: string[];
-  deposit: string;
-  setDeposit: Dispatch<SetStateAction<string>>;
+  deposits: {
+    Id: number;
+    Nombre: string;
+    Activo: boolean;
+  }[];
+  depositId: number;
+  setDepositId: Dispatch<SetStateAction<number>>;
 }
 export default function SelectDeposit({
-  depositNames,
-  deposit,
-  setDeposit,
+  deposits,
+  depositId,
+  setDepositId,
 }: Props) {
   function handleChange(event: ChangeEvent<HTMLSelectElement>) {
-    setDeposit(event.target.value);
+    setDepositId(Number(event.target.value));
   }
 
   return (
     <select
       className="select select-sm select-bordered"
-      value={deposit}
+      value={depositId}
       onChange={handleChange}
     >
-      {depositNames.map((name, index) => (
-        <option key={index}>{name}</option>
+      {deposits.map(({ Nombre: name, Id: depositId }, index) => (
+        <option value={depositId} key={index}>
+          {name}
+        </option>
       ))}
     </select>
   );

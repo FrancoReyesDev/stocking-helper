@@ -19,24 +19,55 @@ import { Control } from "~/types/Control.type";
 
 interface Target {
   moveBetweenDeposits: boolean;
-  originDeposit: string;
-  destinyDeposit: string;
+  originDepositId: number;
+  destinyDepositId: number;
   control: Control;
 }
 
 export async function action({ request }: ActionFunctionArgs) {
-  const target = (await request.json()) as Target;
-
   return null;
+  const contabiliumService = new ContabiliumService();
+
+  const { moveBetweenDeposits, originDepositId, destinyDepositId, control } =
+    (await request.json()) as Target;
+
+  const { products } = control;
+
+  await contabiliumService.authenticate();
+
+  const results: { error: string[]; success: string[] } = {
+    error: [],
+    success: [],
+  };
+
+  if (moveBetweenDeposits)
+    products.forEach(async (product) => {
+      await contabiliumService.modifyStockWithMovements(
+        originDepositId,
+        destinyDepositId,
+        product.sku,
+        product.quantity
+      );
+      results.success.push(product.sku);
+    });
+  else
+    products.forEach(async (product) => {
+      await contabiliumService.modifyStock(
+        destinyDepositId,
+        undefined,
+        product.sku,
+        product.quantity
+      );
+      results.success.push(product.sku);
+    });
+
+  return results;
 }
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
-
   const controlId = params.id as string;
-
   const control = controlsRepository.getControl(controlId);
-
   if (control === undefined) return redirectDocument("/");
 
   const contabiliumService = new ContabiliumService();
@@ -49,14 +80,13 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function SyncControl() {
   const { control, deposits } = useLoaderData<typeof loader>();
-  const depositNames = deposits.map(({ Nombre }) => Nombre);
 
   const fetcher = useFetcher();
   const navigate = useNavigate();
 
   const [moveBetweenDeposits, setMoveBetweenDeposits] = useState(false);
-  const [originDeposit, setOriginDeposit] = useState(depositNames[0]);
-  const [destinyDeposit, setDestinyDeposit] = useState(depositNames[0]);
+  const [originDepositId, setOriginDepositId] = useState(deposits[0].Id);
+  const [destinyDepositId, setDestinyDepositId] = useState(deposits[0].Id);
 
   function handleChangeMoveBetweenDeposits(
     event: ChangeEvent<HTMLInputElement>
@@ -67,8 +97,8 @@ export default function SyncControl() {
   function handleSubmit() {
     const target = {
       moveBetweenDeposits,
-      originDeposit,
-      destinyDeposit,
+      originDeposit: originDepositId,
+      destinyDeposit: destinyDepositId,
       control,
     };
 
@@ -102,9 +132,9 @@ export default function SyncControl() {
                 <span className="label-text">deposito origen</span>
               </div>
               <SelectDeposit
-                deposit={originDeposit}
-                setDeposit={setOriginDeposit}
-                depositNames={depositNames}
+                depositId={originDepositId}
+                setDepositId={setOriginDepositId}
+                deposits={deposits}
               />
             </label>
             <label className="form-control w-full ">
@@ -112,9 +142,9 @@ export default function SyncControl() {
                 <span className="label-text">deposito destino</span>
               </div>
               <SelectDeposit
-                deposit={destinyDeposit}
-                setDeposit={setDestinyDeposit}
-                depositNames={depositNames}
+                depositId={destinyDepositId}
+                setDepositId={setDestinyDepositId}
+                deposits={deposits}
               />
             </label>
             <p className="prose mt-2">
