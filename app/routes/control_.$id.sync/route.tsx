@@ -21,45 +21,32 @@ interface Target {
   moveBetweenDeposits: boolean;
   originDepositId: number;
   destinyDepositId: number;
-  control: Control;
+  product: Control["products"][number];
 }
 
 export async function action({ request }: ActionFunctionArgs) {
-  return null;
   const contabiliumService = new ContabiliumService();
 
-  const { moveBetweenDeposits, originDepositId, destinyDepositId, control } =
+  const { moveBetweenDeposits, originDepositId, destinyDepositId, product } =
     (await request.json()) as Target;
-
-  const { products } = control;
 
   await contabiliumService.authenticate();
 
-  const results: { error: string[]; success: string[] } = {
-    error: [],
-    success: [],
-  };
-
-  if (moveBetweenDeposits)
-    products.forEach(async (product) => {
-      await contabiliumService.modifyStockWithMovements(
-        originDepositId,
-        destinyDepositId,
-        product.sku,
-        product.quantity
-      );
-      results.success.push(product.sku);
-    });
-  else
-    products.forEach(async (product) => {
-      await contabiliumService.modifyStock(
-        destinyDepositId,
-        undefined,
-        product.sku,
-        product.quantity
-      );
-      results.success.push(product.sku);
-    });
+  if (moveBetweenDeposits) {
+    await contabiliumService.modifyStockWithMovements(
+      originDepositId,
+      destinyDepositId,
+      product.sku,
+      product.quantity
+    );
+  } else {
+    await contabiliumService.modifyStock(
+      destinyDepositId,
+      undefined,
+      product.sku,
+      product.quantity
+    );
+  }
 
   return results;
 }
