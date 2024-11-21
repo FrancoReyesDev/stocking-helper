@@ -7,36 +7,49 @@ import {
   Form,
   Link,
   redirect,
+  useActionData,
   useLoaderData,
   useNavigate,
 } from "@remix-run/react";
-import { useEffect, useRef } from "react";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 
-export function action({ params }: ActionFunctionArgs) {
+enum Errors {
+  controlNameDoesNotMatch,
+}
+
+export async function action({ params, request }: ActionFunctionArgs) {
+  const body = await request.formData();
+  const formData = Object.fromEntries(body.entries());
+  const confirmationControlName = formData["confirmation-control-name"];
+
   const controlsRepository = new ControlsRepository();
+  const controlId = params.id as string;
 
-  const controlId = params.id;
+  const currentControl = controlsRepository.getControl(controlId);
 
-  //   if (controlId !== undefined) controlsRepository.deleteControl(controlId);
+  if (currentControl === undefined) return redirectDocument("/");
 
-  return redirectDocument("/");
+  if (confirmationControlName === currentControl.name) {
+    controlsRepository.deleteControl(controlId);
+    return redirectDocument("/");
+  } else return { error: Errors.controlNameDoesNotMatch };
 }
 
 export function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
 
-  const controlId = params.id;
-
-  if (controlId === undefined) return redirectDocument("/");
+  const controlId = params.id as string;
 
   const control = controlsRepository.getControl(controlId);
+
+  if (control === undefined) return redirectDocument("/");
 
   return control;
 }
 
 export default function DeleteControl() {
   const control = useLoaderData<typeof loader>();
+  const actionData = useActionData<typeof action>();
   const navigate = useNavigate(); // Hook para navegación
 
   return (
@@ -54,9 +67,12 @@ export default function DeleteControl() {
         </p>
         <input
           type="text"
-          className="input input-sm input-bordered w-full mt-4"
+          className={
+            "input input-sm input-bordered w-full mt-4 " +
+            (actionData?.error ?? "")
+          }
           placeholder="Escribe el nombre"
-          name="control-name"
+          name="confirmation-control-name"
         />
         <div className="modal-action">
           <button
@@ -69,7 +85,7 @@ export default function DeleteControl() {
           >
             Cancelar
           </button>
-          <button type="submit" className="btn btn-sm btn-primary">
+          <button type="submit" className="btn btn-sm btn-error">
             Confirmar
           </button>
         </div>

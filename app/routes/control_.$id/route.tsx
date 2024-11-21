@@ -1,7 +1,5 @@
 import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { NavLink, Outlet, useLoaderData } from "@remix-run/react";
-import { useState } from "react";
-import { Modal } from "~/components/Modal";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 
 export function loader({ params }: LoaderFunctionArgs) {
@@ -30,7 +28,7 @@ export default function Control() {
           <p>productos: {control.products.length}</p>
           <p>unidades totales: {totalUnits}</p>
           <p>detalles: {control.details || "sin detalles"}</p>
-          <div className="flex mt-2">
+          <div className="flex mt-2 gap-2">
             <NavLink to={"./edit"} className="prose">
               {({ isPending }) => (isPending ? "cargando..." : "editar")}
             </NavLink>

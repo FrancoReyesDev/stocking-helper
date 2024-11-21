@@ -13,12 +13,13 @@ export class ContabiliumProductsUtility {
     this.indexedProducts = _.keyBy(this.arrayOfProducts, "sku");
     this.fuse = this.createFuse();
   }
-
   private createFuse() {
     const fuse = new Fuse(this.arrayOfProducts, {
-      keys: ["sku", "nombre"],
-      threshold: 0.2,
-      shouldSort: true,
+      keys: ["sku", "nombre"], // Campos a buscar
+      threshold: 0.4, // Ajusta este valor según necesites (0 es coincidencia exacta, 1 es más permisivo)
+      shouldSort: true, // Ordena los resultados por relevancia
+      ignoreLocation: true, // Ignora la posición de las coincidencias en el string
+      minMatchCharLength: 2, // Mínimo de caracteres para que una coincidencia sea válida
     });
     return fuse;
   }
