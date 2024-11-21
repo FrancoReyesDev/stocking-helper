@@ -33,22 +33,20 @@ export async function action({ request }: ActionFunctionArgs) {
   await contabiliumService.authenticate();
 
   if (moveBetweenDeposits) {
-    await contabiliumService.modifyStockWithMovements(
+    return await contabiliumService.modifyStockWithMovements(
       originDepositId,
       destinyDepositId,
       product.sku,
       product.quantity
     );
-  } else {
-    await contabiliumService.modifyStock(
-      destinyDepositId,
-      undefined,
-      product.sku,
-      product.quantity
-    );
   }
 
-  return results;
+  return await contabiliumService.modifyStock(
+    destinyDepositId,
+    undefined,
+    product.sku,
+    product.quantity
+  );
 }
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -60,7 +58,10 @@ export async function loader({ params }: LoaderFunctionArgs) {
   const contabiliumService = new ContabiliumService();
   await contabiliumService.authenticate();
 
-  const deposits = await contabiliumService.getDeposits();
+  const deposits = (await contabiliumService.getDeposits()).data;
+
+  if (deposits === undefined)
+    throw new Error("wtf donde estan los depositos xd");
 
   return { deposits, control };
 }

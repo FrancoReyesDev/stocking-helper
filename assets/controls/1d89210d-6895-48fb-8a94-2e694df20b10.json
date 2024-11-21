@@ -1,0 +1,518 @@
+{
+  "id": "1d89210d-6895-48fb-8a94-2e694df20b10",
+  "name": "mt",
+  "details": "deposito nuevo,sotano",
+  "isoStringDate": "2024-11-21T21:58:23.666Z",
+  "products": [
+    {
+      "sku": "13470000137",
+      "name": "CASCO MOTO REBATIBLE MT GENESIS A1 SOLID DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13470000134",
+      "name": "CASCO MOTO REBATIBLE MT GENESIS A1 SOLID DOBLE VISOR RPM925",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "13470000135",
+      "name": "CASCO MOTO REBATIBLE MT GENESIS A1 SOLID DOBLE VISOR RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13470000115",
+      "name": "CASCO REBATIBLE MT GENESIS A1 SOLID NEGRO BRILLO RPM925  NEGRO SOLID M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13470000116",
+      "name": "CASCO REBATIBLE MT GENESIS A1 SOLID NEGRO BRILLO RPM925  NEGRO SOLID L",
+      "quantity": 2,
+      "details": "esta mal es sku, es 13470000117"
+    },
+    {
+      "sku": "134700001227",
+      "name": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID XL",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "134700001226",
+      "name": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "134700001225",
+      "name": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "10949521515",
+      "name": "CASCO MT HELMETS SYNCHRONY B5 ROJO DUO SPORT RPM925  ROJO SYNCHRONY M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "10949521517",
+      "name": "CASCO MT HELMETS SYNCHRONY B5 ROJO DUO SPORT RPM925  ROJO SYNCHRONY XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "10949521415",
+      "name": "CASCO MT HELMETS SYNCHRONY DUO SPORT PATROL NARANJA RPM925  NEGRO-NARANJA SPORT M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "101515217",
+      "name": "CASCO MOTO MT SYNCHRONY DUO SPORT NEGRO RPM925  NEGRO SOLID XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "101515216",
+      "name": "CASCO MOTO MT SYNCHRONY DUO SPORT NEGRO RPM925  NEGRO SOLID L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "10528730137",
+      "name": "CASCO REBATIBLE MT ATOM SV SKILL A1 DOBLE VISOR NEGRO MATE   NEGRO MATE XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "105200037",
+      "name": "CASCO REBATIBLE MT ATOM SV DOBLE VISOR SOLID GLOSS RPM925  NEGRO MATE XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "10526315236",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID F2 AMARILLO MATE RPM925  AMARILLO L",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "10526315237",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID F2 AMARILLO MATE RPM925  AMARILLO XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "10528730936",
+      "name": "CASCO REBATIBLE MT ATOM SV SKILL A9 DOBLE VISOR DORADO MATE  DORADO L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "105200036",
+      "name": "CASCO REBATIBLE MT ATOM SV DOBLE VISOR SOLID GLOSS RPM925  NEGRO MATE L",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "10526315536",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID F5 DOBLE VISOR ROJO MATE  ROJO L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "10526314235",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID E2 DOBLE VISOR GRIS MATE  GRIS MATE M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "10528730935",
+      "name": "CASCO REBATIBLE MT ATOM SV SKILL A9 DOBLE VISOR DORADO MATE  DORADO M",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "10526314236",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID E2 DOBLE VISOR GRIS MATE  GRIS MATE L",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "10528730136",
+      "name": "CASCO REBATIBLE MT ATOM SV SKILL A1 DOBLE VISOR NEGRO MATE   NEGRO MATE L",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "10528730135",
+      "name": "CASCO REBATIBLE MT ATOM SV SKILL A1 DOBLE VISOR NEGRO MATE   NEGRO MATE M",
+      "quantity": 4,
+      "details": ""
+    },
+    {
+      "sku": "105200035",
+      "name": "CASCO REBATIBLE MT ATOM SV DOBLE VISOR SOLID GLOSS RPM925  NEGRO MATE M",
+      "quantity": 6,
+      "details": ""
+    },
+    {
+      "sku": "10526315535",
+      "name": "CASCO REBATIBLE MT ATOM SV HYBRID F5 DOBLE VISOR ROJO MATE  ROJO M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "NEW.GP.A0",
+      "name": "CASCO PARA MOTO INTEGRAL MT STINGER NEW GP - EN RPM",
+      "quantity": 1,
+      "details": "esta mal el sku, en la caja 11155020015 y 8434639027602 "
+    },
+    {
+      "sku": "843463918650",
+      "name": "CASCO MOTO MT STINGER 2 ZIVZE B2 NARANJA BRILLO RPM925  NARANJA ZIVZE M",
+      "quantity": 1,
+      "details": "sku mal 8434639186507 y 10266601T5"
+    },
+    {
+      "sku": "10277601T5",
+      "name": "targo pro welcome f2 gloss gray M",
+      "quantity": 1,
+      "details": "creado nuevo 8434639154308"
+    },
+    {
+      "sku": "27989003716",
+      "name": "CASCO MOTO MT REVENGE 2 ACOSTA A37 AZUL BRILLO INTEGRAL RPM",
+      "quantity": 1,
+      "details": "Esta mal el sku, le falta el 1 del principio:127989003716"
+    },
+    {
+      "sku": "12799030306",
+      "name": "CASCO MOTO MT REVENGE 2 RS A0 AZUL BRILLO INTEGRAL RPM  AMARILLO L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "26989003715",
+      "name": "CASCO MOTO MT REVENGE 2 ACOSTA A37 AZUL BRILLO INTEGRAL RPM m",
+      "quantity": 1,
+      "details": "esta mal el sku, el correcto es 127989003715 y 8434639138476 "
+    },
+    {
+      "sku": "12799030305",
+      "name": "CASCO MOTO MT REVENGE 2 RS A0 AZUL BRILLO INTEGRAL RPM  AMARILLO M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13089871636",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV MOUNTAIN B6 DOBLE VISOR",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13089871635",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV MOUNTAIN B6 DOBLE VISOR",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13089881326",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV PENTAL B3 DOBLE VISOR",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13089881425",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV PENTAL B4 DOBLE VISOR",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "13089881426",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV PENTAL B4 DOBLE VISOR",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13089881325",
+      "name": "CASCO MOTO INTEGRAL MT THUNDER 4 SV PENTAL B3 DOBLE VISOR",
+      "quantity": 3,
+      "details": ""
+    },
+    {
+      "sku": "13089852237",
+      "name": "CASCO MT THUNDER 4 SV EXEO C2 GRIS MATE DOBLE VISOR RPM925  GRIS SOLID XL",
+      "quantity": 1,
+      "details": "sku mal 8434639184169 10255601T7"
+    },
+    {
+      "sku": "13089851517",
+      "name": "CASCO MT THUNDER 4 SV EXEO B5 ROJO MATE DOBLE VISOR RPM925  NEGRO SOLID XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "12996453517",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER NERON D5 ROJO BRILLO   BLANCO XL",
+      "quantity": 1,
+      "details": "el sku debe estar mal: 11155240837 y 8434639136922"
+    },
+    {
+      "sku": "8434639136564",
+      "name": "",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "843463918646",
+      "name": "CASCO MOTO INTEGRAL MT STINGER 2 ZIVZE B3 AMARILLO RPM925  AMARILLO-NEGRO ZIVZE XL",
+      "quantity": 1,
+      "details": "el sku esta mal 8434639186460 y 10266601T7"
+    },
+    {
+      "sku": "11155240737",
+      "name": "CASCO MOTO MT STINGER HUMMER STARK A3 INTEGRAL AMARILLO BRI  AMARILLO FLUO XL",
+      "quantity": 2,
+      "details": "el sku debe estar mal> 11155240737$M y 8434639136441$M"
+    },
+    {
+      "sku": "12997880317",
+      "name": "CASCO INTEGRAL MOTO MT STINGER HUMMER CERO A3 AMARILLO FLUO  AMARILLO XL",
+      "quantity": 2,
+      "details": "el sku debe estar mal > 111500007 y 8434639112667"
+    },
+    {
+      "sku": "11156821737",
+      "name": "CASCO MT INTEGRAL STINGER HUMMER LYCAN C1 NEGRO BRILLO/ MATE  NEGRO BRILLO XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "843463918335",
+      "name": "CASCO MOTO INTEGRAL MT STINGER 2 ZIVZE B5 ROJO BRILLO RPM925  ROJO ZIVZE XL",
+      "quantity": 2,
+      "details": "el sku debe estas mal. 10266601T7 y 19251724191921"
+    },
+    {
+      "sku": "11155240837",
+      "name": "",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "12996450517",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER NERON A5 ROJO BRILLO   GRIS XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "11156821535",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER STARK G0 BLANCO / ROSA  ROSA M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "11155240834",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER STARK G0 BLANCO / ROSA  BLANCO S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "1299788315",
+      "name": "CASCO INTEGRAL MOTO MT STINGER HUMMER CERO A3 AMARILLO FLUO  AMARILLO M",
+      "quantity": 1,
+      "details": "111500005 y 8434639112643"
+    },
+    {
+      "sku": "12996450516",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER NERON A5 ROJO BRILLO   GRIS L",
+      "quantity": 2,
+      "details": "Parece que el sku esta mal, en la caja figuran estos: 11155240734 y 8434639136830"
+    },
+    {
+      "sku": "12996453516",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER NERON D5 ROJO BRILLO   BLANCO L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "11155020016",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER SOLID A1 NEGRO MATE   NEGRO L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "843463918651",
+      "name": "CASCO MOTO MT STINGER 2 ZIVZE B2 NARANJA BRILLO RPM925  NARANJA ZIVZE L",
+      "quantity": 1,
+      "details": "8434639186514 y 10266601T6"
+    },
+    {
+      "sku": "843463918645",
+      "name": "CASCO MOTO INTEGRAL MT STINGER 2 ZIVZE B3 AMARILLO RPM925  AMARILLO-NEGRO ZIVZE L",
+      "quantity": 1,
+      "details": "8434639186453 y 10266601T6"
+    },
+    {
+      "sku": "11155023536",
+      "name": "CASCO MT INTEGRAL STINGER HUMMER QUALITY A5 ROJO FLUO BRILLO  ROJO L",
+      "quantity": 4,
+      "details": ""
+    },
+    {
+      "sku": "11155020017",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER SOLID A1 NEGRO MATE   NEGRO XL",
+      "quantity": 4,
+      "details": ""
+    },
+    {
+      "sku": "11155023537",
+      "name": "CASCO MT INTEGRAL STINGER HUMMER QUALITY A5 ROJO FLUO BRILLO  ROJO XL",
+      "quantity": 4,
+      "details": "el sku debe estar mal> 11155023537 y 8434639136564"
+    },
+    {
+      "sku": "11155240836",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER STARK G0 BLANCO / ROSA  BLANCO L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "111500006",
+      "name": "CASCO MOTO INTEGRAL MT STINGER HUMMER STARK G5 ROJO BRILLO  ROJO L",
+      "quantity": 3,
+      "details": "y 8434639136373"
+    },
+    {
+      "sku": "8434639170322",
+      "name": "CASCO MOTO MODULAR MT STREETFIGHTER TOTEM B4 NARANJA MATE  NARANJA M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "8434639170346",
+      "name": "CASCO MOTO MODULAR MT STREETFIGHTER TOTEM B4 NARANJA MATE  NARANJA XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "8434639170339",
+      "name": "CASCO MOTO MODULAR MT STREETFIGHTER TOTEM B4 NARANJA MATE  NARANJA L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13199313716",
+      "name": "CASCO MOTO MT JARAMA BAUX D7 AZUL BRILLO INTEGRAL RPM925  AZUL BAUX L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13190000136",
+      "name": "CASCO MOTO INTEGRAL MT JARAMA SOLID A1 NEGRO MATE RPM925  NEGRO SOLID L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13198652116",
+      "name": "CASCO MOTO MT JARAMA C1 VERDE BRILLO VINTAGE RPM925  VERDE OSCURO JARAMA L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13198652115",
+      "name": "CASCO MOTO MT JARAMA C1 VERDE BRILLO VINTAGE RPM925  VERDE OSCURO JARAMA M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13199313715",
+      "name": "CASCO MOTO MT JARAMA BAUX D7 AZUL BRILLO INTEGRAL RPM925  AZUL BAUX M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13198652915",
+      "name": "CASCO MOTO MT JARAMA C9 DORADO BRILLO INTEGRAL RPM925  DORADO OSCURO JARAMA M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13190000135",
+      "name": "CASCO MOTO INTEGRAL MT JARAMA SOLID A1 NEGRO MATE RPM925  NEGRO SOLID M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "13198652917",
+      "name": "CASCO MOTO MT JARAMA C9 DORADO BRILLO INTEGRAL RPM925  DORADO OSCURO JARAMA XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13198652117",
+      "name": "CASCO MOTO MT JARAMA C1 VERDE BRILLO VINTAGE RPM925  VERDE OSCURO JARAMA XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "13199313717",
+      "name": "CASCO MOTO MT JARAMA BAUX D7 AZUL BRILLO INTEGRAL RPM925  AZUL BAUX XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "105100027",
+      "name": "avenue sv solid gloss black xl ",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "105100026",
+      "name": "avenue sv solid gloss black L",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "105135057",
+      "name": "avenue sv crossroad gloss pearl white blue XL",
+      "quantity": 3,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "1051350137",
+      "name": "avenue sv crossroad matt black orange XL ",
+      "quantity": 1,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "105135027",
+      "name": "avenue sv crossroad matt black blue XL",
+      "quantity": 2,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "11200000137",
+      "name": "CASCO MOTO ABIERTO MT THUNDER JET SOLID A1 NEGRO MATE RPM925  NEGRO MATE BOW XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "111541127",
+      "name": "stinger warhead matt black orange xl",
+      "quantity": 4,
+      "details": "creado nuevo"
+    },
+    {
+      "sku": "111500017",
+      "name": "stinger solid gloss black xl",
+      "quantity": 1,
+      "details": "creado nuevo"
+    }
+  ]
+}

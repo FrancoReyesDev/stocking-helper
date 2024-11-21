@@ -217,7 +217,11 @@ export default class ContabiliumService {
       ({ Id }) => Id === originDepositId
     );
 
-    if (originDeposit === undefined)
+    const destinyDeposit = productStock.stock.find(
+      ({ Id }) => Id === destinyDepositId
+    );
+
+    if (originDeposit === undefined || destinyDeposit === undefined)
       return {
         success: false,
         error: {
@@ -227,21 +231,22 @@ export default class ContabiliumService {
       };
 
     const { StockConReservas } = originDeposit;
+    const { StockReservado } = destinyDeposit;
 
-    const differenceBetweenOriginDepositStockAndNewStock =
+    const differenceBetweenAvailableOriginDepositStockAndNewStock =
       newStock - StockConReservas;
 
     const stockToMove =
-      differenceBetweenOriginDepositStockAndNewStock <= 0
+      differenceBetweenAvailableOriginDepositStockAndNewStock <= 0
         ? newStock
-        : differenceBetweenOriginDepositStockAndNewStock;
+        : differenceBetweenAvailableOriginDepositStockAndNewStock;
 
-    if (differenceBetweenOriginDepositStockAndNewStock > 0) {
+    if (differenceBetweenAvailableOriginDepositStockAndNewStock > 0) {
       const modifyStockResponse = await this.modifyStock(
         destinyDepositId,
         productStock.Id,
         sku,
-        differenceBetweenOriginDepositStockAndNewStock
+        differenceBetweenAvailableOriginDepositStockAndNewStock + StockReservado
       );
 
       if (!modifyStockResponse.success) return modifyStockResponse;
@@ -268,6 +273,12 @@ export default class ContabiliumService {
         sku,
         currentStockOnDeposit
       );
+
+      if (!modifyStockResponse.success) return modifyStockResponse;
     }
+
+    return {
+      success: true,
+    };
   }
 }
