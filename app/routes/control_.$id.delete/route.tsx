@@ -11,6 +11,7 @@ import {
   useLoaderData,
   useNavigate,
 } from "@remix-run/react";
+import Modal from "~/components/Modal";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 
 enum Errors {
@@ -53,10 +54,7 @@ export default function DeleteControl() {
   const navigate = useNavigate(); // Hook para navegación
 
   return (
-    <div
-      className="modal modal-open"
-      onClick={() => navigate(-1)} // Cierra al hacer clic en el backdrop
-    >
+    <Modal open>
       <Form
         method="post"
         className="modal-box relative"
@@ -90,6 +88,6 @@ export default function DeleteControl() {
           </button>
         </div>
       </Form>
-    </div>
+    </Modal>
   );
 }

@@ -1,24 +1,19 @@
-import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
+import { useNavigate } from "@remix-run/react";
 
 interface Props {
-  openDialog: boolean;
-  setOpenDialog: Dispatch<SetStateAction<boolean>>;
   children: React.ReactNode;
+  open: boolean;
 }
 
-export function Modal({ openDialog, setOpenDialog, children }: Props) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  useEffect(() => {
-    openDialog ? dialogRef.current?.showModal() : dialogRef.current?.close();
-  }, [openDialog]);
+export default function Modal({ children, open }: Props) {
+  const navigate = useNavigate();
 
   return (
-    <dialog ref={dialogRef}>
-      <div className="modal-body">{children}</div>
-      <div className="">
-        <button>close</button>
-      </div>
-    </dialog>
+    <div
+      className={`modal ${open ? "modal-open" : ""}`}
+      onClick={() => navigate(-1)} // Cierra al hacer clic en el backdrop
+    >
+      {children}
+    </div>
   );
 }

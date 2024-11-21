@@ -10,6 +10,29 @@ interface Token {
   expires_in: number;
 }
 
+interface Deposit {
+  Id: number;
+  Nombre: string;
+  Activo: boolean;
+}
+
+interface StockItem {
+  Id: number;
+  Codigo: string;
+  StockActual: number;
+  StockReservado: number;
+  StockConReservas: number;
+}
+
+interface ProductStock {
+  Id: number;
+  Codigo: string;
+  StockActual: number;
+  StockReservado: number;
+  StockConReservas: number;
+  stock: StockItem[];
+}
+
 export default class ContabiliumService {
   private client: AxiosInstance;
 
@@ -55,7 +78,9 @@ export default class ContabiliumService {
   }
 
   async getDeposits() {
-    const response = await this.client.get("api/inventarios/getDepositos");
+    const response = await this.client.get<Deposit[]>(
+      "api/inventarios/getDepositos"
+    );
     return response.data;
   }
 
@@ -66,7 +91,7 @@ export default class ContabiliumService {
   }
 
   async getProductStock(sku: string) {
-    const response = await this.client.get(
+    const response = await this.client.get<ProductStock>(
       `api/inventarios/getStockBySKU?codigo=${sku}`
     );
 
