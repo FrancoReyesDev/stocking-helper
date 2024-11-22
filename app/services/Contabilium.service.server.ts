@@ -200,7 +200,6 @@ export default class ContabiliumService {
     }
   }
 
-  // TODO: tengo que hacerlo atomico
   async modifyStockWithMovements(
     originDepositId: number,
     destinyDepositId: number,
@@ -230,11 +229,8 @@ export default class ContabiliumService {
         },
       };
 
-    const { StockConReservas } = originDeposit;
-    const { StockReservado } = destinyDeposit;
-
     const differenceBetweenAvailableOriginDepositStockAndNewStock =
-      newStock - StockConReservas;
+      newStock - originDeposit.StockActual;
 
     const stockToMove =
       differenceBetweenAvailableOriginDepositStockAndNewStock <= 0
@@ -246,7 +242,7 @@ export default class ContabiliumService {
         destinyDepositId,
         productStock.Id,
         sku,
-        differenceBetweenAvailableOriginDepositStockAndNewStock + StockReservado
+        differenceBetweenAvailableOriginDepositStockAndNewStock
       );
 
       if (!modifyStockResponse.success) return modifyStockResponse;
@@ -259,13 +255,9 @@ export default class ContabiliumService {
       stockToMove
     );
 
+    // rollback on error
     if (!createMovementResponse.success) {
-      // TODO: Debemos tener en cuenta que no puede el stock nuevo ser menor a lo reservado...
-      const currentStockOnDeposit = (
-        productStock.stock.find(
-          ({ Id }) => destinyDepositId === Id
-        ) as StockItem
-      ).StockActual;
+      const currentStockOnDeposit = destinyDeposit.StockActual;
 
       const modifyStockResponse = await this.modifyStock(
         destinyDepositId,
