@@ -19,17 +19,24 @@ interface Props {
   productToAddQuantity: number;
   setProductToAddQuantity: Dispatch<SetStateAction<number>>;
   clearProductToAddFields(): void;
-
+  onlySearchMode: boolean;
+  setOnlySearchMode: Dispatch<SetStateAction<boolean>>;
   searchProductResults: CbItem[];
   setSearchProductResults: Dispatch<SetStateAction<CbItem[]>>;
   addProduct(sku: string): void;
   contabiliumProductsUtility: ContabiliumProductsUtility;
+  onlySearchProductSku: string;
+  setOnlySearchProductSku: Dispatch<SetStateAction<string>>;
 }
 
 export function AddProductControl({
   productToAddSku,
   setProductToAddSku,
   productToAddQuantity,
+  onlySearchMode,
+  setOnlySearchMode,
+  onlySearchProductSku,
+  setOnlySearchProductSku,
   addProduct,
   setProductToAddQuantity,
   clearProductToAddFields,
@@ -68,7 +75,9 @@ export function AddProductControl({
       const target = event.target as HTMLInputElement;
       const sku = target.value;
       setProductToAddSku(sku);
-      addProduct(sku.trim());
+
+      if (!onlySearchMode) addProduct(sku.trim());
+      else setOnlySearchProductSku(sku);
     }
   }
 
@@ -77,11 +86,18 @@ export function AddProductControl({
     setOpenDialog(true);
   }
 
+  function handleChangeOnlySearchMode(event: ChangeEvent<HTMLInputElement>) {
+    const checked = event.target.checked;
+
+    setOnlySearchMode(checked);
+    setOnlySearchProductSku("");
+  }
+
   return (
     <>
       <label className="form-control w-full grow gap-x-2 grid grid-cols-6 grid-rows-2 ">
         <div className="label grid col-span-6">
-          <span className="label-text">Agregar Producto</span>
+          <span className="label-text">Buscar Producto</span>
         </div>
         <label className="input input-bordered flex items-center gap-2 col-span-5">
           <input
@@ -110,6 +126,18 @@ export function AddProductControl({
           max={500}
         />
       </label>
+
+      <div className="form-control max-w-content">
+        <label className="label cursor-pointer justify-start gap-2">
+          <input
+            type="checkbox"
+            checked={onlySearchMode}
+            onChange={handleChangeOnlySearchMode}
+            className="checkbox"
+          />
+          <span className="label-text">Solo busqueda</span>
+        </label>
+      </div>
 
       <BackToProductToAddSkuInput productToAddSkuRef={productToAddSkuRef} />
       <BarcodeScannerModal

@@ -6,48 +6,17 @@ import {
   redirectDocument,
 } from "@remix-run/node";
 import {
-  Form,
+  Fetcher,
   useActionData,
   useFetcher,
+  useFetchers,
   useLoaderData,
   useNavigate,
 } from "@remix-run/react";
 import Modal from "~/components/Modal";
 import SelectDeposit from "./components/SelectDeposit";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import { Control } from "~/types/Control.type";
-
-interface Target {
-  moveBetweenDeposits: boolean;
-  originDepositId: number;
-  destinyDepositId: number;
-  product: Control["products"][number];
-}
-
-export async function action({ request }: ActionFunctionArgs) {
-  const contabiliumService = new ContabiliumService();
-
-  const { moveBetweenDeposits, originDepositId, destinyDepositId, product } =
-    (await request.json()) as Target;
-
-  await contabiliumService.authenticate();
-
-  if (moveBetweenDeposits) {
-    return await contabiliumService.modifyStockWithMovements(
-      originDepositId,
-      destinyDepositId,
-      product.sku,
-      product.quantity
-    );
-  }
-
-  return await contabiliumService.modifyStock(
-    destinyDepositId,
-    undefined,
-    product.sku,
-    product.quantity
-  );
-}
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
@@ -82,15 +51,23 @@ export default function SyncControl() {
     setMoveBetweenDeposits(event.target.checked);
   }
 
-  function handleSubmit() {
+  function syncProduct(product: Control["products"][number]) {
     const target = {
       moveBetweenDeposits,
-      originDeposit: originDepositId,
-      destinyDeposit: destinyDepositId,
-      control,
+      originDepositId,
+      destinyDepositId,
+      product,
     };
 
-    fetcher.submit(target, { method: "POST", encType: "application/json" });
+    fetcher.submit(target, {
+      method: "POST",
+      encType: "application/json",
+      action: "/api/sync-product",
+    });
+  }
+
+  function handleSubmit() {
+    control.products.forEach(syncProduct);
   }
 
   return (
@@ -98,6 +75,7 @@ export default function SyncControl() {
       <div className="modal-box grid" onClick={(e) => e.stopPropagation()}>
         <header className="prose">
           <h3>Sincronizar Articulos</h3>
+          <p>Esta accion sincronizara {control.products.length} productos.</p>
         </header>
 
         <div className="form-control">
@@ -143,15 +121,85 @@ export default function SyncControl() {
           </>
         )}
 
+        <SyncTable />
+
         <div className="modal-action gap-4">
-          <button className="btn btn-ghost" onClick={() => navigate(-1)}>
+          <button className="btn btn-sm btn-ghost" onClick={() => navigate(-1)}>
             cancelar
           </button>
-          <button type="submit" className="btn" onClick={handleSubmit}>
+          <button
+            type="submit"
+            className="btn btn-sm btn-warning"
+            onClick={handleSubmit}
+          >
             aceptar
           </button>
         </div>
       </div>
     </Modal>
+  );
+}
+
+function SyncTable() {
+  const fetchers = useFetchers();
+
+  const [productsSyncStatus, setProductSyncStatus] = useState<{
+    [sku: string]: {
+      success: boolean;
+      newStock: number;
+      message?: string;
+      state: Fetcher["state"];
+    };
+  }>({});
+
+  useEffect(() => {
+    const newProductsSyncStatus: typeof productsSyncStatus = {};
+    fetchers.forEach(({ json, data, state }) => {
+      const { sku, quantity } = json.product;
+
+      if (sku in productsSyncStatus)
+        newProductsSyncStatus[sku] = {
+          success: false,
+          state,
+          message: "",
+          newStock: quantity,
+        };
+    });
+  }, [fetchers]);
+
+  if (fetchers.length === 0 || Object.entries(productsSyncStatus).length === 0)
+    return;
+
+  return (
+    <>
+      <header className="prose">
+        <h2>Cargando...</h2>
+      </header>
+
+      <div className="overflow-x-auto">
+        <table className="table table-xs">
+          <thead>
+            <th>
+              <td>sku</td>
+              <td>nuevo stock</td>
+              <td>mensaje</td>
+              <td>status</td>
+            </th>
+          </thead>
+          <tbody>
+            {Object.entries(productsSyncStatus).map(
+              ([sku, { state, success, message, newStock }]) => (
+                <tr>
+                  <td>{sku}</td>
+                  <td>{newStock}</td>
+                  <td>{message}</td>
+                  <td>{state}</td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

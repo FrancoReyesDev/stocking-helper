@@ -1,10 +1,5 @@
 import { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import {
-  Form,
-  redirect,
-  redirectDocument,
-  useLoaderData,
-} from "@remix-run/react";
+import { Form, redirectDocument, useLoaderData } from "@remix-run/react";
 import { ChangeEvent, useState } from "react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository.server";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
@@ -16,7 +11,7 @@ import { ProductsCounter } from "./components/ProductsCounter";
 import { AddProductSuggestions } from "./components/AddProductSuggestions";
 import { AddedProducts } from "./components/AddedProducts";
 
-function verifyControl(control: Control) {}
+// function verifyControl(control: Control) {}
 
 export async function action({ request }: ActionFunctionArgs) {
   const controlsRepository = new ControlsRepository();
@@ -94,6 +89,8 @@ export default function ControlCreate() {
   const [searchProductResults, setSearchProductResults] = useState<CbItem[]>(
     []
   );
+  const [onlySearchMode, setOnlySearchMode] = useState(false);
+  const [onlySearchProductSku, setOnlySearchProductSku] = useState("");
 
   function clearProductToAddFields() {
     setProductToAddSku("");
@@ -201,6 +198,10 @@ export default function ControlCreate() {
         />
 
         <AddProductControl
+          onlySearchProductSku={onlySearchProductSku}
+          setOnlySearchProductSku={setOnlySearchProductSku}
+          onlySearchMode={onlySearchMode}
+          setOnlySearchMode={setOnlySearchMode}
           productToAddSku={productToAddSku}
           setProductToAddSku={setProductToAddSku}
           productToAddQuantity={productToAddQuantity}
@@ -219,7 +220,12 @@ export default function ControlCreate() {
           searchProductResults={searchProductResults}
         />
 
-        <AddedProducts setControl={setControl} products={control.products} />
+        <AddedProducts
+          onlySearchMode={onlySearchMode}
+          onlySearchProductSku={onlySearchProductSku}
+          setControl={setControl}
+          products={control.products}
+        />
         <button className="btn btn-block" type="submit">
           aceptar control
         </button>
