@@ -15,12 +15,6 @@ export async function action({ request }: ActionFunctionArgs) {
   const { moveBetweenDeposits, originDepositId, destinyDepositId, product } =
     (await request.json()) as Target;
 
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("hola! " + product.sku);
-    }, 1000);
-  });
-
   await contabiliumService.authenticate();
 
   if (moveBetweenDeposits) {

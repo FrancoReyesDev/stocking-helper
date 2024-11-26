@@ -200,7 +200,6 @@ export default class ContabiliumService {
     }
   }
 
-  // TODO: tengo que hacerlo atomico
   async modifyStockWithMovements(
     originDepositId: number,
     destinyDepositId: number,
@@ -230,27 +229,29 @@ export default class ContabiliumService {
         },
       };
 
-    const { StockConReservas } = originDeposit;
-    const { StockReservado } = destinyDeposit;
-
-    const differenceBetweenAvailableOriginDepositStockAndNewStock =
-      newStock - StockConReservas;
+    const differenceBetweenOriginDepositStockAndNewStock =
+      newStock - originDeposit.StockActual;
 
     const stockToMove =
-      differenceBetweenAvailableOriginDepositStockAndNewStock <= 0
+      differenceBetweenOriginDepositStockAndNewStock <= 0
         ? newStock
-        : differenceBetweenAvailableOriginDepositStockAndNewStock;
+        : differenceBetweenOriginDepositStockAndNewStock;
 
-    if (differenceBetweenAvailableOriginDepositStockAndNewStock > 0) {
+    if (differenceBetweenOriginDepositStockAndNewStock > 0) {
       const modifyStockResponse = await this.modifyStock(
         destinyDepositId,
         productStock.Id,
         sku,
-        differenceBetweenAvailableOriginDepositStockAndNewStock + StockReservado
+        differenceBetweenOriginDepositStockAndNewStock
       );
 
       if (!modifyStockResponse.success) return modifyStockResponse;
     }
+
+    if (stockToMove === 0)
+      return {
+        success: true,
+      };
 
     const createMovementResponse = await this.createMovement(
       originDepositId,
@@ -260,18 +261,11 @@ export default class ContabiliumService {
     );
 
     if (!createMovementResponse.success) {
-      // TODO: Debemos tener en cuenta que no puede el stock nuevo ser menor a lo reservado...
-      const currentStockOnDeposit = (
-        productStock.stock.find(
-          ({ Id }) => destinyDepositId === Id
-        ) as StockItem
-      ).StockActual;
-
       const modifyStockResponse = await this.modifyStock(
         destinyDepositId,
         productStock.Id,
         sku,
-        currentStockOnDeposit
+        destinyDeposit.StockActual
       );
 
       if (!modifyStockResponse.success) return modifyStockResponse;

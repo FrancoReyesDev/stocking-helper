@@ -1,6 +1,13 @@
 import { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { Form, redirectDocument, useLoaderData } from "@remix-run/react";
-import { ChangeEvent, useState } from "react";
+import {
+  ChangeEvent,
+  RefObject,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository.server";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import { ContabiliumProductsUtility } from "~/utilities/ContabiliumProducts.utility";
@@ -10,7 +17,7 @@ import { AddProductControl } from "./components/AddProductControl";
 import { ProductsCounter } from "./components/ProductsCounter";
 import { AddProductSuggestions } from "./components/AddProductSuggestions";
 import { AddedProducts } from "./components/AddedProducts";
-
+import _ from "lodash";
 // function verifyControl(control: Control) {}
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -90,7 +97,43 @@ export default function ControlCreate() {
     []
   );
   const [onlySearchMode, setOnlySearchMode] = useState(false);
-  const [onlySearchProductSku, setOnlySearchProductSku] = useState("");
+  const [reviewMode, setReviewMode] = useState(false);
+  const [tmpProducts, setTpmProducts] = useState<Control["products"]>([]);
+
+  useEffect(() => {
+    if (reviewMode) {
+      setTpmProducts(control.products);
+      const newProducts = control.products.map((product) => ({
+        ...product,
+        quantity: 0,
+      }));
+      setControl(({ products, ...rest }) => ({
+        ...rest,
+        products: newProducts,
+      }));
+    } else {
+      const indexedProducts = _.keyBy(control.products, "sku");
+      const newProducts = tmpProducts.forEach((product) => {
+        if (product.sku in indexedProducts) {
+          const reviewedProduct = indexedProducts[product.sku];
+
+          if (reviewedProduct.quantity === null)
+            reviewedProduct.quantity = product.quantity;
+        }
+      });
+      setControl(({ products, ...rest }) => ({
+        ...rest,
+        products: Object.values(indexedProducts),
+      }));
+      setTpmProducts([]);
+    }
+  }, [reviewMode]);
+
+  const productRefs = {};
+  // control.products.reduce((acc, { sku }) => {
+  //   acc[sku] = useRef<HTMLDivElement>(null);
+  //   return acc;
+  // }, {} as { [sku: string]: RefObject<HTMLDivElement> });
 
   function clearProductToAddFields() {
     setProductToAddSku("");
@@ -128,16 +171,16 @@ export default function ControlCreate() {
       });
     }
 
-    if (sku in contabiliumProductsUtility.indexedProducts) {
+    if (sku.trim() in contabiliumProductsUtility.indexedProducts) {
       clearProductToAddFields();
       return setControl(({ products, ...rest }) => {
-        const cbItem = contabiliumProductsUtility.indexedProducts[sku];
+        const cbItem = contabiliumProductsUtility.indexedProducts[sku.trim()];
         return {
           ...rest,
           products: [
             ...products,
             {
-              sku,
+              sku: sku.trim(),
               name: cbItem.nombre,
               quantity: productToAddQuantity ?? 1,
               details: "",
@@ -147,8 +190,10 @@ export default function ControlCreate() {
       });
     }
 
+    if (reviewMode) return clearProductToAddFields();
+
     const newProduct: Control["products"][number] = {
-      sku: productToAddSku,
+      sku: productToAddSku.trim(),
       name: "",
       quantity: productToAddQuantity ?? 1,
       details: "creado nuevo",
@@ -163,6 +208,7 @@ export default function ControlCreate() {
   }
 
   const handleKeyDown = (event: any) => {
+    3;
     if (event.key === "Enter") {
       event.preventDefault();
     }
@@ -171,7 +217,7 @@ export default function ControlCreate() {
   return (
     <article className="grid gap-2">
       <header className="prose mb-4">
-        <h2>Nuevo Control</h2>
+        <h2>{currentControl === null ? "Nuevo" : "Editar"} Control</h2>
       </header>
       <Form
         method="post"
@@ -197,9 +243,20 @@ export default function ControlCreate() {
           maxLength={500}
         />
 
+        <div className="form-control max-w-content">
+          <label className="label cursor-pointer justify-start gap-2">
+            <input
+              type="checkbox"
+              checked={reviewMode}
+              onChange={(event) => setReviewMode(event.target.checked)}
+              className="checkbox"
+            />
+            <span className="label-text">Modo repaso</span>
+          </label>
+        </div>
+
         <AddProductControl
-          onlySearchProductSku={onlySearchProductSku}
-          setOnlySearchProductSku={setOnlySearchProductSku}
+          productRefs={productRefs}
           onlySearchMode={onlySearchMode}
           setOnlySearchMode={setOnlySearchMode}
           productToAddSku={productToAddSku}
@@ -221,8 +278,7 @@ export default function ControlCreate() {
         />
 
         <AddedProducts
-          onlySearchMode={onlySearchMode}
-          onlySearchProductSku={onlySearchProductSku}
+          productRefs={productRefs}
           setControl={setControl}
           products={control.products}
         />

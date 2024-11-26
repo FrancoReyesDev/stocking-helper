@@ -3,6 +3,7 @@ import {
   Dispatch,
   KeyboardEvent,
   MouseEvent,
+  RefObject,
   SetStateAction,
   useRef,
 } from "react";
@@ -25,8 +26,7 @@ interface Props {
   setSearchProductResults: Dispatch<SetStateAction<CbItem[]>>;
   addProduct(sku: string): void;
   contabiliumProductsUtility: ContabiliumProductsUtility;
-  onlySearchProductSku: string;
-  setOnlySearchProductSku: Dispatch<SetStateAction<string>>;
+  productRefs: { [sku: string]: RefObject<HTMLDivElement> };
 }
 
 export function AddProductControl({
@@ -35,12 +35,11 @@ export function AddProductControl({
   productToAddQuantity,
   onlySearchMode,
   setOnlySearchMode,
-  onlySearchProductSku,
-  setOnlySearchProductSku,
   addProduct,
   setProductToAddQuantity,
   clearProductToAddFields,
   setSearchProductResults,
+  productRefs,
   contabiliumProductsUtility,
 }: Props) {
   const productToAddSkuRef = useRef<HTMLInputElement>(null);
@@ -74,10 +73,13 @@ export function AddProductControl({
     if (event.key === "Enter" && productToAddSku.trim() !== "") {
       const target = event.target as HTMLInputElement;
       const sku = target.value;
-      setProductToAddSku(sku);
+      setProductToAddSku(sku.trim());
 
       if (!onlySearchMode) addProduct(sku.trim());
-      else setOnlySearchProductSku(sku);
+      else if (sku.trim() in productRefs) {
+        const productRef = productRefs[sku.trim()];
+        productRef.current?.scrollIntoView();
+      }
     }
   }
 
@@ -90,7 +92,6 @@ export function AddProductControl({
     const checked = event.target.checked;
 
     setOnlySearchMode(checked);
-    setOnlySearchProductSku("");
   }
 
   return (

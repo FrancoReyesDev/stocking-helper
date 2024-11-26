@@ -33,6 +33,12 @@ export default function Control() {
               {({ isPending }) => (isPending ? "cargando..." : "editar")}
             </NavLink>
             <NavLink to={"./delete"}>borrar</NavLink>
+            <NavLink reloadDocument to={"./download"}>
+              {({ isPending }) => (isPending ? "cargando..." : "exportar")}
+            </NavLink>
+            <NavLink to={"./sync"}>
+              {({ isPending }) => (isPending ? "cargando..." : "sincronizar")}
+            </NavLink>
           </div>
         </div>
 

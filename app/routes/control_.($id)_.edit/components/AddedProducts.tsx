@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   Dispatch,
   MouseEvent,
+  RefObject,
   SetStateAction,
   useEffect,
   useRef,
@@ -19,8 +20,7 @@ interface AddedProductProps {
   getHandleDeleteProduct(
     sku: string
   ): (event: MouseEvent<HTMLButtonElement>) => void;
-  onlySearchMode: boolean;
-  onlySearchProductSku: string;
+  productRef: RefObject<HTMLDivElement>;
 }
 
 export function AddedProduct({
@@ -28,8 +28,7 @@ export function AddedProduct({
   product,
   getHandleChangeProduct,
   getHandleDeleteProduct,
-  onlySearchMode,
-  onlySearchProductSku,
+  productRef,
 }: AddedProductProps) {
   const nameInputRef = useRef<HTMLInputElement>(null);
 
@@ -47,15 +46,8 @@ export function AddedProduct({
     if (productNameIsEmpty) focusProduct();
   }, []);
 
-  useEffect(() => {
-    const productWasSearched =
-      onlySearchMode && onlySearchProductSku === product.sku;
-
-    if (productWasSearched) focusProduct();
-  }, [onlySearchMode, onlySearchProductSku]);
-
   return (
-    <div key={index} className="grid gap-2 bordered ">
+    <div key={index} ref={productRef} className="grid gap-2 bordered ">
       <input
         type="text"
         className="input input-bordered"
@@ -101,16 +93,10 @@ export function AddedProduct({
 interface Props {
   products: Control["products"];
   setControl: Dispatch<SetStateAction<Control>>;
-  onlySearchMode: boolean;
-  onlySearchProductSku: string;
+  productRefs: { [sku: string]: RefObject<HTMLDivElement> };
 }
 
-export function AddedProducts({
-  products,
-  setControl,
-  onlySearchMode,
-  onlySearchProductSku,
-}: Props) {
+export function AddedProducts({ productRefs, products, setControl }: Props) {
   function getHandleChangeProduct(
     field: keyof Control["products"][number],
     sku: string
@@ -149,8 +135,7 @@ export function AddedProducts({
       {index === 0 && <div className="divider"></div>}
 
       <AddedProduct
-        onlySearchMode={onlySearchMode}
-        onlySearchProductSku={onlySearchProductSku}
+        productRef={productRefs[product.sku]}
         index={index}
         product={product}
         getHandleChangeProduct={getHandleChangeProduct}

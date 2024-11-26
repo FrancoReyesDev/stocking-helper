@@ -1,12 +1,9 @@
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import ContabiliumService from "~/services/Contabilium.service.server";
-import {
-  ActionFunctionArgs,
-  LoaderFunctionArgs,
-  redirectDocument,
-} from "@remix-run/node";
+import { LoaderFunctionArgs, redirectDocument } from "@remix-run/node";
 import {
   Fetcher,
+  FetcherWithComponents,
   useActionData,
   useFetcher,
   useFetchers,
@@ -16,7 +13,7 @@ import {
 import Modal from "~/components/Modal";
 import SelectDeposit from "./components/SelectDeposit";
 import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
-import { Control } from "~/types/Control.type";
+import ProductSyncStatusesTable from "./components/SyncTableStatuses";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
@@ -37,9 +34,14 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function SyncControl() {
   const { control, deposits } = useLoaderData<typeof loader>();
-
-  const fetcher = useFetcher();
   const navigate = useNavigate();
+
+  const productFetchers = control.products.reduce((acc, product) => {
+    const sku = product.sku;
+    acc[sku] = useFetcher();
+
+    return acc;
+  }, {} as { [sku: string]: FetcherWithComponents<string> });
 
   const [moveBetweenDeposits, setMoveBetweenDeposits] = useState(false);
   const [originDepositId, setOriginDepositId] = useState(deposits[0].Id);
@@ -51,23 +53,25 @@ export default function SyncControl() {
     setMoveBetweenDeposits(event.target.checked);
   }
 
-  function syncProduct(product: Control["products"][number]) {
-    const target = {
-      moveBetweenDeposits,
-      originDepositId,
-      destinyDepositId,
-      product,
-    };
-
-    fetcher.submit(target, {
-      method: "POST",
-      encType: "application/json",
-      action: "/api/sync-product",
-    });
-  }
-
   function handleSubmit() {
-    control.products.forEach(syncProduct);
+    control.products.forEach((product) => {
+      const fetcher = productFetchers[product.sku];
+
+      if (fetcher === undefined) return;
+
+      const target = {
+        moveBetweenDeposits,
+        originDepositId,
+        destinyDepositId,
+        product,
+      };
+
+      fetcher.submit(target, {
+        method: "POST",
+        encType: "application/json",
+        action: "/api/sync-product",
+      });
+    });
   }
 
   return (
@@ -77,6 +81,17 @@ export default function SyncControl() {
           <h3>Sincronizar Articulos</h3>
           <p>Esta accion sincronizara {control.products.length} productos.</p>
         </header>
+
+        <label className="form-control w-full ">
+          <div className="label">
+            <span className="label-text">deposito destino</span>
+          </div>
+          <SelectDeposit
+            depositId={destinyDepositId}
+            setDepositId={setDestinyDepositId}
+            deposits={deposits}
+          />
+        </label>
 
         <div className="form-control">
           <label className="label cursor-pointer gap-2 justify-start">
@@ -103,16 +118,7 @@ export default function SyncControl() {
                 deposits={deposits}
               />
             </label>
-            <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text">deposito destino</span>
-              </div>
-              <SelectDeposit
-                depositId={destinyDepositId}
-                setDepositId={setDestinyDepositId}
-                deposits={deposits}
-              />
-            </label>
+
             <p className="prose mt-2">
               Esto hara que los articulos que esten en el deposito origen se
               muevan al deposito destino, ademas de agregar el stock
@@ -121,7 +127,7 @@ export default function SyncControl() {
           </>
         )}
 
-        <SyncTable />
+        <ProductSyncStatusesTable productFetchers={productFetchers} />
 
         <div className="modal-action gap-4">
           <button className="btn btn-sm btn-ghost" onClick={() => navigate(-1)}>
@@ -137,69 +143,5 @@ export default function SyncControl() {
         </div>
       </div>
     </Modal>
-  );
-}
-
-function SyncTable() {
-  const fetchers = useFetchers();
-
-  const [productsSyncStatus, setProductSyncStatus] = useState<{
-    [sku: string]: {
-      success: boolean;
-      newStock: number;
-      message?: string;
-      state: Fetcher["state"];
-    };
-  }>({});
-
-  useEffect(() => {
-    const newProductsSyncStatus: typeof productsSyncStatus = {};
-    fetchers.forEach(({ json, data, state }) => {
-      const { sku, quantity } = json.product;
-
-      if (sku in productsSyncStatus)
-        newProductsSyncStatus[sku] = {
-          success: false,
-          state,
-          message: "",
-          newStock: quantity,
-        };
-    });
-  }, [fetchers]);
-
-  if (fetchers.length === 0 || Object.entries(productsSyncStatus).length === 0)
-    return;
-
-  return (
-    <>
-      <header className="prose">
-        <h2>Cargando...</h2>
-      </header>
-
-      <div className="overflow-x-auto">
-        <table className="table table-xs">
-          <thead>
-            <th>
-              <td>sku</td>
-              <td>nuevo stock</td>
-              <td>mensaje</td>
-              <td>status</td>
-            </th>
-          </thead>
-          <tbody>
-            {Object.entries(productsSyncStatus).map(
-              ([sku, { state, success, message, newStock }]) => (
-                <tr>
-                  <td>{sku}</td>
-                  <td>{newStock}</td>
-                  <td>{message}</td>
-                  <td>{state}</td>
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
-      </div>
-    </>
   );
 }
