@@ -130,10 +130,6 @@ export default function ControlCreate() {
   }, [reviewMode]);
 
   const productRefs = {};
-  // control.products.reduce((acc, { sku }) => {
-  //   acc[sku] = useRef<HTMLDivElement>(null);
-  //   return acc;
-  // }, {} as { [sku: string]: RefObject<HTMLDivElement> });
 
   function clearProductToAddFields() {
     setProductToAddSku("");

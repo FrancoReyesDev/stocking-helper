@@ -1,0 +1,470 @@
+{
+  "id": "c1ac6b53-e898-4c20-956a-d1b89e5e9f27",
+  "name": "LS2 definitivo",
+  "details": "todo el stock de ls2 en el nuevo deposito",
+  "isoStringDate": "2024-11-27T20:15:58.810Z",
+  "products": [
+    {
+      "sku": "LS2103521011.XL",
+      "name": "CASCO MOTO INTEGRAL LS2 352 SINGLE MONO NEGRO MATE - RPM  NEGRO ROOKIE MONOCHROME XL",
+      "quantity": 2,
+      "details": "9035210110050 y 6958639485788"
+    },
+    {
+      "sku": "LS2103536131.XL",
+      "name": "CASCO INTEGRAL LS2 353 RAPID XTREET NEGRO / ROJO MATE RPM925",
+      "quantity": 2,
+      "details": "1035361310050 y 6923221110638"
+    },
+    {
+      "sku": "LS2103203192.L",
+      "name": "FF320 STREAM EVO ENTER NAVY Blue Purple GS L ",
+      "quantity": 1,
+      "details": "1032031920040 y 6958639486495 "
+    },
+    {
+      "sku": "LS2503701011.S",
+      "name": "CASCO MOTO REBATIBLE LS2 370 EASY DOBLE VISOR NEGRO MATE RPM  NEGRO MATE EASY S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103203192.M",
+      "name": "FF320 STREAM EVO ENTER NAVY Blue Purple GS M",
+      "quantity": 1,
+      "details": "1032031920030 y 6958639486488"
+    },
+    {
+      "sku": "LS2503701011.L",
+      "name": "370 EASY SV NEGRO MATE L",
+      "quantity": 1,
+      "details": "50370101100406958639465841"
+    },
+    {
+      "sku": "LS2103533552.M",
+      "name": "CASCO MOTO PISTA LS2 353 RAPID CIRCLE TITANIUM RPM925  NEGRO-NARANJA CIRCLE M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527702.XL",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE STINGER + ALERÓN RPM925  NEGRO-AMARILLO STINGER XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2503701011.M",
+      "name": "CASCO MOTO REBATIBLE LS2 370 EASY DOBLE VISOR NEGRO MATE RPM  NEGRO MATE EASY M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2103533188.XL",
+      "name": "CASCO INTEGRAL LS2 353 RAPID KRUISE NEGRO / GRIS MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103534150.L",
+      "name": "CASCO MOTO LS2 FF353 RAPID NAUGHTY NARANJA-AZUL RPM925  AZUL OSCURO NAUGHTY L",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2103533552.S",
+      "name": "CASCO MOTO PISTA LS2 353 RAPID CIRCLE TITANIUM RPM925  NEGRO-NARANJA CIRCLE S",
+      "quantity": 1,
+      "details": "1035335520020 y 6934432858264"
+    },
+    {
+      "sku": "LS2103533188.L",
+      "name": "CASCO INTEGRAL LS2 353 RAPID KRUISE NEGRO / GRIS MATE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527303.M",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER NARA",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527702.M",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE STINGER + ALERÓN RPM925  NEGRO-AMARILLO STINGER M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625311.XL",
+      "name": "CASCO AIRFLOW METROPOLIS HVY 562 RPM925  NEGRO- AMARILLO AIRFLOW XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103204011.L",
+      "name": "CASCO MOTO INTEGRAL LS2 320 STREAM EVO MONO NEGRO MATE - RPM  NEGRO MATE MONOCOLOR L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103536131.L",
+      "name": "CASCO INTEGRAL LS2 353 RAPID XTREET NEGRO / ROJO MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527301.M",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2903521011.S",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE SOLID NEGRO MATE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2168081006.L",
+      "name": "CASCO MOTO INTEGRAL LS2 STREAM II 808 NARDO GRIS RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2935220436.S",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE SKAR CON SPOILER - RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903521011.M",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE SOLID NEGRO MATE RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168082311.M",
+      "name": "CASCO MOTO DOBLE VISOR LS2 808 STREAM II ROAD AZUL MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527445.XL",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE THUNDER + ALERON RPM925  NEGRO-ROJO THUNDER XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2935220438.S",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE MERCH MATE CON SPOILER",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527303.L",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER NARA",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527301.XL",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2903521011.2XL",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE SOLID NEGRO MATE RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233612.XS",
+      "name": "CASCO MOTO INTEGRAL LS2 323 ARROW EVO TECHINO BLANCO / NEGRO",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2935220438.XL",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE MERCH MATE CON SPOILER",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2935220439.2X",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE ULTRA ROJO BRILLO RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2935220436.2X",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROOKIE SKAR CON SPOILER - RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527301.2X",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER RPM",
+      "quantity": 1,
+      "details": "cambiar titulo a CASCO LS2 FF352 STROKE NEGRO GRIS 2XL"
+    },
+    {
+      "sku": "LS2103203192.S",
+      "name": "CASCO MOTO INTEGRAL LS2 320 STREAM EVO ENTER NAVY MUJER ROSA",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103204011.XL",
+      "name": "CASCO MOTO INTEGRAL LS2 320 STREAM EVO MONO NEGRO MATE - RPM  NEGRO MATE MONOCOLOR XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168082311.L",
+      "name": "CASCO MOTO DOBLE VISOR LS2 808 STREAM II ROAD AZUL MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2103534150.S",
+      "name": "CASCO MOTO LS2 FF353 RAPID NAUGHTY NARANJA-AZUL RPM925  AZUL OSCURO NAUGHTY S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168081006.XL",
+      "name": "CASCO MOTO INTEGRAL LS2 STREAM II 808 NARDO GRIS RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527303.S",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER NARA",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168082245.XS",
+      "name": "CASCO MOTO INTEGRAL DOBLE VISOR LS2 808 STREAM II JUNGLE RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527301.S",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625461.L",
+      "name": "CASCO MOTO ABIERTO LS2 562 AIRFLOW CAMO GRIS AMARILLO RPM  TITANIO AMARILLO CAMO L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625232.M",
+      "name": "CASCO MOTO ABIERTO 562 AIRFLOW CONDOR BLANCO NEGRO ROJO RPM  BLANCO AZUL Y ROJO CONDOR M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168081006.M",
+      "name": "CASCO MOTO INTEGRAL LS2 STREAM II 808 NARDO GRIS RPM925",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2168082311.XL",
+      "name": "CASCO MOTO DOBLE VISOR LS2 808 STREAM II ROAD AZUL MATE RPM",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2168081006.XS",
+      "name": "CASCO MOTO INTEGRAL LS2 STREAM II 808 NARDO GRIS RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527301.L",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER RPM",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103534150.M",
+      "name": "CASCO MOTO LS2 FF353 RAPID NAUGHTY NARANJA-AZUL RPM925  AZUL OSCURO NAUGHTY M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2404374032.XL",
+      "name": "437 FAST STRIKE BLA-WHI-RED XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2404374032.L",
+      "name": "437 FAST STRIKE BLA-WHI-RED L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2509021011.S",
+      "name": "CASCO MOTO REBATIBLE LS2 902 SCOPE NEGRO MATE PINLOCK RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2404374032.S",
+      "name": "437 FAST STRIKE BLA-WHI-RED S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2509021011.M",
+      "name": "CASCO MOTO REBATIBLE LS2 902 SCOPE NEGRO MATE PINLOCK RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2903527303.2X",
+      "name": "CASCO INTEGRAL MOTO LS2 352 ROKIE STROKE ALERÓN SPOILER NARA",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103533552.XL",
+      "name": "CASCO MOTO PISTA LS2 353 RAPID CIRCLE TITANIUM RPM925  NEGRO-NARANJA CIRCLE XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2168081006.2X",
+      "name": "CASCO MOTO INTEGRAL LS2 STREAM II 808 NARDO GRIS RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233098.S",
+      "name": "CASCO MOTO CARBONO ARROW  C EVO 323 SOLID NEGRO RPM925   NEGRO ARROW S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233626.M",
+      "name": "CASCO MOTO PISTA INTEGRAL LS2 323 ARROW RAPID EVO TECHNO RPM  AZUL - BLANCO TECHNO M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2404374032.M",
+      "name": "437 FAST STRIKE BLA-WHI-RED M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2509021011.L",
+      "name": "CASCO MOTO REBATIBLE LS2 902 SCOPE NEGRO MATE PINLOCK RPM925",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233613.L",
+      "name": "CASCO MOTO PISTA INTEGRAL LS2 323 EVO TECHNO RPM925  NEGRO EVO L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233612.M",
+      "name": "CASCO MOTO INTEGRAL LS2 323 EVO TECHNO RPM925  NEGRO-BLANCO ARROW M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233098.M",
+      "name": "CASCO MOTO CARBONO ARROW  C EVO 323 SOLID NEGRO RPM925   NEGRO ARROW M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233098.L",
+      "name": "CASCO MOTO CARBONO ARROW  C EVO 323 SOLID NEGRO RPM925   NEGRO ARROW L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103204011.M",
+      "name": "CASCO MOTO INTEGRAL LS2 320 STREAM EVO MONO NEGRO MATE - RPM  NEGRO MATE MONOCOLOR M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2103233613.M",
+      "name": "CASCO MOTO PISTA INTEGRAL LS2 323 EVO TECHNO RPM925  NEGRO EVO M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305626025.2X",
+      "name": "OF562 ANDROID BL/RD MT 2XL",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625461.XL",
+      "name": "562 AIRFLOW CAMO MATT TIT Y XL",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305626025.L",
+      "name": "OF562 ANDROID BL/RD MT L",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305626025.S",
+      "name": "OF562 ANDROID BL/RD MT S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305626025.M",
+      "name": "OF562 ANDROID BL/RD MT M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625311.M",
+      "name": "CASCO AIRFLOW METROPOLIS HVY 562 RPM925  NEGRO- AMARILLO AIRFLOW M",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625011.S",
+      "name": "CASCO MOTO ABIERTO LS2 562 AIRFLOW SOLID MATE RPM925  NEGRO SOLID S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625311.S",
+      "name": "CASCO AIRFLOW METROPOLIS HVY 562 RPM925  NEGRO- AMARILLO AIRFLOW S",
+      "quantity": 1,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625011.M",
+      "name": "CASCO MOTO ABIERTO LS2 AIRFLOW SOLID MATE RPM925  NEGRO SOLID M",
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "sku": "LS2305625011.L",
+      "name": "CASCO MOTO ABIERTO LS2 AIRFLOW SOLID MATE RPM925  NEGRO SOLID L",
+      "quantity": 2,
+      "details": ""
+    }
+  ]
+}
