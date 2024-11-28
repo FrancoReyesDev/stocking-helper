@@ -1,13 +1,6 @@
 import { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { Form, redirectDocument, useLoaderData } from "@remix-run/react";
-import {
-  ChangeEvent,
-  RefObject,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository.server";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import { ContabiliumProductsUtility } from "~/utilities/ContabiliumProducts.utility";
@@ -18,7 +11,6 @@ import { ProductsCounter } from "./components/ProductsCounter";
 import { AddProductSuggestions } from "./components/AddProductSuggestions";
 import { AddedProducts } from "./components/AddedProducts";
 import _ from "lodash";
-// function verifyControl(control: Control) {}
 
 export async function action({ request }: ActionFunctionArgs) {
   const controlsRepository = new ControlsRepository();

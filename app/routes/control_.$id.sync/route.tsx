@@ -2,17 +2,14 @@ import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import ContabiliumService from "~/services/Contabilium.service.server";
 import { LoaderFunctionArgs, redirectDocument } from "@remix-run/node";
 import {
-  Fetcher,
   FetcherWithComponents,
-  useActionData,
   useFetcher,
-  useFetchers,
   useLoaderData,
   useNavigate,
 } from "@remix-run/react";
 import Modal from "~/components/Modal";
 import SelectDeposit from "./components/SelectDeposit";
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ProductSyncStatusesTable from "./components/SyncTableStatuses";
 
 export async function loader({ params }: LoaderFunctionArgs) {

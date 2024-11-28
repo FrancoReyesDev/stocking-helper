@@ -47,20 +47,24 @@ export default function Control() {
             <thead>
               <tr className="bg-base-200 rounded">
                 <th>sku</th>
+                <th>codigos</th>
                 <th>nombre</th>
                 <th>cantidad</th>
                 <th>detalles</th>
               </tr>
             </thead>
             <tbody>
-              {control.products.map(({ sku, quantity, name, details }) => (
-                <tr key={sku}>
-                  <td>{sku}</td>
-                  <td>{name}</td>
-                  <td>{quantity}</td>
-                  <td>{details}</td>
-                </tr>
-              ))}
+              {control.products.map(
+                ({ sku, quantity, title, ids, details }) => (
+                  <tr key={sku}>
+                    <td>{sku}</td>
+                    <td>{ids?.join(", ") || ""}</td>
+                    <td>{title}</td>
+                    <td>{quantity}</td>
+                    <td>{details}</td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
