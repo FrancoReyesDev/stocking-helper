@@ -1,4 +1,13 @@
-import { FetcherWithComponents } from "@remix-run/react";
+import { FetcherWithComponents, useFetcher } from "@remix-run/react";
+import { ControlProduct } from "~/types/Control.type";
+
+interface ProductSyncRowProps {
+  product: ControlProduct;
+}
+
+function ProductSyncRow({ product }: ProductSyncRowProps) {
+  const fetcher = useFetcher();
+}
 
 interface Props {
   productFetchers: {

@@ -34,13 +34,6 @@ export default function SyncControl() {
   const { control, deposits } = useLoaderData<typeof loader>();
   const navigate = useNavigate();
 
-  const productFetchers = control.products.reduce((acc, product) => {
-    const sku = product.sku;
-    acc[sku] = useFetcher();
-
-    return acc;
-  }, {} as { [sku: string]: FetcherWithComponents<string> });
-
   const [moveBetweenDeposits, setMoveBetweenDeposits] = useState(false);
   const [originDepositId, setOriginDepositId] = useState(deposits[0].Id);
   const [destinyDepositId, setDestinyDepositId] = useState(deposits[0].Id);
