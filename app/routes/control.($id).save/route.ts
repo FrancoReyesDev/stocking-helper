@@ -1,22 +1,21 @@
 import { ActionFunctionArgs, redirectDocument } from "@remix-run/node";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import { Control } from "~/types/Control.type";
+import { v4 as uuidV4 } from "uuid";
 
 export async function action({ request }: ActionFunctionArgs) {
   const controlsRepository = new ControlsRepository();
 
   const control = (await request.json()) as Control;
+
+  const uuid = uuidV4();
   const date = new Date();
 
-  const newControl: Control = {
-    id: crypto.randomUUID(),
-    name: control.name,
-    details: control.details,
+  controlsRepository.saveControl({
+    ...control,
+    id: uuid,
     isoStringDate: date.toISOString(),
-    products: control.products,
-  };
+  });
 
-  controlsRepository.saveControl(newControl);
-
-  return redirectDocument("/control/" + newControl.id);
+  return redirectDocument("/control/" + uuid);
 }

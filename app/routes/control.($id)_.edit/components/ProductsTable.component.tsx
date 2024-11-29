@@ -30,7 +30,7 @@ function ProductTableRowForm({
     ) {
       const newValue =
         field === "quantity"
-          ? Number(event.target.value) || 1
+          ? Number(event.target.value) || ""
           : event.target.value;
 
       updateProduct({
@@ -165,11 +165,27 @@ export default function ProductsTable({
     } else setFilteredProducts(products);
   }, [search, products]);
 
+  const totalUnits = products.reduce((acc, { quantity }) => acc + quantity, 0);
+
   return (
     <>
       <header className="prose mt-4">
         <h3>Productos agregados</h3>
       </header>
+      <div className="flex gap-2">
+        <div className="badge badge-bordered p-3">
+          {products.length === 0
+            ? "sin products"
+            : products.length === 1
+            ? "1 producto"
+            : products.length + " productos"}
+        </div>
+        <div className="badge badge-bordered p-3 ">
+          {totalUnits === 0 ? "sin unidades" : totalUnits}{" "}
+          {totalUnits === 1 ? "unidad" : "unidades"}
+        </div>
+      </div>
+
       <label className="form-control w-full w-max-xs">
         <div className="label">
           <span className="label-text">Buscar</span>

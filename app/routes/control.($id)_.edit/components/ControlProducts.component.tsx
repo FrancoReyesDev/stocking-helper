@@ -1,6 +1,14 @@
-import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import {
+  ChangeEvent,
+  KeyboardEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import CbItem from "~/types/CbItem.type";
 import { ControlProduct } from "~/types/Control.type";
+import _ from "lodash";
 
 const defaultProduct: ControlProduct = {
   uuid: "",
@@ -27,6 +35,19 @@ export default function ControlProducts({
   const [newProduct, setNewProduct] = useState<ControlProduct>(defaultProduct);
   const [idsToString, setIdsToString] = useState(newProduct.ids.join(", "));
   const idsFieldRef = useRef<HTMLInputElement>(null);
+  const skuFieldRef = useRef<HTMLInputElement>(null);
+
+  const audios = useMemo(() => {
+    if (typeof window === undefined) return undefined;
+    const addedProductAudio = new Audio(
+      "https://assets.mixkit.co/active_storage/sfx/2870/2870-preview.mp3"
+    );
+    const tabToSkuAudio = new Audio(
+      "https://assets.mixkit.co/active_storage/sfx/2841/2841-preview.mp3"
+    );
+
+    return { addedProductAudio, tabToSkuAudio };
+  }, []);
 
   function handleChangeProductField(field: keyof ControlProduct) {
     return function (
@@ -34,7 +55,7 @@ export default function ControlProducts({
     ) {
       const newValue =
         field === "quantity"
-          ? Number(event.target.value) || 1
+          ? Number(event.target.value) || ""
           : event.target.value;
 
       setNewProduct((currentProduct) => ({
@@ -56,8 +77,7 @@ export default function ControlProducts({
   }
 
   function handleAddProduct() {
-    if (newProduct.sku === "" && newProduct.ids.length === 0) return;
-
+    audios?.addedProductAudio.play();
     addProduct(newProduct);
     handleClearForm();
   }
@@ -74,23 +94,29 @@ export default function ControlProducts({
     handleAddProduct();
   }
 
-  function handleSearchOnContabiliumByPressingEnter(
-    event: KeyboardEvent<HTMLInputElement>
-  ) {
+  function handlePressingEnterOnSku(event: KeyboardEvent<HTMLInputElement>) {
     const sku = (event.target as HTMLInputElement).value.trim();
 
     if (
-      event.key === "Enter" &&
-      sku !== "" &&
-      sku in contabiliumIndexedProductsBySku &&
-      newProduct.title === ""
-    ) {
-      const cbProduct = contabiliumIndexedProductsBySku[sku];
+      event.key !== "Enter" ||
+      sku === "" ||
+      !(sku in contabiliumIndexedProductsBySku) ||
+      newProduct.title !== ""
+    )
+      return;
 
-      setNewProduct(({ title, ...rest }) => ({
-        ...rest,
-        title: cbProduct.nombre,
-      }));
+    const cbProduct = contabiliumIndexedProductsBySku[sku];
+
+    setNewProduct(({ title, ...rest }) => ({
+      ...rest,
+      title: cbProduct.nombre,
+    }));
+
+    console.log(newProduct.ids);
+
+    if (newProduct.ids.length !== 0) {
+      console.log("mas de uno");
+      handleAddProduct();
     }
   }
 
@@ -100,10 +126,20 @@ export default function ControlProducts({
         .split(",")
         .map((id) => id.trim())
         .filter((id) => id !== "");
+
+      const uniqueIds = _.uniq(ids);
+      const hasDuplicates = _.size(ids) !== _.size(uniqueIds);
+
       setNewProduct((currentProduct) => ({
         ...currentProduct,
-        ids,
+        uniqueIds,
       }));
+
+      if (hasDuplicates) {
+        audios?.tabToSkuAudio.play();
+        setIdsToString(uniqueIds.join(", "));
+        skuFieldRef.current?.focus();
+      }
     }
   }, [idsToString]);
 
@@ -140,7 +176,8 @@ export default function ControlProducts({
               className="grow"
               placeholder="Podes apretar enter para buscar en contabilium"
               onChange={handleChangeProductField("sku")}
-              onKeyDown={handleSearchOnContabiliumByPressingEnter}
+              onKeyDown={handlePressingEnterOnSku}
+              ref={skuFieldRef}
               value={newProduct.sku}
             />
             <kbd className="kbd kbd-sm">enter</kbd>

@@ -24,7 +24,7 @@ export default function ControlFields({
   }
 
   function handleSaveControl() {
-    fetcher.submit({ control } as unknown as SubmitTarget, {
+    fetcher.submit(control as unknown as SubmitTarget, {
       //Remix bug, the type is ok
       method: "POST",
       encType: "application/json",
