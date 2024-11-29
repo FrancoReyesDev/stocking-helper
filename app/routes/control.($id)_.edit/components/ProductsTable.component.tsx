@@ -13,12 +13,14 @@ interface ProductTableRowFormProps {
   product: ControlProduct;
   updateProduct(product: ControlProduct): void;
   removeProduct(productId: string): void;
+  order: number[];
 }
 
 function ProductTableRowForm({
   product,
   updateProduct,
   removeProduct,
+  order,
 }: ProductTableRowFormProps) {
   const { sku, title, ids, uuid, quantity, details } = product;
 
@@ -118,6 +120,7 @@ function ProductTableRowForm({
           onChange={handleChangeProductField("details")}
         />
       </td>
+      <td className="p-1.5">{(order ?? []).join(", ")}</td>
       <td>
         <button onClick={handleRemoveProduct} className="btn btn-xs">
           borrar
@@ -131,12 +134,14 @@ interface Props {
   products: ControlProduct[];
   updateProduct(product: ControlProduct): void;
   removeProduct(productId: string): void;
+  productOrder: { [uuid: string]: number[] };
 }
 
 export default function ProductsTable({
   products,
   updateProduct,
   removeProduct,
+  productOrder,
 }: Props) {
   const [search, setSearch] = useState("");
   const [filteredProducts, setFilteredProducts] =
@@ -207,6 +212,7 @@ export default function ProductsTable({
               <th>titulo</th>
               <th>cantidad</th>
               <th>detalles</th>
+              <th>orden</th>
               <th></th>
             </tr>
           </thead>
@@ -217,6 +223,7 @@ export default function ProductsTable({
                   removeProduct={removeProduct}
                   updateProduct={updateProduct}
                   product={product}
+                  order={productOrder[product.uuid]}
                 />
               </Fragment>
             ))}

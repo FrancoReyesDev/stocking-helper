@@ -9,6 +9,7 @@ import {
 import CbItem from "~/types/CbItem.type";
 import { ControlProduct } from "~/types/Control.type";
 import _ from "lodash";
+import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 
 const defaultProduct: ControlProduct = {
   uuid: "",
@@ -34,11 +35,17 @@ export default function ControlProducts({
 }: Props) {
   const [newProduct, setNewProduct] = useState<ControlProduct>(defaultProduct);
   const [idsToString, setIdsToString] = useState(newProduct.ids.join(", "));
+  const [fastAddMode, setFastAddMode] = useState(false);
+  // const [mask, setMask] = useState("");
+
   const idsFieldRef = useRef<HTMLInputElement>(null);
   const skuFieldRef = useRef<HTMLInputElement>(null);
+  const [audios, setAudios] = useState<{
+    addedProductAudio?: HTMLAudioElement;
+    tabToSkuAudio?: HTMLAudioElement;
+  }>({ addedProductAudio: undefined, tabToSkuAudio: undefined });
 
-  const audios = useMemo(() => {
-    if (typeof window === undefined) return undefined;
+  function initAudios() {
     const addedProductAudio = new Audio(
       "https://assets.mixkit.co/active_storage/sfx/2870/2870-preview.mp3"
     );
@@ -46,7 +53,11 @@ export default function ControlProducts({
       "https://assets.mixkit.co/active_storage/sfx/2841/2841-preview.mp3"
     );
 
-    return { addedProductAudio, tabToSkuAudio };
+    setAudios({ addedProductAudio, tabToSkuAudio });
+  }
+
+  useEffect(() => {
+    initAudios();
   }, []);
 
   function handleChangeProductField(field: keyof ControlProduct) {
@@ -77,7 +88,7 @@ export default function ControlProducts({
   }
 
   function handleAddProduct() {
-    audios?.addedProductAudio.play();
+    audios.addedProductAudio?.play();
     addProduct(newProduct);
     handleClearForm();
   }
@@ -89,36 +100,83 @@ export default function ControlProducts({
       .map((id) => id.trim())
       .filter((id) => id !== "");
 
-    if (!searchProduct(newProduct))
-      return setIdsToString(value.join(", ") + ", ");
-    handleAddProduct();
+    setIdsToString(value.join(", ") + ", ");
+  }
+
+  function trySku(sku: string) {
+    if (
+      sku !== "" &&
+      sku in contabiliumIndexedProductsBySku &&
+      newProduct.title === ""
+    ) {
+      const cbProduct = contabiliumIndexedProductsBySku[sku];
+
+      setNewProduct(({ title, ...rest }) => ({
+        ...rest,
+        sku,
+        title: cbProduct.nombre,
+      }));
+    }
   }
 
   function handlePressingEnterOnSku(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key !== "Enter") return;
     const sku = (event.target as HTMLInputElement).value.trim();
-
-    if (
-      event.key !== "Enter" ||
-      sku === "" ||
-      !(sku in contabiliumIndexedProductsBySku) ||
-      newProduct.title !== ""
-    )
-      return;
-
-    const cbProduct = contabiliumIndexedProductsBySku[sku];
-
-    setNewProduct(({ title, ...rest }) => ({
-      ...rest,
-      title: cbProduct.nombre,
-    }));
-
-    console.log(newProduct.ids);
-
-    if (newProduct.ids.length !== 0) {
-      console.log("mas de uno");
-      handleAddProduct();
-    }
+    trySku(sku);
   }
+
+  // function handleFocusOnSku() {
+  //   if (
+  //     mask !== "" &&
+  //     newProduct.ids.length > 0 &&
+  //     newProduct.title === "" &&
+  //     newProduct.sku === ""
+  //   ) {
+  //     const regexForIdIndex = /\b(\d+)\./;
+  //     const matchIdIndex = mask.match(regexForIdIndex);
+  //     const idIndex = matchIdIndex ? matchIdIndex[1] : null;
+
+  //     if (idIndex === null || isNaN(Number(idIndex))) return;
+
+  //     const regexForMask = /\d+\.(.*)/; // Busca un número seguido de un punto y captura todo lo que está después
+  //     const matchMask = mask.match(regexForMask); // Encuentra coincidencias
+  //     const maskReplaces = matchMask ? matchMask[1].trim() : null;
+
+  //     if (maskReplaces === null) return;
+
+  //     const selectedId = newProduct.ids?.[Number(idIndex)];
+
+  //     if (selectedId === undefined) return;
+
+  //     const idToArray = Array.from(selectedId);
+  //     const maskedSku = Array.from(maskReplaces).reduce((acc, letter) => {
+  //       if (letter === "#") {
+  //         const idLetter = idToArray.shift();
+  //         acc += idLetter;
+  //       } else acc += letter;
+
+  //       return acc;
+  //     }, "");
+
+  //     trySku(maskedSku);
+  //   }
+  // }
+
+  useEffect(() => {
+    if (
+      newProduct.ids.length !== 0 &&
+      newProduct.sku !== "" &&
+      newProduct.sku in contabiliumIndexedProductsBySku &&
+      newProduct.title !== "" &&
+      fastAddMode
+    )
+      handleAddProduct();
+  }, [newProduct.title]);
+
+  useEffect(() => {
+    if ((newProduct.ids.length || newProduct.sku) && searchProduct(newProduct))
+      handleAddProduct();
+  }, [newProduct]);
 
   useEffect(() => {
     if (idsToString !== "") {
@@ -132,11 +190,11 @@ export default function ControlProducts({
 
       setNewProduct((currentProduct) => ({
         ...currentProduct,
-        uniqueIds,
+        ids: uniqueIds,
       }));
 
       if (hasDuplicates) {
-        audios?.tabToSkuAudio.play();
+        audios.tabToSkuAudio?.play();
         setIdsToString(uniqueIds.join(", "));
         skuFieldRef.current?.focus();
       }
@@ -163,9 +221,24 @@ export default function ControlProducts({
               onKeyDown={handlePressingEnterOnId}
               value={idsToString}
             />
+
             <kbd className="kbd kbd-sm">enter</kbd>
           </label>
         </label>
+        {/* <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text">Mascara</span>
+          </div>
+
+          <input
+            type="text"
+            ref={idsFieldRef}
+            className="input input-bordered"
+            placeholder="ej: 1.### el 1. dice que debe ser el primer id, las almohadillas ponen los datos del id"
+            onChange={(event) => setMask(event.target.value)}
+            value={mask}
+          />
+        </label> */}
         <label className="form-control w-full">
           <div className="label">
             <span className="label-text">Sku</span>
@@ -179,7 +252,19 @@ export default function ControlProducts({
               onKeyDown={handlePressingEnterOnSku}
               ref={skuFieldRef}
               value={newProduct.sku}
+              // onFocus={handleFocusOnSku}
             />
+            <div className="form-control  ">
+              <label className="label cursor-pointer flex gap-1 border px-2 rounded shadow-xs">
+                <span className="label-text">Modo Rapido</span>
+                <input
+                  type="checkbox"
+                  checked={fastAddMode}
+                  onChange={(e) => setFastAddMode(e.target.checked)}
+                  className="checkbox checkbox-xs"
+                />
+              </label>
+            </div>
             <kbd className="kbd kbd-sm">enter</kbd>
           </label>
         </label>

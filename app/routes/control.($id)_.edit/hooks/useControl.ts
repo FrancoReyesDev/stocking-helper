@@ -22,6 +22,11 @@ export default function useControl(
     currentControl || defaultControl
   );
 
+  const [order, setOrder] = useState(0);
+  const [productOrder, setProductOrder] = useState<{
+    [uuid: string]: number[];
+  }>({});
+
   const products = control.products;
 
   function setControlName(name: string) {
@@ -91,6 +96,14 @@ export default function useControl(
     }));
   }
 
+  function addProductOrder(uuid: string) {
+    setProductOrder(({ [uuid]: oldOrder, ...rest }) => ({
+      ...rest,
+      [uuid]: [...(oldOrder ?? []), order],
+    }));
+    setOrder((current) => current + 1);
+  }
+
   function addProduct(product: ControlProduct) {
     const searchedProduct = searchProduct(product);
 
@@ -100,11 +113,14 @@ export default function useControl(
         ...currentControl,
         products: [...currentProducts, { ...product, uuid }],
       }));
-    } else
+      addProductOrder(uuid);
+    } else {
       updateProduct({
         ...searchedProduct,
         quantity: searchedProduct.quantity + 1,
       });
+      addProductOrder(searchedProduct.uuid);
+    }
   }
 
   return {
@@ -115,5 +131,6 @@ export default function useControl(
     removeProduct,
     setControlName,
     setControlDetails,
+    productOrder,
   };
 }

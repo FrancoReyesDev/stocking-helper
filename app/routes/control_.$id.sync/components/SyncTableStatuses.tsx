@@ -9,10 +9,7 @@ interface Props {
 export default function ProductSyncStatusesTable({ productFetchers }: Props) {
   return (
     <>
-      <div className="overflow-x-auto">
-        <header className="prose my-4">
-          <h3>Cargando...</h3>
-        </header>
+      <div className="overflow-x-auto p-2 border rounded-lg">
         <table className="table table-xs">
           <thead>
             <tr>

@@ -15,7 +15,7 @@ export function loader({ params }: LoaderFunctionArgs) {
 
   const headers = ["sku", "nombre", "cantidad", "detalles"];
   const aoaFromControl = control.products.map(
-    ({ sku, name, quantity, details }) => [sku, name, quantity, details]
+    ({ sku, title, quantity, details }) => [sku, title, quantity, details]
   );
 
   const workbook = workbookService.createWorkbookFromAoA("control", [

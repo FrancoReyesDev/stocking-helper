@@ -42,6 +42,7 @@ export default function Edit() {
     removeProduct,
     setControlDetails,
     setControlName,
+    productOrder,
   } = useControl({ currentControl });
 
   const products = control.products;
@@ -66,6 +67,7 @@ export default function Edit() {
           removeProduct={removeProduct}
           updateProduct={updateProduct}
           products={products}
+          productOrder={productOrder}
         />
       )}
     </article>

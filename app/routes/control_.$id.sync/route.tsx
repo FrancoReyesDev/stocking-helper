@@ -16,6 +16,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
   const controlId = params.id as string;
   const control = controlsRepository.getControl(controlId);
+
   if (control === undefined) return redirectDocument("/");
 
   const contabiliumService = new ContabiliumService();
@@ -73,11 +74,16 @@ export default function SyncControl() {
 
   return (
     <Modal open>
-      <div className="modal-box grid" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal-box grid gap-2"
+        onClick={(e) => e.stopPropagation()}
+      >
         <header className="prose">
           <h3>Sincronizar Articulos</h3>
-          <p>Esta accion sincronizara {control.products.length} productos.</p>
         </header>
+        <p className="prose">
+          Esta accion sincronizara {control.products.length} productos.
+        </p>
 
         <label className="form-control w-full ">
           <div className="label">
@@ -91,7 +97,7 @@ export default function SyncControl() {
         </label>
 
         <div className="form-control">
-          <label className="label cursor-pointer gap-2 justify-start">
+          <label className="label cursor-pointer gap-2 justify-start border rounded-lg p-2">
             <input
               type="checkbox"
               checked={moveBetweenDeposits}
@@ -99,7 +105,7 @@ export default function SyncControl() {
               onChange={handleChangeMoveBetweenDeposits}
               className="checkbox"
             />
-            <span className="label-text">mover entre depositos</span>
+            <span className="label-text">Mover entre depositos</span>
           </label>
         </div>
 
