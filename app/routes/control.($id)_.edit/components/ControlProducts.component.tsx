@@ -10,6 +10,7 @@ import CbItem from "~/types/CbItem.type";
 import { ControlProduct } from "~/types/Control.type";
 import _ from "lodash";
 import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
+import printOnRemotePrinter from "~/lib/printOnRemotePrinter";
 
 const defaultProduct: ControlProduct = {
   uuid: "",
@@ -44,6 +45,8 @@ export default function ControlProducts({
     addedProductAudio?: HTMLAudioElement;
     tabToSkuAudio?: HTMLAudioElement;
   }>({ addedProductAudio: undefined, tabToSkuAudio: undefined });
+  const [remotePrint, setRemotePrint] = useState(false);
+  const [remotePrintHost, setRemotePrintHost] = useState("");
 
   function initAudios() {
     const addedProductAudio = new Audio(
@@ -91,6 +94,11 @@ export default function ControlProducts({
     audios.addedProductAudio?.play();
     addProduct(newProduct);
     handleClearForm();
+    if (remotePrint)
+      printOnRemotePrinter({
+        host: remotePrintHost,
+        label: { sku: newProduct.sku, title: newProduct.title, quantity: 1 },
+      });
   }
 
   function handlePressingEnterOnId(event: KeyboardEvent<HTMLInputElement>) {
@@ -207,6 +215,29 @@ export default function ControlProducts({
         <h3>Agregar Producto</h3>
       </header>
       <div className="flex flex-col gap-1">
+        <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text">Impresion Remota</span>
+          </div>
+          <label className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              className="toggle"
+              checked={remotePrint}
+              onChange={(e) => setRemotePrint(e.target.checked)}
+            />
+            <input
+              type="text"
+              ref={idsFieldRef}
+              className="input input-bordered grow"
+              placeholder="ej: 192.168.0.1:3000"
+              onChange={(e) => setRemotePrintHost(e.target.value)}
+              value={remotePrintHost}
+              disabled={!remotePrint}
+            />
+          </label>
+        </label>
+
         <label className="form-control w-full">
           <div className="label">
             <span className="label-text">Codigo</span>
