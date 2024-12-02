@@ -56,7 +56,7 @@ function ProductTableRowForm({
       .map((id) => id.trim())
       .filter((id) => id !== "");
 
-    setIdsToString(value.join(", ") + ", ");
+    if (value.length > 0) setIdsToString(value.join(", ") + ", ");
   }
 
   function handleRemoveProduct() {
@@ -84,7 +84,7 @@ function ProductTableRowForm({
           type="text"
           className="input input-xs input-ghost "
           value={sku}
-          onBlur={handleChangeProductField("sku")}
+          onChange={handleChangeProductField("sku")}
         />
       </td>
       <td className="p-1.5">
@@ -92,7 +92,7 @@ function ProductTableRowForm({
           type="text"
           className="input input-xs input-ghost "
           value={idsToString}
-          onBlur={handleChangeProductIds}
+          onChange={handleChangeProductIds}
           onKeyDown={handlePressingEnterOnId}
         />
       </td>
@@ -101,7 +101,7 @@ function ProductTableRowForm({
           type="text"
           className="input input-xs input-ghost "
           value={title}
-          onBlur={handleChangeProductField("title")}
+          onChange={handleChangeProductField("title")}
         />
       </td>
       <td className="p-1.5">
@@ -109,7 +109,7 @@ function ProductTableRowForm({
           type="text"
           className="input input-xs input-ghost "
           value={quantity}
-          onBlur={handleChangeProductField("quantity")}
+          onChange={handleChangeProductField("quantity")}
         />
       </td>
       <td className="p-1.5">
@@ -117,7 +117,7 @@ function ProductTableRowForm({
           type="text"
           className="input input-xs input-ghost "
           value={details}
-          onBlur={handleChangeProductField("details")}
+          onChange={handleChangeProductField("details")}
         />
       </td>
       <td className="p-1.5">{(order ?? []).join(", ")}</td>

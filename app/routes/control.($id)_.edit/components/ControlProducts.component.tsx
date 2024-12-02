@@ -90,14 +90,18 @@ export default function ControlProducts({
     idsFieldRef.current?.focus();
   }
 
-  function handleAddProduct() {
+  function handleAddProduct(product?: ControlProduct) {
     audios.addedProductAudio?.play();
     addProduct(newProduct);
     handleClearForm();
     if (remotePrint)
       printOnRemotePrinter({
         host: remotePrintHost,
-        label: { sku: newProduct.sku, title: newProduct.title, quantity: 1 },
+        label: {
+          sku: (product ?? newProduct).sku,
+          title: (product ?? newProduct).title,
+          quantity: (product ?? newProduct).quantity,
+        },
       });
   }
 
@@ -182,8 +186,9 @@ export default function ControlProducts({
   }, [newProduct.title]);
 
   useEffect(() => {
-    if ((newProduct.ids.length || newProduct.sku) && searchProduct(newProduct))
-      handleAddProduct();
+    const searchedProduct = searchProduct(newProduct);
+    if ((newProduct.ids.length || newProduct.sku) && searchedProduct)
+      handleAddProduct(searchedProduct);
   }, [newProduct]);
 
   useEffect(() => {
@@ -337,7 +342,10 @@ export default function ControlProducts({
           />
         </label>
         <div className="flex gap-1 mt-4">
-          <button onClick={handleAddProduct} className="btn  btn-neutral">
+          <button
+            onClick={() => handleAddProduct()}
+            className="btn  btn-neutral"
+          >
             agregar
           </button>
           <button onClick={handleClearForm} className="btn btn-warning">
