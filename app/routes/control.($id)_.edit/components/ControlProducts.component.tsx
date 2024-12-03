@@ -48,7 +48,7 @@ export default function ControlProducts({
   const [remotePrint, setRemotePrint] = useState(false);
   const [remotePrintHost, setRemotePrintHost] = useState("");
 
-  function initAudios() {
+  useEffect(() => {
     const addedProductAudio = new Audio(
       "https://assets.mixkit.co/active_storage/sfx/2870/2870-preview.mp3"
     );
@@ -57,10 +57,6 @@ export default function ControlProducts({
     );
 
     setAudios({ addedProductAudio, tabToSkuAudio });
-  }
-
-  useEffect(() => {
-    initAudios();
   }, []);
 
   function handleChangeProductField(field: keyof ControlProduct) {
@@ -112,7 +108,9 @@ export default function ControlProducts({
       .map((id) => id.trim())
       .filter((id) => id !== "");
 
-    setIdsToString(value.join(", ") + ", ");
+    const newValue = value.join(", ");
+
+    setIdsToString(newValue === "" ? newValue : newValue + ", ");
   }
 
   function trySku(sku: string) {
