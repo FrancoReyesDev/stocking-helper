@@ -7,11 +7,11 @@ import {
   useMemo,
   useState,
 } from "react";
-import { ControlProduct } from "~/types/Control.type";
+import { ControlSnapshotProduct } from "~/types/Control.type";
 
 interface ProductTableRowFormProps {
-  product: ControlProduct;
-  updateProduct(product: ControlProduct): void;
+  product: ControlSnapshotProduct;
+  updateProduct(product: ControlSnapshotProduct): void;
   removeProduct(productId: string): void;
   order: number[];
 }
@@ -26,7 +26,7 @@ function ProductTableRowForm({
 
   const [idsToString, setIdsToString] = useState(ids.join(", "));
 
-  function handleChangeProductField(field: keyof ControlProduct) {
+  function handleChangeProductField(field: keyof ControlSnapshotProduct) {
     return function (
       event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
@@ -131,8 +131,8 @@ function ProductTableRowForm({
 }
 
 interface Props {
-  products: ControlProduct[];
-  updateProduct(product: ControlProduct): void;
+  products: ControlSnapshotProduct[];
+  updateProduct(product: ControlSnapshotProduct): void;
   removeProduct(productId: string): void;
   productOrder: { [uuid: string]: number[] };
 }
@@ -145,7 +145,7 @@ export default function ProductsTable({
 }: Props) {
   const [search, setSearch] = useState("");
   const [filteredProducts, setFilteredProducts] =
-    useState<ControlProduct[]>(products);
+    useState<ControlSnapshotProduct[]>(products);
   const fuse = useMemo(() => {
     const options = {
       includeScore: false,

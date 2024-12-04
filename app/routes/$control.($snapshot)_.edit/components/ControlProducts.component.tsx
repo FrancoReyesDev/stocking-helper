@@ -7,12 +7,12 @@ import {
   useState,
 } from "react";
 import CbItem from "~/types/CbItem.type";
-import { ControlProduct } from "~/types/Control.type";
+import { ControlSnapshotProduct } from "~/types/Control.type";
 import _ from "lodash";
 import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 import printOnRemotePrinter from "~/lib/printOnRemotePrinter";
 
-const defaultProduct: ControlProduct = {
+const defaultProduct: ControlSnapshotProduct = {
   uuid: "",
   sku: "",
   ids: [],
@@ -25,8 +25,10 @@ interface Props {
   contabiliumIndexedProductsBySku: {
     [sku: string]: CbItem;
   };
-  addProduct(product: ControlProduct): void;
-  searchProduct(product: ControlProduct): ControlProduct | undefined;
+  addProduct(product: ControlSnapshotProduct): void;
+  searchProduct(
+    product: ControlSnapshotProduct
+  ): ControlSnapshotProduct | undefined;
 }
 
 export default function ControlProducts({
@@ -34,7 +36,8 @@ export default function ControlProducts({
   searchProduct,
   addProduct,
 }: Props) {
-  const [newProduct, setNewProduct] = useState<ControlProduct>(defaultProduct);
+  const [newProduct, setNewProduct] =
+    useState<ControlSnapshotProduct>(defaultProduct);
   const [idsToString, setIdsToString] = useState(newProduct.ids.join(", "));
   const [fastAddMode, setFastAddMode] = useState(false);
   // const [mask, setMask] = useState("");
@@ -59,7 +62,7 @@ export default function ControlProducts({
     setAudios({ addedProductAudio, tabToSkuAudio });
   }, []);
 
-  function handleChangeProductField(field: keyof ControlProduct) {
+  function handleChangeProductField(field: keyof ControlSnapshotProduct) {
     return function (
       event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
@@ -86,7 +89,7 @@ export default function ControlProducts({
     idsFieldRef.current?.focus();
   }
 
-  function handleAddProduct(product?: ControlProduct) {
+  function handleAddProduct(product?: ControlSnapshotProduct) {
     audios.addedProductAudio?.play();
     addProduct(newProduct);
     handleClearForm();

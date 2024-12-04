@@ -1,8 +1,8 @@
 import { FetcherWithComponents, useFetcher } from "@remix-run/react";
-import { ControlProduct } from "~/types/Control.type";
+import { ControlSnapshotProduct } from "~/types/Control.type";
 
 interface ProductSyncRowProps {
-  product: ControlProduct;
+  product: ControlSnapshotProduct;
 }
 
 function ProductSyncRow({ product }: ProductSyncRowProps) {

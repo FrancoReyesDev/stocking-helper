@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import _ from "lodash";
-import { Control, ControlProduct } from "~/types/Control.type";
+import { Control, ControlSnapshotProduct } from "~/types/Control.type";
 import { v4 as uuidV4 } from "uuid";
 
 const defaultControl: Control = {
@@ -48,13 +48,13 @@ export default function useControl(
     const mapProductBySku = products.reduce((acc, product) => {
       acc.set(String(product.sku), product);
       return acc;
-    }, new Map() as Map<string, ControlProduct>);
+    }, new Map() as Map<string, ControlSnapshotProduct>);
     const mapProductById = products.reduce((acc, product) => {
       product.ids.forEach((id) => {
         acc.set(String(id), product);
       });
       return acc;
-    }, new Map() as Map<string, ControlProduct>);
+    }, new Map() as Map<string, ControlSnapshotProduct>);
 
     return { mapProductById, mapProductBySku, indexedByUuid };
   }, [products]);
@@ -66,7 +66,9 @@ export default function useControl(
     }));
   }
 
-  function searchProduct(product: ControlProduct): ControlProduct | undefined {
+  function searchProduct(
+    product: ControlSnapshotProduct
+  ): ControlSnapshotProduct | undefined {
     const productBySku = mapProductBySku.get(product.sku);
 
     if (productBySku !== undefined) return productBySku;
@@ -83,7 +85,7 @@ export default function useControl(
     return undefined;
   }
 
-  function updateProduct(product: ControlProduct) {
+  function updateProduct(product: ControlSnapshotProduct) {
     const newProducts = {
       ...indexedByUuid,
       [product.uuid]: {
@@ -104,7 +106,7 @@ export default function useControl(
     setOrder((current) => current + 1);
   }
 
-  function addProduct(product: ControlProduct) {
+  function addProduct(product: ControlSnapshotProduct) {
     const searchedProduct = searchProduct(product);
 
     if (searchedProduct === undefined) {

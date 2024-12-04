@@ -7,14 +7,7 @@ export class ControlsRepository {
   controls: Control[];
 
   constructor() {
-    const controls = this.getControlsFromDirectory();
-    this.controls = controls.sort((a, b) =>
-      a.isoStringDate < b.isoStringDate
-        ? 1
-        : a.isoStringDate === b.isoStringDate
-        ? 0
-        : -1
-    );
+    this.controls = this.getControlsFromDirectory();
   }
 
   private getControlsFromDirectory() {
@@ -37,32 +30,32 @@ export class ControlsRepository {
     return jsonObjects;
   }
 
-  getControl(id: string) {
-    return this.controls.find((control) => control.id === id);
+  getControl(uuid: string) {
+    return this.controls.find((control) => control.uuid === uuid);
   }
 
-  deleteControl(id: string) {
-    const filename = path.join(this.dirname, id + ".json");
+  deleteControl(uuid: string) {
+    const filename = path.join(this.dirname, uuid + ".json");
 
     try {
       fs.rmSync(filename);
     } catch (e) {
       console.error({
         error: e,
-        msg: "error al borrar " + id,
+        msg: "error al borrar " + uuid,
         filename: filename,
       });
     }
   }
 
-  saveControl(data: Control) {
+  saveControl(control: Control) {
     try {
       // Convierte el objeto JavaScript a JSON
-      const jsonData = JSON.stringify(data, null, 2); // El `null, 2` agrega formato (espaciado) al JSON
+      const jsonData = JSON.stringify(control, null, 2); // El `null, 2` agrega formato (espaciado) al JSON
 
       // Escribe el JSON en el archivo
       fs.writeFileSync(
-        path.join(this.dirname, data.id + ".json"),
+        path.join(this.dirname, control.uuid + ".json"),
         jsonData,
         "utf-8"
       );

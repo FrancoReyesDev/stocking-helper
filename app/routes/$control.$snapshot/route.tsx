@@ -1,33 +1,43 @@
 import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
+import ControlUtility from "~/utilities/Control.utility";
 
 export function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
-  const control = controlsRepository.getControl(params.id as string);
-  return control === undefined ? redirect("/") : control;
+  const control = controlsRepository.getControl(params.control as string);
+
+  if (control === undefined) return redirect("/");
+
+  const snapshot = control?.snapshots.find(
+    (snapshot) => snapshot.uuid === params.snapshot
+  );
+
+  return snapshot === undefined ? redirect("/") : { snapshot, control };
 }
 
 export default function Control() {
-  const control = useLoaderData<typeof loader>();
-  const totalUnits = control.products.reduce((acc, current) => {
-    return acc + Number(current.quantity);
-  }, 0);
+  const { snapshot, control } = useLoaderData<typeof loader>();
+  const totalUnits = snapshot.products.reduce(
+    (acc, current) =>
+      acc + ControlUtility.getQuantityFromAddittions(current.additions),
+    0
+  );
 
   return (
     <>
       <article>
         <header className="mb-2 prose">
-          <h2>{control.name}</h2>
+          <h2>{control?.name}</h2>
         </header>
 
         <div className="prose space-y-1 ">
           <p className="mb-0">
-            fecha: {new Date(control.isoStringDate).toLocaleString()}
+            fecha: {new Date(snapshot.isoStringDate).toLocaleString()}
           </p>
-          <p>productos: {control.products.length}</p>
+          <p>productos: {snapshot.products.length}</p>
           <p>unidades totales: {totalUnits}</p>
-          <p>detalles: {control.details || "sin detalles"}</p>
+          <p>detalles: {snapshot.details || "sin detalles"}</p>
           <div className="flex mt-2 gap-2">
             <NavLink to={"./edit"} className="prose">
               {({ isPending }) => (isPending ? "cargando..." : "editar")}
@@ -54,13 +64,15 @@ export default function Control() {
               </tr>
             </thead>
             <tbody>
-              {control.products.map(
-                ({ sku, quantity, title, ids, details }) => (
+              {snapshot.products.map(
+                ({ sku, additions, title, ids, details }) => (
                   <tr key={sku}>
                     <td>{sku}</td>
                     <td>{ids?.join(", ") || ""}</td>
                     <td>{title}</td>
-                    <td>{quantity}</td>
+                    <td>
+                      {ControlUtility.getQuantityFromAddittions(additions)}
+                    </td>
                     <td>{details}</td>
                   </tr>
                 )

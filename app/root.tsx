@@ -2,7 +2,6 @@ import {
   Link,
   Links,
   Meta,
-  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -36,16 +35,16 @@ export default function App() {
 
   return (
     <div className="mx-auto lg:w-2/3 p-8">
-      <header className="my-6 prose flex gap-4">
-        <Link reloadDocument to={"/"}>
-          {!inRoot && <span>&#8592;</span>} inicio
-        </Link>
-        {inRoot ? (
+      {!inRoot && (
+        <header className="mb-4 mt-2 prose flex gap-4">
+          <Link to={"/"}>{<span>&#8592;</span>} inicio</Link>
+          {/* {inRoot ? (
           <NavLink to={"/control/edit"}>
-            {({ isPending }) => (isPending ? "cargando..." : "nuevo control")}
+          {({ isPending }) => (isPending ? "cargando..." : "nuevo control")}
           </NavLink>
-        ) : null}
-      </header>
+          ) : null} */}
+        </header>
+      )}
       <Outlet />
     </div>
   );
