@@ -2,11 +2,15 @@ import { NavLink } from "@remix-run/react";
 
 export default function SnapshotsActions() {
   return (
-    <div className="flex gap-2 ">
-      <NavLink to={"./edit"} className="prose">
-        {({ isPending }) => (isPending ? "cargando..." : "crear")}
+    <div className="flex gap-1 ">
+      <NavLink className="btn btn-xs btn-neutral" to={"./edit"}>
+        editar
       </NavLink>
-      <NavLink reloadDocument to={"./download"}>
+      <NavLink
+        className="btn btn-xs btn-neutral"
+        reloadDocument
+        to={"./download"}
+      >
         {({ isPending }) => (isPending ? "cargando..." : "exportar")}
       </NavLink>
     </div>

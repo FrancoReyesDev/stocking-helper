@@ -44,6 +44,7 @@ export default function CreateControlDialog({ open, setOpen }: Props) {
       encType: "application/json",
       method: "POST",
     });
+    handleClose();
   }
 
   function handleClose() {

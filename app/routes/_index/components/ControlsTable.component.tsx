@@ -16,7 +16,18 @@ export default function ControlsTable({
     ControlUtility.getSortedControlsByLastSnapshot(controls);
 
   if (!controls.length)
-    return <p className="prose">No hay controles, crea uno para comenzar...</p>;
+    return (
+      <p className="prose">
+        No hay controles,{" "}
+        <button
+          className="btn btn-link p-0"
+          onClick={handleOpenCreateControlFrom}
+        >
+          crea uno
+        </button>{" "}
+        para comenzar...
+      </p>
+    );
 
   function handleDelete(control: Control) {
     return function () {
@@ -28,12 +39,17 @@ export default function ControlsTable({
   }
 
   return (
-    <div className="overflow-auto p-2">
+    <div className="overflow-auto">
       <table className="table table-pin-rows">
         <thead>
           <tr>
             <th>
-              <button onClick={handleOpenCreateControlFrom}>crear nuevo</button>
+              <button
+                onClick={handleOpenCreateControlFrom}
+                className="btn btn-link p-0 btn-xs"
+              >
+                crear nuevo
+              </button>
             </th>
             <th>nombre</th>
             <th>ultimo control</th>

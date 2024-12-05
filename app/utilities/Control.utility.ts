@@ -17,7 +17,7 @@ export default class ControlUtility {
   }
 
   static getLastSnapshot(snapshots: Control["snapshots"]) {
-    if (!snapshots.length) return undefined;
+    if (snapshots.length === 0) return undefined;
 
     return snapshots.reduce((acc, current, index) => {
       if (index === 0 || current.isoStringDate > acc.isoStringDate) {

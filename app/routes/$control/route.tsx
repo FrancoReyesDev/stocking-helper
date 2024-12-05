@@ -1,9 +1,27 @@
 import { LoaderFunctionArgs, redirect } from "@remix-run/node";
-import { NavLink, Outlet, useLoaderData } from "@remix-run/react";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import ControlUtility from "~/utilities/Control.utility";
 import ControlActions from "./components/ControlActions.component";
 import SnapshotsActions from "./components/SnapshotsActions.component";
+import { ActionFunctionArgs, redirectDocument } from "@remix-run/node";
+import { v4 as uuidV4 } from "uuid";
+import { Control as ControlType } from "~/types/Control.type";
+
+export async function action({ request }: ActionFunctionArgs) {
+  const controlsRepository = new ControlsRepository();
+
+  const control = (await request.json()) as ControlType;
+
+  const uuid = uuidV4();
+
+  controlsRepository.saveControl({
+    ...control,
+    uuid,
+  });
+
+  return redirectDocument("/control/" + uuid);
+}
 
 export function loader({ params }: LoaderFunctionArgs) {
   const controlsRepository = new ControlsRepository();
@@ -26,7 +44,6 @@ export default function Control() {
           <ControlActions />
 
           <h4>detalles</h4>
-
           <p>{control.details || "sin detalles"}</p>
         </div>
 

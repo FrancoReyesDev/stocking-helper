@@ -1,10 +1,8 @@
-import { NavLink } from "@remix-run/react";
-
 export default function ControlActions() {
   return (
-    <div className="flex gap-2 ">
-      <button>editar</button>
-      <NavLink to={"./delete"}>borrar</NavLink>
+    <div className="flex gap-1 ">
+      <button className="btn btn-xs btn-neutral">editar</button>
+      <button className="btn btn-xs btn-error">borrar</button>
     </div>
   );
 }
