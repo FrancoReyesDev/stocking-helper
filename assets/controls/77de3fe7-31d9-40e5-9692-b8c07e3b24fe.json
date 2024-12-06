@@ -1,0 +1,767 @@
+{
+  "uuid": "77de3fe7-31d9-40e5-9692-b8c07e3b24fe",
+  "name": "AXXIS",
+  "details": "",
+  "snapshots": [
+    {
+      "uuid": "ed1a5729-1236-4347-9692-65bd58ff4d59",
+      "details": "",
+      "isoStringDate": "2024-12-06T20:41:27.608Z",
+      "products": [
+        {
+          "uuid": "342b3bce-6219-4c11-9f6b-f118a9652616",
+          "sku": "431288011517",
+          "ids": [
+            "8435619139001",
+            "431288011517"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 1,
+              "quantity": 1
+            },
+            {
+              "order": 38,
+              "quantity": 1
+            },
+            {
+              "order": 66,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B15 ROJO BRILLO RPM  SOLID XL"
+        },
+        {
+          "uuid": "42d5201f-ac7b-423a-be47-7423af87e609",
+          "sku": "43126560215",
+          "ids": [
+            "8435619147921",
+            "43126560215"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 2,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS DRAKEN S NAHESA A2 GRIS BRILLO RPM925  GRIS M"
+        },
+        {
+          "uuid": "72e615d9-1d42-4222-85e6-e577f2f19fea",
+          "sku": "43126560515",
+          "ids": [
+            "8435619148041",
+            "43126560515"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 3,
+              "quantity": 1
+            },
+            {
+              "order": 57,
+              "quantity": 1
+            },
+            {
+              "order": 61,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS DRAKEN S NAHESA A5 ROJO BRILLO RPM925  ROJO M"
+        },
+        {
+          "uuid": "94f9ade6-5ede-4ebb-b527-344a01ec7d2e",
+          "sku": "43128801315",
+          "ids": [
+            "8435619152505",
+            "43128801315"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 4,
+              "quantity": 1
+            },
+            {
+              "order": 5,
+              "quantity": 1
+            },
+            {
+              "order": 55,
+              "quantity": 1
+            },
+            {
+              "order": 62,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B3 NARANJA BRILLO RPM  NARANJA M"
+        },
+        {
+          "uuid": "60a254e5-3bad-40a7-8c00-c7b64f41ffa5",
+          "sku": "43128801316",
+          "ids": [
+            "8435619152512",
+            "43128801316"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 6,
+              "quantity": 1
+            },
+            {
+              "order": 40,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B3 NARANJA BRILLO RPM  NARANJA L"
+        },
+        {
+          "uuid": "0eec9375-53e9-4988-a62f-f13812edabae",
+          "sku": "431288011316",
+          "ids": [
+            "8435619153878",
+            "431288011316"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 7,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B13 AMARILLO BRILLO  AMARILLO L"
+        },
+        {
+          "uuid": "c71768a5-0e3b-42d7-8f57-ade9835515df",
+          "sku": "43126560217",
+          "ids": [
+            "8435619147945",
+            "43126560217"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 8,
+              "quantity": 1
+            },
+            {
+              "order": 42,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS DRAKEN S NAHESA A2 GRIS BRILLO RPM925  GRIS XL"
+        },
+        {
+          "uuid": "542c0ecf-e23e-439e-bf77-9baa8916e357",
+          "sku": "42565190107",
+          "ids": [
+            "8434639072671",
+            "42565190107"
+          ],
+          "title": "EAGLE SV SEARGEANT A1 GLOSS PEARL BLUE XL",
+          "details": "",
+          "additions": [
+            {
+              "order": 9,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "82f793b5-122a-49f0-91c1-952487725067",
+          "sku": "43126560517",
+          "ids": [
+            "8435619148065",
+            "43126560517"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 10,
+              "quantity": 1
+            },
+            {
+              "order": 36,
+              "quantity": 1
+            },
+            {
+              "order": 65,
+              "quantity": 1
+            },
+            {
+              "order": 67,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS DRAKEN S NAHESA A5 ROJO BRILLO RPM925  ROJO XL"
+        },
+        {
+          "uuid": "4875fc3b-8f8f-4e1d-b523-a0f7dbd2d534",
+          "sku": "43128801317",
+          "ids": [
+            "8435619152529",
+            "43128801317"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 11,
+              "quantity": 1
+            },
+            {
+              "order": 17,
+              "quantity": 1
+            },
+            {
+              "order": 25,
+              "quantity": 1
+            },
+            {
+              "order": 37,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B3 NARANJA BRILLO RPM  NARANJA XL"
+        },
+        {
+          "uuid": "69d2bc1f-0c7f-4b14-b09e-248cc044fc7a",
+          "sku": "431288011317",
+          "ids": [
+            "8435619153885",
+            "431288011317"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 12,
+              "quantity": 1
+            },
+            {
+              "order": 43,
+              "quantity": 1
+            },
+            {
+              "order": 60,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B13 AMARILLO BRILLO  AMARILLO XL"
+        },
+        {
+          "uuid": "3a7731a3-1e12-4c20-b994-5341394f2cba",
+          "sku": "43060000134",
+          "ids": [
+            "8435619115968",
+            "43060000134"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 13,
+              "quantity": 1
+            },
+            {
+              "order": 14,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV SOLID DOBLE VISOR MATE"
+        },
+        {
+          "uuid": "def72c69-41fa-4f45-b3cc-a30b19aea3dc",
+          "sku": "8435619140984",
+          "ids": [
+            "8435619140984",
+            "432188311536"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 15,
+              "quantity": 1
+            }
+          ],
+          "title": "HAWK SV EVO IXIL B15 MATT RED L"
+        },
+        {
+          "uuid": "5dcb09cb-f93f-4ab8-b0d2-b0df34e405d4",
+          "sku": "43068461436",
+          "ids": [
+            "8435619134495",
+            "43068461436"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 16,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO SPEAR B4 NARANJA RPM  NARANJA SPEAR L"
+        },
+        {
+          "uuid": "0c106dd2-0b06-4bca-bb1d-f16a6ce23964",
+          "sku": "43067831336",
+          "ids": [
+            "8435619134136",
+            "43067831336"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 18,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO B3 AMARILLO JUGDE RPM  AMARILLO FLUOR JUDGE L"
+        },
+        {
+          "uuid": "0ab45f78-0188-44c6-a2c2-1edc74e442a9",
+          "sku": "43067831337",
+          "ids": [
+            "8435619134143",
+            "43067831337"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 19,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO B3 AMARILLO JUGDE RPM  AMARILLO FLUOR JUDGE XL"
+        },
+        {
+          "uuid": "2aed730c-0e5a-4e1e-a8bc-1bc6802575dc",
+          "sku": "43060000137",
+          "ids": [
+            "8435619115999",
+            "43060000137"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 20,
+              "quantity": 1
+            },
+            {
+              "order": 21,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS HAWK SV SOLID A1 NEGRO MATE DOBLE VISOR RPM  NEGRO MATE XL"
+        },
+        {
+          "uuid": "2331e4dd-8ce2-435a-af15-67d718906add",
+          "sku": "43218922237",
+          "ids": [
+            "8435619141271",
+            "43218922237"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 22,
+              "quantity": 1
+            },
+            {
+              "order": 23,
+              "quantity": 1
+            },
+            {
+              "order": 24,
+              "quantity": 1
+            },
+            {
+              "order": 30,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL AXXIS HAWK SV EVO DAYTONA C2 DOBLE VISOR RPM  GRIS XL"
+        },
+        {
+          "uuid": "38edfd97-3b1f-4edf-8a76-6fce486eeabd",
+          "sku": "43218922235",
+          "ids": [
+            "8435619141257",
+            "43218922235"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 26,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL AXXIS HAWK SV EVO DAYTONA C2 DOBLE VISOR RPM  GRIS M"
+        },
+        {
+          "uuid": "652be759-d0f1-4054-8d0d-cd0f905651f7",
+          "sku": "43060000135",
+          "ids": [
+            "8435619115975",
+            "43060000135"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 27,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS HAWK SV SOLID A1 NEGRO MATE DOBLE VISOR RPM  NEGRO MATE M"
+        },
+        {
+          "uuid": "af5dc16b-c5bb-40eb-aba2-ff7da60e1505",
+          "sku": "43068462535",
+          "ids": [
+            "8435619133702",
+            "43068462535"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 28,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO SPEAR C5 ROJO RPM925"
+        },
+        {
+          "uuid": "ca7a1663-0097-46fa-a8e1-df5cab5a722b",
+          "sku": "43068461437",
+          "ids": [
+            "8435619134501",
+            "43068461437"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 29,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO SPEAR B4 NARANJA RPM  NARANJA SPEAR XL"
+        },
+        {
+          "uuid": "05112334-7b50-413e-81e3-3d652de03ec9",
+          "sku": "432188311535",
+          "ids": [
+            "8435619140977",
+            "432188311535"
+          ],
+          "title": "HAWK SV EVO IXIL B15 MATT RED M",
+          "details": "",
+          "additions": [
+            {
+              "order": 31,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "08379c22-a24d-4a7b-b644-07b46011b8e1",
+          "sku": "43067831335",
+          "ids": [
+            "8435619134129",
+            "43067831335"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 32,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO INTEGRAL MOTO AXXIS HAWK SV EVO B3 AMARILLO JUGDE RPM  AMARILLO FLUOR JUDGE M"
+        },
+        {
+          "uuid": "cae60298-a5fb-4544-ab79-a0ad3995102f",
+          "sku": "42565220427",
+          "ids": [
+            "42565220427",
+            "8434639072497"
+          ],
+          "title": "EAGLE SV RADICAL A4 MATT PEARL GRAY XL",
+          "details": "crear nuevo",
+          "additions": [
+            {
+              "order": 33,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "4b2285fd-e8c0-438f-816b-d3c78ef65c57",
+          "sku": "40750000115",
+          "ids": [
+            "40750000115"
+          ],
+          "title": "ROC SV SOLID A1 GLOSS BLACK K",
+          "details": "crear en contabilium",
+          "additions": [
+            {
+              "order": 34,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "5bf5c090-335e-4266-aef3-e3e3bc92169e",
+          "sku": "41200000117",
+          "ids": [
+            "8435619109042",
+            "41200000117"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 35,
+              "quantity": 1
+            },
+            {
+              "order": 46,
+              "quantity": 1
+            }
+          ],
+          "title": "MIRAGE SV SOLID A1 NEGRO BRILLO XL"
+        },
+        {
+          "uuid": "4818e269-3ec7-4edf-94dd-e4e93c0a3f77",
+          "sku": "43126560516",
+          "ids": [
+            "8435619148058",
+            "43126560516"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 39,
+              "quantity": 1
+            },
+            {
+              "order": 63,
+              "quantity": 1
+            },
+            {
+              "order": 64,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO AXXIS DRAKEN S NAHESA A5 ROJO BRILLO RPM925  ROJO L"
+        },
+        {
+          "uuid": "d50de372-50f8-474b-8428-0134b2d54df3",
+          "sku": "431288011516",
+          "ids": [
+            "8435619138998",
+            "431288011516"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 41,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO INTEGRAL AXXIS DRAKEN SONAR B15 ROJO BRILLO RPM  SOLID L"
+        },
+        {
+          "uuid": "2d140f4b-6817-401c-9a93-9cdce24f2ea0",
+          "sku": "41200000115",
+          "ids": [
+            "8435619109028",
+            "41200000115"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 44,
+              "quantity": 1
+            },
+            {
+              "order": 51,
+              "quantity": 1
+            }
+          ],
+          "title": "MIRAGE SV SOLID A1 NEGRO BRILLO M"
+        },
+        {
+          "uuid": "10e3f2ed-b09b-4dbc-b3ff-c2586e2a67b8",
+          "sku": "41200000116",
+          "ids": [
+            "8435619109035",
+            "41200000116"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 45,
+              "quantity": 1
+            },
+            {
+              "order": 56,
+              "quantity": 1
+            }
+          ],
+          "title": "MIRAGE SV SOLID A1 NEGRO BRILLO L"
+        },
+        {
+          "uuid": "c16cea43-83cf-4496-b6cc-50c654d057b0",
+          "sku": "41200000137",
+          "ids": [
+            "8435619109110",
+            "41200000137"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 47,
+              "quantity": 1
+            },
+            {
+              "order": 58,
+              "quantity": 1
+            }
+          ],
+          "title": "MIRAGE SV SOLID A1 NEGRO MATE XL"
+        },
+        {
+          "uuid": "1136dbf1-3fe8-4f90-8580-754016742917",
+          "sku": "42627311314",
+          "ids": [
+            "8435619123161",
+            "42627311314"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 48,
+              "quantity": 1
+            },
+            {
+              "order": 52,
+              "quantity": 1
+            },
+            {
+              "order": 53,
+              "quantity": 1
+            },
+            {
+              "order": 54,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO PARA MOTO REBATIBLE AXXIS GECKO SV DOBLE VISOR RPM925"
+        },
+        {
+          "uuid": "a8ebd4b5-211b-48bf-a1d1-a7950e408620",
+          "sku": "42627311714",
+          "ids": [
+            "8435619123284",
+            "42627311714"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 49,
+              "quantity": 1
+            }
+          ],
+          "title": "AXXIS GECKO SV EPIC B7 AZUL BRILLO S"
+        },
+        {
+          "uuid": "b2e6ed06-12f2-44f4-8038-546fba018281",
+          "sku": "41200000138",
+          "ids": [
+            "8435619109127",
+            "41200000138"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 50,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO PARA MOTO ABIERTO AXXIS MIRAGE SOLID A1 RPM925"
+        },
+        {
+          "uuid": "f986ece3-7b9a-44f2-847f-96b58dc820b2",
+          "sku": "41200000135",
+          "ids": [
+            "8435619109097",
+            "41200000135"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 59,
+              "quantity": 1
+            }
+          ],
+          "title": "MIRAGE SV SOLID A1 NEGRO MATE M"
+        },
+        {
+          "uuid": "bf3d72bc-2009-4756-911e-f02d5b5b0764",
+          "sku": "42520000138",
+          "ids": [
+            "8434639039964",
+            "42520000138"
+          ],
+          "title": "DRAKEN SOLID A1 MATT BLACK XXL",
+          "details": "crear publicacion",
+          "additions": [
+            {
+              "order": 68,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "ea6754e4-0508-4805-92b0-fe71b24a57c2",
+          "sku": "42525011517",
+          "ids": [
+            "42525011517"
+          ],
+          "title": "DRAKEN X ROAD B5 GLOSS ORANGE XL",
+          "details": "crear nuevo",
+          "additions": [
+            {
+              "order": 69,
+              "quantity": 1
+            },
+            {
+              "order": 71,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "939aeb2f-47a7-4c39-8984-48cb0b3eda36",
+          "sku": "42525160217",
+          "ids": [
+            "42525160217"
+          ],
+          "title": "DRAKEN RONIN A2 GLOSS BLUE XL",
+          "details": "crear publicacion",
+          "additions": [
+            {
+              "order": 70,
+              "quantity": 1
+            },
+            {
+              "order": 72,
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

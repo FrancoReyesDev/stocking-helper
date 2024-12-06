@@ -94,13 +94,13 @@ export default function Control() {
                           <td>{details}</td>
                           <td className="flex gap-1">
                             <Link
-                              className="btn btn-xs p-1 btn-neutral"
+                              className="btn btn-xs btn-neutral"
                               to={`./${uuid}/edit`}
                             >
                               ver
                             </Link>
                             <Link
-                              className="btn btn-xs p-1 btn-warning"
+                              className="btn btn-xs btn-info"
                               reloadDocument
                               to={`./${uuid}/download?type=labels`}
                             >

@@ -2,8 +2,7 @@ import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import getWorkbookParamsForLabels from "./lib/getWorkbookParamsForLabels";
 import createCsvResponseFromWorkbookParams from "./lib/createCsvResponseFromWorkbookParams";
-import { useNavigate } from "@remix-run/react";
-import { useEffect } from "react";
+import getWorkbookParamsForContabilium from "./lib/getWorkbookParamsForContabilium";
 
 export function loader({ params, request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -31,5 +30,7 @@ export function loader({ params, request }: LoaderFunctionArgs) {
   }
 
   if (exportType === "contabilium") {
+    const workbookParams = getWorkbookParamsForContabilium(snapshot.products);
+    return createCsvResponseFromWorkbookParams(workbookParams);
   }
 }

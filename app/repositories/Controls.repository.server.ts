@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { Control } from "~/types/Control.type";
+import { Control, ControlSnapshot } from "~/types/Control.type";
 
 export class ControlsRepository {
   private dirname = path.join(import.meta.dirname, "../../assets/controls");

@@ -70,22 +70,19 @@ export default function useSnapshot(
     product: ControlSnapshotProduct
   ): ControlSnapshotProduct | undefined {
     const productBySku = mapProductBySku.get(product.sku.trim());
+    if (product.sku.trim() !== "" && productBySku !== undefined)
+      return productBySku;
 
-    if (productBySku !== undefined) return productBySku;
-
-    const trimmedIds = product.ids.map((id) => id.trim());
+    const trimmedIds = product.ids
+      .map((id) => id.trim())
+      .filter((id) => id !== "");
     const idsHash = trimmedIds.join("-");
     const productIdByidsHash = mapProductByIdsHash.get(idsHash);
 
-    if (productIdByidsHash !== undefined) return productIdByidsHash;
+    if (trimmedIds.length !== 0 && productIdByidsHash !== undefined)
+      return productIdByidsHash;
 
-    const firstProductId = trimmedIds?.[0] as string | undefined;
-    const productSkuByFirstId =
-      firstProductId !== undefined
-        ? mapProductBySku.get(firstProductId)
-        : undefined;
-
-    return productSkuByFirstId;
+    return undefined;
   }
 
   function updateProduct(product: ControlSnapshotProduct) {
@@ -162,6 +159,8 @@ export default function useSnapshot(
     additionQuantity: number
   ) {
     const trimmedProduct = CommonUtility.getTrimmedObjectFields(product);
+
+    console.log({ trimmedProduct, product });
 
     const searchedProduct = searchProduct(trimmedProduct);
 

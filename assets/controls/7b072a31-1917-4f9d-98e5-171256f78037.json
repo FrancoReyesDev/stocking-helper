@@ -1,0 +1,699 @@
+{
+  "uuid": "7b072a31-1917-4f9d-98e5-171256f78037",
+  "name": "MT",
+  "details": "",
+  "snapshots": [
+    {
+      "uuid": "06bd0533-a294-495d-93c0-20e227d8b9a2",
+      "details": "",
+      "isoStringDate": "2024-12-06T20:52:01.720Z",
+      "products": [
+        {
+          "uuid": "29d6a459-4d9c-481c-9766-646cbcbfc9fa",
+          "sku": "10526315236",
+          "ids": [
+            "8434639099234",
+            "10526315236"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 1,
+              "quantity": 1
+            },
+            {
+              "order": 9,
+              "quantity": 1
+            },
+            {
+              "order": 29,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID F2 AMARILLO MATE L"
+        },
+        {
+          "uuid": "86770228-4c0d-4fa6-9c3c-106254814f92",
+          "sku": "10528730136",
+          "ids": [
+            "8434639151260",
+            "10528730136"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 2,
+              "quantity": 1
+            },
+            {
+              "order": 8,
+              "quantity": 1
+            },
+            {
+              "order": 37,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SKILL A1 NEGRO MATE L"
+        },
+        {
+          "uuid": "97ddf838-8d93-4d51-8774-532e23dfea16",
+          "sku": "10528730935",
+          "ids": [
+            "8434639155152",
+            "10528730935"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 3,
+              "quantity": 1
+            },
+            {
+              "order": 4,
+              "quantity": 1
+            },
+            {
+              "order": 52,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SKILL A9 MATT GOLD M"
+        },
+        {
+          "uuid": "2a103626-6ffc-4495-874f-405a0718bdf7",
+          "sku": "105200035",
+          "ids": [
+            "8434639011410",
+            "105200035"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 5,
+              "quantity": 1
+            },
+            {
+              "order": 13,
+              "quantity": 1
+            },
+            {
+              "order": 31,
+              "quantity": 1
+            },
+            {
+              "order": 39,
+              "quantity": 1
+            },
+            {
+              "order": 42,
+              "quantity": 1
+            },
+            {
+              "order": 48,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SOLID MAT BLACK M"
+        },
+        {
+          "uuid": "a90acb1a-a209-42d2-a247-1c9a7b91c425",
+          "sku": "10526314236",
+          "ids": [
+            "8434639079571",
+            "10526314236"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 6,
+              "quantity": 1
+            },
+            {
+              "order": 38,
+              "quantity": 1
+            },
+            {
+              "order": 46,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID E2 GRIS MATE L"
+        },
+        {
+          "uuid": "b84e3778-48e3-485c-a495-a797cb6c9ce4",
+          "sku": "10528730137",
+          "ids": [
+            "8434639151277",
+            "10528730137"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 7,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SKILL A1 NEGRO MATE XL"
+        },
+        {
+          "uuid": "018f6a5f-8894-4213-8b3d-d20c9dfd0eff",
+          "sku": "105200036",
+          "ids": [
+            "8434639011427",
+            "105200036"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 10,
+              "quantity": 1
+            },
+            {
+              "order": 22,
+              "quantity": 1
+            },
+            {
+              "order": 30,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SOLID MAT BLACK L"
+        },
+        {
+          "uuid": "2590cbe6-8257-4d6d-85ff-97f428eeff12",
+          "sku": "134700001225",
+          "ids": [
+            "8434639197671",
+            "134700001225"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 11,
+              "quantity": 1
+            },
+            {
+              "order": 12,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID M"
+        },
+        {
+          "uuid": "9c21ac2f-504e-4e0b-98b5-727997fcbb50",
+          "sku": "13470000115",
+          "ids": [
+            "13470000115"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 14,
+              "quantity": 1
+            },
+            {
+              "order": 20,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID NEGRO BRILLO RPM925  NEGRO SOLID M"
+        },
+        {
+          "uuid": "c13d3295-c7e4-4b22-a05e-23810bd2b09e",
+          "sku": "134700001226",
+          "ids": [
+            "8434639197688",
+            "134700001226"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 15,
+              "quantity": 1
+            },
+            {
+              "order": 25,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID L"
+        },
+        {
+          "uuid": "0f279476-18b5-4ea0-a75d-f04209fb8027",
+          "sku": "105200037",
+          "ids": [
+            "8434639011434",
+            "105200037"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 16,
+              "quantity": 1
+            },
+            {
+              "order": 21,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SOLID MAT BLACK XL"
+        },
+        {
+          "uuid": "3f2dc0ec-4535-43a4-be58-3ad06c7fb4f2",
+          "sku": "13470000116",
+          "ids": [
+            "8434639195509",
+            "13470000116"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 17,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID NEGRO BRILLO RPM925  NEGRO SOLID L"
+        },
+        {
+          "uuid": "d3246671-4365-45f6-a8c6-00d8e65b528f",
+          "sku": "134700001227",
+          "ids": [
+            "8434639197695",
+            "134700001227"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 18,
+              "quantity": 1
+            },
+            {
+              "order": 24,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID GRIS MATE RPM925  GRIS SOLID XL"
+        },
+        {
+          "uuid": "b4886bf5-5383-493f-a0ae-9e8971646ae1",
+          "sku": "13470000134",
+          "ids": [
+            "8434639195547",
+            "13470000134"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 19,
+              "quantity": 1
+            },
+            {
+              "order": 23,
+              "quantity": 1
+            },
+            {
+              "order": 26,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO REBATIBLE MT GENESIS A1 SOLID DOBLE VISOR RPM925"
+        },
+        {
+          "uuid": "444a656a-2987-42d1-9202-d2772fc30fc4",
+          "sku": "13470000117",
+          "ids": [
+            "8434639195516",
+            "13470000117"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 27,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO REBATIBLE MT GENESIS A1 SOLID NEGRO BRILLO RPM925  NEGRO SOLID XL"
+        },
+        {
+          "uuid": "99a26e4c-252d-499f-a6ad-5f2445df7387",
+          "sku": "13470000137",
+          "ids": [
+            "8434639195578",
+            "13470000137"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 28,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO REBATIBLE MT GENESIS A1 SOLID DOBLE VISOR RPM925"
+        },
+        {
+          "uuid": "331420ba-5eb4-44b6-b445-9869ea30696f",
+          "sku": "10526315536",
+          "ids": [
+            "8434639099296",
+            "10526315536"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 32,
+              "quantity": 1
+            },
+            {
+              "order": 34,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID F5 ROJO MATE L"
+        },
+        {
+          "uuid": "c2a8ed56-2716-4e20-bdf3-1958dbc190d1",
+          "sku": "10528730936",
+          "ids": [
+            "8434639155169",
+            "10528730936"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 33,
+              "quantity": 1
+            },
+            {
+              "order": 47,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SKILL A9 MATT GOLD L"
+        },
+        {
+          "uuid": "570022e6-d17a-4c52-9e34-3267be313f7a",
+          "sku": "10526315237",
+          "ids": [
+            "8434639099241",
+            "10526315237"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 35,
+              "quantity": 1
+            },
+            {
+              "order": 36,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID F2 AMARILLO MATE XL"
+        },
+        {
+          "uuid": "2e7f6d72-a7ee-4a50-b8fb-532db740bc0f",
+          "sku": "10528730135",
+          "ids": [
+            "8434639151253",
+            "10528730135"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 40,
+              "quantity": 1
+            },
+            {
+              "order": 45,
+              "quantity": 1
+            },
+            {
+              "order": 49,
+              "quantity": 1
+            },
+            {
+              "order": 51,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV SKILL A1 NEGRO MATE M"
+        },
+        {
+          "uuid": "bf83fbf1-dfbd-4d07-a3be-79d36681f133",
+          "sku": "10526315535",
+          "ids": [
+            "8434639099289",
+            "10526315535"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 41,
+              "quantity": 1
+            },
+            {
+              "order": 50,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID F5 ROJO MATE M"
+        },
+        {
+          "uuid": "59785888-353e-4235-a02c-4910db6d8383",
+          "sku": "10526314235",
+          "ids": [
+            "8434639079564",
+            "10526314235"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 43,
+              "quantity": 1
+            },
+            {
+              "order": 44,
+              "quantity": 1
+            }
+          ],
+          "title": "ATOM SV HYBRID E2 GRIS MATE"
+        },
+        {
+          "uuid": "2291820a-e4ba-4fbb-afea-804624656529",
+          "sku": "8434639136564",
+          "ids": [
+            "11155023537",
+            "8434639136564"
+          ],
+          "title": "HUMMER QUALITY A5 ROJO FLUOR PERLA XL",
+          "details": "crear contabilium",
+          "additions": [
+            {
+              "order": 53,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "83b68004-172a-4509-97af-1b6a4b50604f",
+          "sku": "10266601T5",
+          "ids": [
+            "8434639186507",
+            "10266601T5"
+          ],
+          "title": "STINGER ZIVZE B4 GLOSS FLUOR M",
+          "details": "crear",
+          "additions": [
+            {
+              "order": 54,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "7c54354a-335d-4473-a9a6-b6947dce107f",
+          "sku": "10949521415",
+          "ids": [
+            "8434639185197",
+            "10949521415"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 55,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT HELMETS SYNCHRONY DUO SPORT PATROL NARANJA RPM925  NEGRO-NARANJA SPORT M"
+        },
+        {
+          "uuid": "649e9bc6-786d-4be8-bf99-3032c9d9af97",
+          "sku": "101515217",
+          "ids": [
+            "8434639009943",
+            "101515217"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 56,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO MT SYNCHRONY DUO SPORT NEGRO RPM925  NEGRO SOLID XL"
+        },
+        {
+          "uuid": "f7ca8f0e-bad4-40fe-ac00-8dfd9de8c191",
+          "sku": "10949521515",
+          "ids": [
+            "8434639185258",
+            "10949521515"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 57,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT HELMETS SYNCHRONY B5 ROJO DUO SPORT RPM925  ROJO SYNCHRONY M"
+        },
+        {
+          "uuid": "9dc76f92-3ef6-44b8-95af-e5c5d381deb2",
+          "sku": "10949521517",
+          "ids": [
+            "8434639185272",
+            "10949521517"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 58,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT HELMETS SYNCHRONY B5 ROJO DUO SPORT RPM925  ROJO SYNCHRONY XL"
+        },
+        {
+          "uuid": "5db4bb21-31b9-4207-a9f7-d10f41111102",
+          "sku": "101515216",
+          "ids": [
+            "8434639009936",
+            "101515216"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 59,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO MT SYNCHRONY DUO SPORT NEGRO RPM925  NEGRO SOLID L"
+        },
+        {
+          "uuid": "020d4c0b-68ac-43ec-bbb7-e52da5382974",
+          "sku": "111541127",
+          "ids": [
+            "111541127"
+          ],
+          "title": "STINGER WARHEAR MATT BLACK ORANGE XL",
+          "details": "",
+          "additions": [
+            {
+              "order": 60,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "5759cc8d-95c7-4be3-9349-a81118f337b6",
+          "sku": "1051350137",
+          "ids": [
+            "1051350137"
+          ],
+          "title": "AVENUE SV CROSSROAD MATT BLACK ORANGE XL",
+          "details": "crear",
+          "additions": [
+            {
+              "order": 61,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "uuid": "919c0f86-4040-42ed-9fb7-8b29ebfb1ece",
+          "sku": "11200000137",
+          "ids": [
+            "11200000137",
+            "8434639017498"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 62,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT HELMETS THUNDER 3 SV JET SOLID A1 MAT BLACK XL"
+        },
+        {
+          "uuid": "9bb17f35-253d-4248-9da8-5a93bfceb136",
+          "sku": "8434639170346",
+          "ids": [
+            "8434639170346",
+            "10322701T7"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 63,
+              "quantity": 1
+            },
+            {
+              "order": 66,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MOTO MODULAR MT STREETFIGHTER TOTEM B4 NARANJA MATE  NARANJA XL"
+        },
+        {
+          "uuid": "acb94c37-c46f-40a6-a052-37ce17bc21bf",
+          "sku": "8434639170339",
+          "ids": [
+            "8434639170339",
+            "10322701T6"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 64,
+              "quantity": 1
+            },
+            {
+              "order": 67,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT STREETFIGHTER NARANJA TOTEM B4"
+        },
+        {
+          "uuid": "7a2b9d90-d533-40e6-8311-b13c31f0f80a",
+          "sku": "8434639170322",
+          "ids": [
+            "8434639170322",
+            "10322701T5"
+          ],
+          "details": "",
+          "additions": [
+            {
+              "order": 65,
+              "quantity": 1
+            }
+          ],
+          "title": "CASCO MT STREETFIGHTER NARANJA TOTEM B4"
+        }
+      ]
+    }
+  ]
+}

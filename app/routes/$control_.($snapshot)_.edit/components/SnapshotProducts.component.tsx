@@ -72,18 +72,8 @@ export default function SnapshotProducts({
 
   function handleChangeProductIds(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
+
     setIdsToString(value);
-  }
-
-  function formatProductIds() {
-    const value = idsToString
-      .split(",")
-      .map((id) => id.trim())
-      .filter((id) => id !== "");
-
-    const newValue = value.join(", ");
-
-    setIdsToString(newValue === "" ? newValue : newValue + ", ");
   }
 
   function handlePressingEnterOnProductIds(
@@ -91,12 +81,34 @@ export default function SnapshotProducts({
   ) {
     if (event.key !== "Enter") return;
 
-    if (newProduct.ids.length > 0) {
-      const searchedProduct = searchProduct(newProduct);
-      if (searchedProduct) return handleAddProduct(searchedProduct);
-    }
+    const ids = idsToString
+      .split(",")
+      .map((id) => id.trim())
+      .filter((id) => id !== "");
 
-    formatProductIds();
+    if (ids.length === 0) return setIdsToString("");
+
+    const uniqueIds = _.uniq(ids);
+    const hasDuplicates = _.size(ids) !== _.size(uniqueIds);
+
+    const newProductsWithUniqueIds = {
+      ...newProduct,
+      ids: uniqueIds,
+    };
+
+    const searchedProduct = searchProduct(newProductsWithUniqueIds);
+
+    console.log({ searchedProduct, newProductsWithUniqueIds, uniqueIds, ids });
+
+    if (searchedProduct) return handleAddProduct(searchedProduct);
+
+    setNewProduct(newProductsWithUniqueIds);
+
+    if (!hasDuplicates) return setIdsToString(ids.join(", ") + ", ");
+
+    setIdsToString(uniqueIds.join(", "));
+    skuFieldRef.current?.focus();
+    playTabToSkuAudio();
   }
 
   function handleChangeProductField(field: keyof ControlSnapshotProduct) {
@@ -158,7 +170,7 @@ export default function SnapshotProducts({
     if (isNaN(additionQuantityToNumber) || additionQuantityToNumber === 0)
       return;
 
-    addProduct(newProduct, additionQuantityToNumber);
+    addProduct(product ?? newProduct, additionQuantityToNumber);
 
     if (remotePrint)
       printOnRemotePrinter({
@@ -173,29 +185,6 @@ export default function SnapshotProducts({
     handleClearForm();
     playAddedProductAudio();
   }
-
-  useEffect(() => {
-    if (idsToString !== "") {
-      const ids = idsToString
-        .split(",")
-        .map((id) => id.trim())
-        .filter((id) => id !== "");
-
-      const uniqueIds = _.uniq(ids);
-      const hasDuplicates = _.size(ids) !== _.size(uniqueIds);
-
-      setNewProduct((currentProduct) => ({
-        ...currentProduct,
-        ids: uniqueIds,
-      }));
-
-      if (hasDuplicates) {
-        setIdsToString(uniqueIds.join(", "));
-        skuFieldRef.current?.focus();
-        playTabToSkuAudio();
-      }
-    }
-  }, [idsToString]);
 
   // Add product if all fields are not empty and product sku exist in Contabilium and fast mode is active
   useEffect(() => {
