@@ -68,28 +68,7 @@ export default function ProductsTable({
   }
 
   const productsByOrder = useMemo(() => {
-    return filteredProducts.reduce((acc, product) => {
-      const { additions } = product;
-
-      if (additions.length === 0) {
-        acc.push(product);
-        return acc;
-      }
-
-      additions.forEach((addition) => {
-        const newProduct: ControlSnapshotProduct = {
-          ...product,
-          additions: [addition],
-        };
-        acc.push(newProduct);
-      });
-
-      const sortedProducts = acc.sort((a, b) => {
-        return a.additions[0].order >= b.additions[0].order ? 1 : -1;
-      });
-
-      return sortedProducts;
-    }, [] as ControlSnapshotProduct[]);
+    return ControlUtility.getProductsByOrder(filteredProducts);
   }, [groupProducts, filteredProducts]);
 
   const tableProducts = groupProducts ? filteredProducts : productsByOrder;

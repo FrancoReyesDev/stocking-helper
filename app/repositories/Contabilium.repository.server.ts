@@ -15,11 +15,10 @@ export class ContabiliumRepository {
   }
 
   private getArrayOfProductsFromContabiliumXlsx(): typeof this.arrayOfProducts {
-    const workbookUtility = new WorkbookUtility();
-    const workbook = workbookUtility.createWorkbook(
+    const workbook = WorkbookUtility.createWorkbook(
       this.contabiliumXlsxAssetFilename
     );
-    const arrayOfJsons = workbookUtility.sheetToAoJson<CbItem>(
+    const arrayOfJsons = WorkbookUtility.sheetToAoJson<CbItem>(
       workbook,
       workbook.SheetNames[0],
       cbItemHeaders

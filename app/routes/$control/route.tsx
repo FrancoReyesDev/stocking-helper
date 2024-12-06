@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs, redirect } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
 import ControlUtility from "~/utilities/Control.utility";
 import ControlActions from "./components/ControlActions.component";
@@ -51,16 +51,19 @@ export default function Control() {
           <h3>Snapshots</h3>
         </header>
 
-        <div className="prose">
-          <SnapshotsActions />
-        </div>
-
         {control.snapshots.length === 0 ? (
           <p className="prose">
-            Aun no tenes snapshots, crea una para comenzar...
+            Aun no tenes snapshots,{" "}
+            <Link className="btn btn-link p-0" to={"./edit"}>
+              crea una
+            </Link>{" "}
+            para comenzar...
           </p>
         ) : (
           <>
+            <Link to={"./edit"} className="btn btn-xs btn-warning">
+              crear
+            </Link>
             <div className="overflow-auto">
               <table className="table table-pin-rows p-2 border  rounded mt-4">
                 <thead>
@@ -69,6 +72,7 @@ export default function Control() {
                     <th>productos</th>
                     <th>unidades totales</th>
                     <th>detalles</th>
+                    <th>-</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -76,7 +80,7 @@ export default function Control() {
                     ({ uuid, isoStringDate, products, details }) => {
                       const formattedDate = new Date(
                         isoStringDate
-                      ).toLocaleDateString();
+                      ).toLocaleString("es-AR");
 
                       return (
                         <tr key={uuid}>
@@ -88,6 +92,21 @@ export default function Control() {
                             )}
                           </td>
                           <td>{details}</td>
+                          <td className="flex gap-1">
+                            <Link
+                              className="btn btn-xs p-1 btn-neutral"
+                              to={`./${uuid}/edit`}
+                            >
+                              ver
+                            </Link>
+                            <Link
+                              className="btn btn-xs p-1 btn-warning"
+                              reloadDocument
+                              to={`./${uuid}/download?type=labels`}
+                            >
+                              exportar
+                            </Link>
+                          </td>
                         </tr>
                       );
                     }

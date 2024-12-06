@@ -1,4 +1,8 @@
-import { LoaderFunctionArgs, redirect } from "@remix-run/node";
+import {
+  ActionFunctionArgs,
+  LoaderFunctionArgs,
+  redirect,
+} from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { ContabiliumRepository } from "~/repositories/Contabilium.repository.server";
 import { ControlsRepository } from "~/repositories/Controls.repository.server";
@@ -9,7 +13,32 @@ import ProductsTable from "./components/ProductsTable.component";
 import useSnapshot from "./hooks/useSnapshot";
 import EditProductDialog from "./components/EditProductDialog.component";
 import { useState } from "react";
-import { ControlSnapshotProduct } from "~/types/Control.type";
+import {
+  Control,
+  ControlSnapshot,
+  ControlSnapshotProduct,
+} from "~/types/Control.type";
+
+export async function action({ params, request }: ActionFunctionArgs) {
+  const controlsRepository = new ControlsRepository();
+  const control = controlsRepository.getControl(params.control as string);
+
+  if (control === undefined)
+    return new Response("control not found", { status: 404 });
+  const snapshot = (await request.json()) as ControlSnapshot;
+
+  const newSnapshots: ControlSnapshot[] = control.snapshots.filter(
+    ({ uuid }) => uuid !== snapshot.uuid
+  );
+
+  const newControl: Control = {
+    ...control,
+    snapshots: [...newSnapshots, snapshot],
+  };
+
+  controlsRepository.saveControl(newControl);
+  return new Response(null, { status: 200 });
+}
 
 export function loader({ params }: LoaderFunctionArgs) {
   const contabiliumRepository = new ContabiliumRepository();
@@ -72,6 +101,7 @@ export default function Edit() {
       <SnapshotFields
         setSnapshotDetails={setSnapshotDetails}
         snapshot={snapshot}
+        controlUuid={currentControl.uuid}
       />
       <SnapshotProducts
         addProduct={addProduct}

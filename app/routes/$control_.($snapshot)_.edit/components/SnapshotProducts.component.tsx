@@ -53,10 +53,22 @@ export default function SnapshotProducts({
 
   useEffect(() => {
     const addedProductAudio = new Audio("/audios/addedProductNotification.mp3");
+    addedProductAudio.load();
     const tabToSkuAudio = new Audio("/audios/skuFocusNotification.mp3");
+    tabToSkuAudio.load();
 
     setAudios({ addedProductAudio, tabToSkuAudio });
   }, []);
+
+  function playTabToSkuAudio() {
+    audios.tabToSkuAudio?.load();
+    audios.tabToSkuAudio?.play();
+  }
+
+  function playAddedProductAudio() {
+    audios.addedProductAudio?.load();
+    audios.addedProductAudio?.play();
+  }
 
   function handleChangeProductIds(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
@@ -159,7 +171,7 @@ export default function SnapshotProducts({
       });
 
     handleClearForm();
-    audios.addedProductAudio?.play();
+    playAddedProductAudio();
   }
 
   useEffect(() => {
@@ -178,9 +190,9 @@ export default function SnapshotProducts({
       }));
 
       if (hasDuplicates) {
-        audios.tabToSkuAudio?.play();
         setIdsToString(uniqueIds.join(", "));
         skuFieldRef.current?.focus();
+        playTabToSkuAudio();
       }
     }
   }, [idsToString]);

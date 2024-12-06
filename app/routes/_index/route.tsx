@@ -36,19 +36,29 @@ export default function Index() {
   const [openCreateControl, setOpenCreateControl] = useState(false);
   const controls = useLoaderData<typeof loader>();
 
+  function handleOpenCreateControlForm() {
+    setOpenCreateControl(true);
+  }
+
   return (
     <article>
       <header className="prose flex gap-2">
         <h2>Controles</h2>
       </header>
+      <div className="mt-2">
+        <button
+          onClick={handleOpenCreateControlForm}
+          className="btn btn-xs btn-warning"
+        >
+          crear
+        </button>
+      </div>
       <CreateControlDialog
         open={openCreateControl}
         setOpen={setOpenCreateControl}
       />
       <ControlsTable
-        handleOpenCreateControlFrom={() => {
-          setOpenCreateControl(true);
-        }}
+        handleOpenCreateControlFrom={handleOpenCreateControlForm}
         controls={controls}
       />
     </article>

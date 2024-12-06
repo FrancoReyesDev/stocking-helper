@@ -17,7 +17,7 @@ export default function ControlsTable({
 
   if (!controls.length)
     return (
-      <p className="prose">
+      <p className="">
         No hay controles,{" "}
         <button
           className="btn btn-link p-0"
@@ -40,17 +40,10 @@ export default function ControlsTable({
 
   return (
     <div className="overflow-auto">
-      <table className="table table-pin-rows">
+      <table className="table  table-pin-rows p-2 border  rounded mt-4">
         <thead>
           <tr>
-            <th>
-              <button
-                onClick={handleOpenCreateControlFrom}
-                className="btn btn-link p-0 btn-xs"
-              >
-                crear nuevo
-              </button>
-            </th>
+            <th>-</th>
             <th>nombre</th>
             <th>ultimo control</th>
             <th></th>
@@ -76,12 +69,6 @@ export default function ControlsTable({
                   >
                     ver
                   </NavLink>{" "}
-                  <NavLink
-                    className="btn btn-xs btn-warning"
-                    to={control.uuid + "/download"}
-                  >
-                    exportar
-                  </NavLink>
                   <button
                     className="btn btn-xs btn-error"
                     onClick={handleDelete(control)}

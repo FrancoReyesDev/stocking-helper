@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  useNavigate,
 } from "@remix-run/react";
 
 import "./tailwind.css";
@@ -30,19 +31,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const inRoot = location.pathname === "/";
 
   return (
     <div className="mx-auto lg:w-2/3 p-8">
       {!inRoot && (
         <header className="mb-4 mt-2 prose flex gap-4">
-          <Link to={"/"}>{<span>&#8592;</span>} inicio</Link>
-          {/* {inRoot ? (
-          <NavLink to={"/control/edit"}>
-          {({ isPending }) => (isPending ? "cargando..." : "nuevo control")}
-          </NavLink>
-          ) : null} */}
+          <button
+            className="btn btn-link p-0 text-black"
+            onClick={() => navigate(-1)}
+          >
+            &#8592; atras
+          </button>
+
+          <Link className="btn btn-link p-0 text-black" to={"/"}>
+            inicio
+          </Link>
         </header>
       )}
       <Outlet />

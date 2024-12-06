@@ -1,11 +1,13 @@
 import { useNavigate } from "@remix-run/react";
 import { useFetcher } from "react-router-dom";
-import { Control, ControlSnapshot } from "~/types/Control.type";
+import { ControlSnapshot } from "~/types/Control.type";
 import _ from "lodash";
 import { SubmitTarget } from "react-router-dom/dist/dom";
-import { ChangeEvent, Dispatch } from "react";
+import { ChangeEvent } from "react";
+import { v4 as uuidV4 } from "uuid";
 
 interface Props {
+  controlUuid: string;
   snapshot: ControlSnapshot;
   setSnapshotDetails(details: string): void;
 }
@@ -13,21 +15,32 @@ interface Props {
 export default function SnapshotFields({
   snapshot,
   setSnapshotDetails,
+  controlUuid,
 }: Props) {
   const navigate = useNavigate();
   const fetcher = useFetcher();
 
   function handleCloseControl() {
-    navigate("..");
+    navigate(-1);
   }
 
   function handleSaveControl() {
-    fetcher.submit(snapshot as unknown as SubmitTarget, {
-      //Remix bug, the type is ok
-      method: "POST",
+    const snapshotUuid = snapshot.uuid === "" ? uuidV4() : snapshot.uuid;
+    const isoStringDate = new Date().toISOString();
+
+    const newSnapshot: ControlSnapshot = {
+      ...snapshot,
+      uuid: snapshotUuid,
+      isoStringDate,
+    };
+
+    fetcher.submit(newSnapshot as unknown as SubmitTarget, {
+      method: "PUT",
       encType: "application/json",
-      action: "/control/save",
+      action: `/${controlUuid}/edit`,
     });
+
+    handleCloseControl();
   }
 
   function handleChangeSnapshotDetails(

@@ -1,12 +1,12 @@
 import XLSX, { Sheet2JSONOpts } from "xlsx";
 
 export class WorkbookUtility {
-  public createWorkbook(filename: string) {
+  static createWorkbook(filename: string) {
     const workbook = XLSX.readFile(filename);
     return workbook;
   }
 
-  public sheetToAoJson<item = unknown>(
+  static sheetToAoJson<item = unknown>(
     workbook: XLSX.WorkBook,
     sheetName: string,
     headers: string[]
@@ -19,7 +19,7 @@ export class WorkbookUtility {
     return arrayOfJsons;
   }
 
-  public createWorkbookFromAoA(title: string, data: any[][]) {
+  static createWorkbookFromAoA(title: string, data: any[][]) {
     const workbook = XLSX.utils.book_new();
     const worksheet = XLSX.utils.aoa_to_sheet(data);
     XLSX.utils.book_append_sheet(workbook, worksheet, title);
